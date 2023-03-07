@@ -113,3 +113,13 @@ glimpse(police_shootings)
 billionaires <- read_csv("data/billionaires (1).csv")
 glimpse(billionaires)
 ```
+
+```{r}
+colnames(billionaires)
+
+unique(billionaires[,6]) |> print(n = 74)
+
+billionaires |>
+filter()
+```
+
