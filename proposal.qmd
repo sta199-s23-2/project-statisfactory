@@ -122,11 +122,13 @@ glimpse(billionaires)
 ```
 
 ```{r}
-colnames(billionaires)
+# colnames(billionaires)
 
-unique(billionaires[,6]) |> print(n = 74)
+# unique(billionaires[,6]) |> print(n = 74)
 
 billionaires |>
-filter()
+  count(year)
+  #select(`wealth.how.was political`)# |>
+  #unique()
 ```
 
