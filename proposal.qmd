@@ -41,7 +41,11 @@ This data shows substance abuse across different age groups and states in the U.
 
 -   Find one published credible article on the topic you are interested in researching.
 
+    [Ignaszewski MJ. The Epidemiology of Drug Abuse. J Clin Pharmacol. 2021 Aug;61 Suppl 2:S10-S17. doi: 10.1002/jcph.1937. PMID: 34396554.](https://pubmed.ncbi.nlm.nih.gov/34396554/)
+
 -   Provide a one paragraph summary about the article.
+
+    The prevalence of substance abuse disorders has been largely considered a public health crisis, particularly with the rise of opioid overdose deaths in 2016. In the United States, the majority of the population will partake in some use of substances, and among users, nicotine, alcohol, and cannabis are the most common drugs of choice. In terms of nicotine consumption, while cigarette smoking has declined significantly in the past few decades, nicotine and cannabis vaping had risen over 2-fold by 2017. There was a brief dip in alcohol consumption, followed by large increases in the past decade, part of which the authors suggest may have been caused by the increased accessibility and time throughout the COVID-19 pandemic. Cannabis use has increased, especially with the rise of legalization across US states. After cannabis, opioids and then heroin were the most common illicit substances, both of which are linked to high rates of overdose. Experts are shifting to understand substance abuse disorder as characterized by neurobiological and social risk factors.
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
@@ -108,7 +112,11 @@ glimpse(police_shootings)
 
 -   Find one published credible article on the topic you are interested in researching.
 
+    Freund, Caroline and Oliver, Sarah, The Origins of the Superrich: The Billionaire Characteristics Database (February 1, 2016). Peterson Institute for International Economics Working Paper No. 16-1, Available at SSRN: <https://ssrn.com/abstract=2731353> or [http://dx.doi.org/10.2139/ssrn.2731353](https://dx.doi.org/10.2139/ssrn.2731353)
+
 -   Provide a one paragraph summary about the article.
+
+    This article aims to provide an overview of the new billionaires dataset to begin analyzing changes in extreme wealth across advanced countries. The data largely comes from Forbes World\'s Billionaires list from 1996-2015. Thus far, they have identified three significant trends: 1) wealth is growing faster in emerging markets; 2) wealth is trending towards increasingly self-made; 3) there are large regional differences in wealth trends. In the US, for example, extreme wealth is more likely to be the result of financial and investing endeavors, while European wealth continues to be, for the most part, inherited. The authors also argue that rather than the net worth of billionaires rising as a consequence of current billionaires acquiring more wealth, it is more likely that these numbers come from the increase of total billionaires worldwide. The study of billionaires and the accumulation of wealth is important to understand global wealth distributions and income inequality, as well as allowing experts to suggest means of potential redistribution and benevolent problem-solving targets. 
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
@@ -122,10 +130,12 @@ glimpse(billionaires)
 ```
 
 ```{r}
-colnames(billionaires)
+# colnames(billionaires)
 
-unique(billionaires[,6]) |> print(n = 74)
+# unique(billionaires[,6]) |> print(n = 74)
 
 billionaires |>
-filter()
+  count(year)
+  #select(`wealth.how.was political`)# |>
+  #unique()
 ```
