@@ -89,6 +89,8 @@ The age variable is quantitative, and the race and shooting manner variables are
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
+Our research question seeks to further analyze the difference in how BIPOC are treated by police compared to white victims. The article provides many statistics that prove minorities are targeted at higher frequencies than white victims, but our research question goes a step further to understand how the intensity of police brutality directed at young people changes based on race.
+
 ## Glimpse of data
 
 ```{r}
