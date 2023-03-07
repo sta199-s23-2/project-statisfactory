@@ -17,11 +17,11 @@ library(readr)
 
 ## Introduction and data
 
-This data came from the Substance Abuse and Mental Health Data Archive.
+-   Identify the source of the data.
 
-It was originally collected from individual states in a National Survey on Drug Use and Health study, and data collection ranges from 2002 to 2018. It was intended to provide information about national substance abuse to better understand public health.
+-   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
-This data shows substance abuse across different age groups and states in the U.S. The types of substances include cigarettes, marijuana, cocaine, and alcohol use. The data includes the total population of the users in three different age groups across different years, as well as the rates of substance usage in each age group per each substance. 
+-   Write a brief description of the observations.
 
 ## Research question
 
@@ -86,8 +86,11 @@ glimpse(police_shootings)
 
 ## Introduction and data
 
+This data came from the Substance Abuse and Mental Health Data Archive.
 
+It was originally collected from individual states in a National Survey on Drug Use and Health study, and data collection ranges from 2002 to 2018. It was intended to provide information about national substance abuse to better understand public health.
 
+This data shows substance abuse across different age groups and states in the U.S. The types of substances include cigarettes, marijuana, cocaine, and alcohol use. The data includes the total population of the users in three different age groups across different years, as well as the rates of substance usage in each age group per each substance.
 
 ## Research question
 
