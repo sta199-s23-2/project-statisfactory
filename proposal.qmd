@@ -53,7 +53,7 @@ library(readr)
 
 The data comes from the Washington Post. It was published with the intent to bolster the evidence-base of police killings for the Black Lives Matter movement.
 
-The data was originally collected by manually combing through local news reports; combining information from law enforcement websites, social media, and other databases (including Fatal Encounters and the \"Killed by Police\" project). Data collection started in 2015 spurred by a slew of fatal slewings, and the information was updated in 2022.
+The data was originally collected by manually combing through local news reports; combining information from law enforcement websites, social media, and other databases (including Fatal Encounters and the \"Killed by Police\" project). Data collection started in 2015 spurred by a slew of fatal shootings, and the information was updated in 2022.
 
 The observations include details about police-involved killings in the United States. The variables include race, age, gender, armed vs not armed status, location, and if the person killed had a mental illness. The observations are primarily focused on key descriptions of the person killed, but do include some details about the police involved (including the presence/lack of a police body camera and the threat of the person as perceived by police).
 
