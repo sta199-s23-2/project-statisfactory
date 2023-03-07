@@ -69,11 +69,13 @@ The observations include details about police-involved killings in the United St
 
 ## Research question
 
--   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
+How does the average **age** differ by **race** for victims of police shootings who experience more violence **(shot and tasered)** compared to just shot?
 
--   A description of the research topic along with a concise statement of your hypotheses on this topic.
+This question is important because it directly draws a distinction between the type of violence people experience based on their race. Findings may indicate that younger people of certain races are targeted with disproportionate police violence, which could lead to a push for police reform. Investigating the intricacies of police violence through the lens of race and age is crucial to identifying systemic issues in the criminal justice system.
 
--   Identify the types of variables in your research question. Categorical? Quantitative?
+The research topic seeks to investigate if young people of minority races are targeted with more police violence. We will analyze the variables \"Person.Age,\" \"Person.Race,\" and \"Shooting.Manner\" to narrow down which demographic experiences \"shot and Tasered\" vs \"shot.\" We **hypothesize** that minority victims (African American, Hispanic, Native American, other) are more likely to be shot and tased (experience more violence) at a younger age than white victims.
+
+The age variable is quantitative, and the race and shooting manner variables are categorical.
 
 ## Literature
 
@@ -116,7 +118,7 @@ glimpse(police_shootings)
 
 -   Provide a one paragraph summary about the article.
 
-    This article aims to provide an overview of the new billionaires dataset to begin analyzing changes in extreme wealth across advanced countries. The data largely comes from Forbes World\'s Billionaires list from 1996-2015. Thus far, they have identified three significant trends: 1) wealth is growing faster in emerging markets; 2) wealth is trending towards increasingly self-made; 3) there are large regional differences in wealth trends. In the US, for example, extreme wealth is more likely to be the result of financial and investing endeavors, while European wealth continues to be, for the most part, inherited. The authors also argue that rather than the net worth of billionaires rising as a consequence of current billionaires acquiring more wealth, it is more likely that these numbers come from the increase of total billionaires worldwide. The study of billionaires and the accumulation of wealth is important to understand global wealth distributions and income inequality, as well as allowing experts to suggest means of potential redistribution and benevolent problem-solving targets. 
+    This article aims to provide an overview of the new billionaires dataset to begin analyzing changes in extreme wealth across advanced countries. The data largely comes from Forbes World's Billionaires list from 1996-2015. Thus far, they have identified three significant trends: 1) wealth is growing faster in emerging markets; 2) wealth is trending towards increasingly self-made; 3) there are large regional differences in wealth trends. In the US, for example, extreme wealth is more likely to be the result of financial and investing endeavors, while European wealth continues to be, for the most part, inherited. The authors also argue that rather than the net worth of billionaires rising as a consequence of current billionaires acquiring more wealth, it is more likely that these numbers come from the increase of total billionaires worldwide. The study of billionaires and the accumulation of wealth is important to understand global wealth distributions and income inequality, as well as allowing experts to suggest means of potential redistribution and benevolent problem-solving targets. 
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
