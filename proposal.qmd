@@ -21,14 +21,6 @@ It was originally collected from individual states in a NSDUH study, and data co
 
 This data shows substance abuse across different age groups and states in the U.S. The types of substances include cigarettes, marijuana, cocaine, and alcohol use. It includes the population of the users in three different age groups in different years, as well as the totals and rates of the different substance uses in each age group.
 
-## Introduction and data
-
--   Identify the source of the data.
-
--   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
-
--   Write a brief description of the observations.
-
 ## Research question
 
 -   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
