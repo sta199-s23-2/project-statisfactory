@@ -10,6 +10,7 @@ editor: visual
 #| message: false
 
 library(tidyverse)
+library(readr) 
 ```
 
 # Data 1
@@ -30,7 +31,7 @@ library(tidyverse)
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-## Literature 
+## Literature
 
 -   Find one published credible article on the topic you are interested in researching.
 
@@ -42,8 +43,8 @@ library(tidyverse)
 
 ```{r}
 #| label: load-data-1
-
-# add code here
+  drugs <- read_csv("data/drugs (1).csv")
+  glimpse(drugs)
 ```
 
 # Data 2
@@ -64,7 +65,7 @@ library(tidyverse)
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-## Literature 
+## Literature
 
 -   Find one published credible article on the topic you are interested in researching.
 
@@ -77,7 +78,8 @@ library(tidyverse)
 ```{r}
 #| label: load-data-2
 
-# add code here
+police_shootings <- read_csv("data/police_shootings (1).csv")
+glimpse(police_shootings)
 ```
 
 # Data 3
@@ -98,7 +100,7 @@ library(tidyverse)
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-## Literature 
+## Literature
 
 -   Find one published credible article on the topic you are interested in researching.
 
@@ -111,5 +113,6 @@ library(tidyverse)
 ```{r}
 #| label: load-data-3
 
-# add code here
+billionaires <- read_csv("data/billionaires (1).csv")
+glimpse(billionaires)
 ```
