@@ -15,13 +15,19 @@ library(readr)
 
 # Data 1
 
-## Introduction and data
-
 This data came from the Substance Abuse and Mental Health Data Archive.
 
-It was originally collected from individual states in a National Survey on Drug Use and Health study, and data collection ranges from 2002 to 2018. It was intended to provide information about national substance abuse to better understand public health.
+It was originally collected from individual states in a NSDUH study, and data collection ranges from 2002 to 2018. It was intended to provide information about national substance abuse to better understand public health.
 
-This data shows substance abuse across different age groups and states in the U.S. The types of substances include cigarettes, marijuana, cocaine, and alcohol use. The data includes the total population of the users in three different age groups across different years, as well as the rates of substance usage in each age group per each substance. 
+This data shows substance abuse across different age groups and states in the U.S. The types of substances include cigarettes, marijuana, cocaine, and alcohol use. It includes the population of the users in three different age groups in different years, as well as the totals and rates of the different substance uses in each age group.
+
+## Introduction and data
+
+-   Identify the source of the data.
+
+-   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
+
+-   Write a brief description of the observations.
 
 ## Research question
 
@@ -51,11 +57,11 @@ This data shows substance abuse across different age groups and states in the U.
 
 ## Introduction and data
 
--   Identify the source of the data.
+The data comes from the Washington Post. It was published with the intent to bolster the evidence-base of police killings for the Black Lives Matter movement.
 
--   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
+The data was originally collected by manually combing through local news reports; combining information from law enforcement websites, social media, and other databases (including Fatal Encounters and the "Killed by Police" project). Data collection started in 2015 spurred by a slew of fatal shootings, and the information was updated in 2022.
 
--   Write a brief description of the observations.
+The observations include details about police-involved killings in the United States. The variables include race, age, gender, armed vs not armed status, location, and if the person killed had a mental illness. The observations are primarily focused on key descriptions of the person killed, but do include some details about the police involved (including the presence/lack of a police body camera and the threat of the person as perceived by police).
 
 ## Research question
 
@@ -69,7 +75,11 @@ This data shows substance abuse across different age groups and states in the U.
 
 -   Find one published credible article on the topic you are interested in researching.
 
+    [Lett E, Asabor EN, Corbin T, et al. Racial inequity in fatal US police shootings, 2015--2020J Epidemiol Community Health 2021;**75:**394-397.](https://jech.bmj.com/content/jech/75/4/394.full.pdf)
+
 -   Provide a one paragraph summary about the article.
+
+    As police brutality and violence has come to a national forefront, data has indicated that the burden of fatal police shootings falls disproportionately on BIPOC in terms of mortality and years of life lost (YLL). Data was sourced from the Washington Post repository on fatal police shootings between 2015-2020, which is dependent on curated news reports and thus may exclude necessary data such as gender and minority status. During this time interval, 5367 fatalities were recorded, 4740 presented with significant racial data for analysis, and 4653 included both sufficient racial and age data for YLL calculation. Contrary to popular hypotheses, while there was a small decline in deaths of white victims, there was no significant trend in death rates among all other race/ethnic groups (i.e. rates were stable across the 5 year interval). In order, mean deaths pqpm were as follows: highest among Native Americans (1.74), then Blacks (1.49), Hispanics (0.74) , Whites (0.57), and Asians (0.25). The authors call for the treatment of police violence as a public health crisis and suggest police demilitarization as a potential intervention.
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
@@ -85,9 +95,6 @@ glimpse(police_shootings)
 # Data 3
 
 ## Introduction and data
-
-
-
 
 ## Research question
 
