@@ -41,7 +41,11 @@ This data shows substance abuse across different age groups and states in the U.
 
 -   Find one published credible article on the topic you are interested in researching.
 
+    [Ignaszewski MJ. The Epidemiology of Drug Abuse. J Clin Pharmacol. 2021 Aug;61 Suppl 2:S10-S17. doi: 10.1002/jcph.1937. PMID: 34396554.](https://pubmed.ncbi.nlm.nih.gov/34396554/)
+
 -   Provide a one paragraph summary about the article.
+
+    The prevalence of substance abuse disorders has been largely considered a public health crisis, particularly with the rise of opioid overdose deaths in 2016. In the United States, the majority of the population will partake in some use of substances, and among users, nicotine, alcohol, and cannabis are the most common drugs of choice. In terms of nicotine consumption, while cigarette smoking has declined significantly in the past few decades, nicotine and cannabis vaping had risen over 2-fold by 2017. There was a brief dip in alcohol consumption, followed by large increases in the past decade, part of which the authors suggest may have been caused by the increased accessibility and time throughout the COVID-19 pandemic. Cannabis use has increased, especially with the rise of legalization across US states. After cannabis, opioids and then heroin were the most common illicit substances, both of which are linked to high rates of overdose. Experts are shifting to understand substance abuse disorder as characterized by neurobiological and social risk factors.
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
@@ -131,4 +135,3 @@ billionaires |>
   #select(`wealth.how.was political`)# |>
   #unique()
 ```
-
