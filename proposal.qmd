@@ -15,6 +15,12 @@ library(readr)
 
 # Data 1
 
+This data came from the Substance Abuse and Mental Health Data Archive. 
+
+It was originally collected from individual states in a NSDUH study, and data collection ranges from 2002 to 2018. It was intended to provide information about national substance abuse to better understand public health.
+
+This data shows substance abuse across different age groups and states in the U.S. The types of substances include cigarettes, marijuana, cocaine, and alcohol use. It includes the population of the users in three different age groups in different years, as well as the totals and rates of the different substance uses in each age group. 
+
 ## Introduction and data
 
 -   Identify the source of the data.
