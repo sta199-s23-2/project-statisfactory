@@ -129,4 +129,3 @@ unique(billionaires[,6]) |> print(n = 74)
 billionaires |>
 filter()
 ```
-
