@@ -15,19 +15,21 @@ library(readr)
 
 # Data 1
 
-This data came from the Substance Abuse and Mental Health Data Archive.
+This data came from the Substance Abuse and Mental Health Data Archive (SAMHDA). 
 
-It was originally collected from individual states in a NSDUH study, and data collection ranges from 2002 to 2018. It was intended to provide information about national substance abuse to better understand public health.
+It was originally collected from individual states in a NSDUH study, and data collection ranges from 2002 to 2018. It was intended to provide information about national substance abuse in different demographics to better understand public health and guide policy.
 
-This data shows substance abuse across different age groups and states in the U.S. The types of substances include cigarettes, marijuana, cocaine, and alcohol use. It includes the population of the users in three different age groups in different years, as well as the totals and rates of the different substance uses in each age group.
+This data shows substance abuse across different age groups and states in the U.S. The types of substances include cigarettes, marijuana, cocaine, and alcohol use. It includes the population of the users in three different age groups in different years, as well as the totals and rates of the different substance uses in each age group. 
 
 ## Research question
 
--   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
+How do the quantities of people with alcohol use disorder in the last year aged 12-17 compared to 18-25 differ across states?
 
--   A description of the research topic along with a concise statement of your hypotheses on this topic.
+This question is important because it draws attention to how youth substance abuse trends differ across regions of the United States. The resulting conclusions may guide targeted and more effective policy to more rural or urban states (depending on the results). Having an understanding of what regions have larger populations of youth with substance abuse disorders can also guide future studies that explore the cause of those discrepancies (types of jobs, income, ethnicity, etc.).
 
--   Identify the types of variables in your research question. Categorical? Quantitative?
+This research topic will compare the number of teenagers (12-17) with substance abuse disorders to young adults (18-15) by state. This involves first comparing the numerical (quantitative) data from the \"Totals.Alcohol.Use Disorder Past Year.12-17'' observation column to the \"Totals.Alcohol.Use Disorder Past Year.18-25\" column. After general trends are observed in substance use disorders across age, we can look at how these trends are magnified or intensified in certain states or regions. To do this second level of analysis, we will use the categorical observation column called \"State\" (which holds Strings) to compare increases/decreases in substance use disorders across states. We may even group states into regions (eg. southeast, northeast...) to get a broader understanding of the distribution of substance use disorders across the country. We hypothesize that there will be a consistent increase in substance use disorders between the 12-17 group and the 18-25 group, but this jump will be more dramatic (bigger increase) in states with large urban hubs known to struggle with high crime rates (including NYC, Chicago, Detroit, Baltimore, and St. Louis). 
+
+Our three variables will be Totals.Alcohol.Use Disorder Past Year.12-17 (Quantitative - Integer), otals.Alcohol.Use Disorder Past Year.18-2 (Quantitative - Integer), and State (Categorical - String).
 
 ## Literature
 
@@ -65,7 +67,7 @@ How does the average **age** differ by **race** for victims of police shootings 
 
 This question is important because it directly draws a distinction between the type of violence people experience based on their race. Findings may indicate that younger people of certain races are targeted with disproportionate police violence, which could lead to a push for police reform. Investigating the intricacies of police violence through the lens of race and age is crucial to identifying systemic issues in the criminal justice system.
 
-The research topic seeks to investigate if young people of minority races are targeted with more police violence. We will analyze the variables \"Person.Age,\" \"Person.Race,\" and \"Shooting.Manner\" to narrow down which demographic experiences \"shot and Tasered\" vs \"shot.\" We **hypothesize** that minority victims (African American, Hispanic, Native American, other) are more likely to be shot and tased (experience more violence) at a younger age than white victims.
+The research topic seeks to investigate if young people of minority races are targeted with more police violence. We will analyze the variables "Person.Age," "Person.Race," and "Shooting.Manner" to narrow down which demographic experiences "shot and Tasered" vs "shot." We **hypothesize** that minority victims (African American, Hispanic, Native American, other) are more likely to be shot and tased (experience more violence) at a younger age than white victims.
 
 The age variable is quantitative, and the race and shooting manner variables are categorical.
 
