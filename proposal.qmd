@@ -43,6 +43,8 @@ Our three variables will be Totals.Alcohol.Use Disorder Past Year.12-17 (Quantit
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
 
+As research focuses more on the balance between biological and environmental factors, it becomes increasingly important to understand the nuances of situational factors - such as location. The article states that alcohol abuse increased over the course of the pandemic, so our research question seeks to understand how risk of alcohol use disorder varies across age groups, and how the prevalence of it changes across states and regions.
+
 ## Glimpse of data
 
 ```{r}
