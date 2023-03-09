@@ -21,7 +21,7 @@ This data came from the Substance Abuse and Mental Health Data Archive (SAMHDA).
 
 It was originally collected from individual states in a NSDUH study, and data collection ranges from 2002 to 2018. It was intended to provide information about national substance abuse in different demographics to better understand public health and guide policy.
 
-This data shows substance abuse across different age groups and states in the U.S. The types of substances include cigarettes, marijuana, cocaine, and alcohol use. It includes the population of the users in three different age groups in different years, as well as the totals and rates of the different substance uses in each age group. 
+This data shows substance abuse across different age groups and states in the U.S. The types of substances include cigarettes, marijuana, cocaine, and alcohol use. It includes the population of the users in three different age groups in different years, as well as the totals and rates of the different substance uses in each age group. There are no apparent ethical concerns with data collection or presentation. 
 
 ## Research question
 
@@ -31,7 +31,7 @@ This question is important because it draws attention to how youth substance abu
 
 This research topic will compare the number of teenagers (12-17) with substance abuse disorders to young adults (18-15) by state. This involves first comparing the numerical (quantitative) data from the "Totals.Alcohol.Use Disorder Past Year.12-17'' observation column to the"Totals.Alcohol.Use Disorder Past Year.18-25" column. After general trends are observed in substance use disorders across age, we can look at how these trends are magnified or intensified in certain states or regions. To do this second level of analysis, we will use the categorical observation column called "State" (which holds Strings) to compare increases/decreases in substance use disorders across states. We may even group states into regions (eg. southeast, northeast...) to get a broader understanding of the distribution of substance use disorders across the country. We hypothesize that there will be a consistent increase in substance use disorders between the 12-17 group and the 18-25 group, but this jump will be more dramatic (bigger increase) in states with large urban hubs known to struggle with high crime rates (including NYC, Chicago, Detroit, Baltimore, and St. Louis). 
 
-Our three variables will be Totals.Alcohol.Use Disorder Past Year.12-17 (Quantitative - Integer), otals.Alcohol.Use Disorder Past Year.18-2 (Quantitative - Integer), and State (Categorical - String).
+Our three variables will be Totals.Alcohol.Use Disorder Past Year.12-17 (Quantitative - Integer), Totals.Alcohol.Use Disorder Past Year.18-2 (Quantitative - Integer), and State (Categorical - String).
 
 ## Literature
 
@@ -61,7 +61,7 @@ As research focuses more on the balance between biological and environmental fac
 
 The data comes from the Washington Post. It was published with the intent to bolster the evidence-base of police killings for the Black Lives Matter movement.
 
-The data was originally collected by manually combing through local news reports; combining information from law enforcement websites, social media, and other databases (including Fatal Encounters and the "Killed by Police" project). Data collection started in 2015 spurred by a slew of fatal shootings, and the information was updated in 2022.
+The data was originally collected by manually combing through local news reports; combining information from law enforcement websites, social media, and other databases (including Fatal Encounters and the "Killed by Police" project). Data collection started in 2015 spurred by a slew of fatal shootings, and the information was updated in 2022. There are no apparent ethical concerns with data collection or presentation. 
 
 The observations include details about police-involved killings in the United States. The variables include race, age, gender, armed vs not armed status, location, and if the person killed had a mental illness. The observations are primarily focused on key descriptions of the person killed, but do include some details about the police involved (including the presence/lack of a police body camera and the threat of the person as perceived by police).
 
@@ -69,9 +69,9 @@ The observations include details about police-involved killings in the United St
 
 How does the average **age** differ by **race** for victims of police shootings who experience more violence **(shot and tasered)** compared to just shot?
 
-This question is important because it directly draws a distinction between the type of violence people experience based on their race. Findings may indicate that younger people of certain races are targeted with disproportionate police violence, which could lead to a push for police reform. Investigating the intricacies of police violence through the lens of race and age is crucial to identifying systemic issues in the criminal justice system.
+This question is important because it directly draws a distinction between the type of violence people experience based on their race. Findings may indicate that younger people of certain races are targeted with disproportionate levels of police violence, which could lead to a push for police reform. Investigating the intricacies of police violence through the lens of race and age is crucial to identifying systemic issues in the criminal justice system.
 
-The research topic seeks to investigate if young people of minority races are targeted with more police violence. We will analyze the variables "Person.Age," "Person.Race," and "Shooting.Manner" to narrow down which demographic experiences "shot and Tasered" vs "shot." We **hypothesize** that minority victims (African American, Hispanic, Native American, other) are more likely to be shot and tased (experience more violence) at a younger age than white victims.
+The research topic seeks to investigate if young people of minority races are targeted with more police violence. We will analyze the variables "Person.Age," "Person.Race," and "Shooting.Manner" to narrow down which demographic experiences "shot and Tasered" vs "shot" at higher rates. We **hypothesize** that minority victims (African American, Hispanic, Native American, other) are more likely to be shot and tazed (experience more violence) at a younger age than white victims.
 
 The age variable is quantitative, and the race and shooting manner variables are categorical.
 
@@ -104,21 +104,21 @@ glimpse(police_shootings)
 
 The data comes from the Peterson Institute for International Economics: an independent nonprofit, nonpartisan research organization dedicated to strengthening prosperity and human welfare in the global economy through expert analysis and practical policy solutions.
 
-Data was collected from the Forbes World’s Billionaires lists from 1996-2014.
+Data was collected from the Forbes World's Billionaires lists from 1996-2014.
 
-The data observations include the company type, sector, location, demographic of the billionaire, and how much of the wealth was inherited. Data analysis shows that superrich in the United States are more dynamic than in Europe, with over half of European billionaires inheriting their fortunes, compared with one-third in the United States. Traditional sectors explain more than half of the rise in wealth in Europe; the financial sector and technology-related sectors together are largely responsible for the rise in US wealth.
+The data observations include the company type, sector, location, demographic of the billionaire, and how much of the wealth was inherited. Data analysis shows that super-rich in the United States are more dynamic than in Europe, with over half of European billionaires inheriting their fortunes, compared with one-third in the United States. Traditional sectors explain more than half of the rise in wealth in Europe; the financial sector and technology-related sectors together are largely responsible for the rise in US wealth. There are no apparent ethical concerns with data collection or presentation. 
 
 ## Research question
 
 As of 2014, what were the most popular sectors for female billionaires, and how rich were they in comparison to male billionaires in the same sectors?
 
-This research topic is important in order to understand sex-associated wealth disparities among the uber-rich. One of the major criticisms today in the intersecting fields of gender and employment is the gender based pay gap that many working and middle class people experience. This wealth gap however has not  been heavily scrutinized with regards to the super-wealthy. It is common knowledge that there are many more male than female billionaires. However, in the fields in which females do manage to break through, we wanted to explore how large the gap was, if at all, and if fields with more percentages of female billionaires had less or greater gaps in terms of overall net worth.
+This research topic is important in order to understand sex-associated wealth disparities among the uber-rich. One of the major criticisms today in the intersecting fields of gender and employment is the gender based pay gap that many working and middle class people experience. This wealth gap however has not been heavily scrutinized with regards to the super-wealthy. It is common knowledge that there are many more male than female billionaires. However, in the fields in which females do manage to break through, we wanted to explore how large the gap was, if at all, and if fields with more percentages of female billionaires had less or greater gaps in terms of overall net worth.
 
 We hypothesize that fields in which there is a greater percentage of female billionaires will have less differences in terms of percent difference of net worth as compared to overall among all sectors.
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
 
-The research topic seeks to investigate the wealth differences between female and male billionaires across sectors. We will analyze the variables “`wealth.how.industry`”, "`year`", “`demographics.gender`”, “`company.sector`” and “`wealth.worth in billions`” to be able to compare the wealth disparity among female billionaires in their most dominant sectors as compared to overall among billionaires.
+The research topic seeks to investigate the wealth differences between female and male billionaires across sectors. We will analyze the variables "`wealth.how.industry`", "`year`", "`demographics.gender`", "`company.sector`" and "`wealth.worth in billions`" to be able to compare the wealth disparity among female billionaires in their most dominant sectors as compared to overall among billionaires. These variables are respectively Categorical, Quantitative, Categorical, Categorical, and Quantitative.
 
 ## Literature
 
