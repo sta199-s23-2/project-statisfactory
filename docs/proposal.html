@@ -2,19 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.36">
+<meta name="generator" content="quarto-1.1.251">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project title</title>
+<title>Statisfactory</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -53,7 +58,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -66,7 +71,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -132,7 +137,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">TEAM NAME</a>
+    <a class="nav-link" href="./index.html">Statisfactory</a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./proposal.html" aria-current="page">Proposal</a>
@@ -157,7 +162,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
@@ -190,7 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project title</h1>
+<h1 class="title">Statisfactory</h1>
 <p class="subtitle lead">Proposal</p>
 </div>
 
@@ -206,50 +211,107 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'ggplot2' was built under R version 4.2.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'tidyr' was built under R version 4.2.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'readr' was built under R version 4.2.2</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: package 'purrr' was built under R version 4.2.2</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="data-1" class="level1">
 <h1>Data 1</h1>
 <section id="introduction-and-data" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-and-data">Introduction and data</h2>
-<ul>
-<li><p>Identify the source of the data.</p></li>
-<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p></li>
-<li><p>Write a brief description of the observations.</p></li>
-</ul>
+<p>This data came from the Substance Abuse and Mental Health Data Archive (SAMHDA).&nbsp;</p>
+<p>It was originally collected from individual states in a NSDUH study, and data collection ranges from 2002 to 2018. It was intended to provide information about national substance abuse in different demographics to better understand public health and guide policy.</p>
+<p>This data shows substance abuse across different age groups and states in the U.S. The types of substances include cigarettes, marijuana, cocaine, and alcohol use. It includes the population of the users in three different age groups in different years, as well as the totals and rates of the different substance uses in each age group. There are no apparent ethical concerns with data collection or presentation.&nbsp;</p>
 </section>
 <section id="research-question" class="level2">
 <h2 class="anchored" data-anchor-id="research-question">Research question</h2>
-<ul>
-<li>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</li>
-<li>A description of the research topic along with a concise statement of your hypotheses on this topic.</li>
-<li>Identify the types of variables in your research question. Categorical? Quantitative?</li>
-</ul>
+<p>How do the quantities of people with alcohol use disorder in the last year aged 12-17 compared to 18-25 differ across states?</p>
+<p>This question is important because it draws attention to how youth substance abuse trends differ across regions of the United States. The resulting conclusions may guide targeted and more effective policy to more rural or urban states (depending on the results). Having an understanding of what regions have larger populations of youth with substance abuse disorders can also guide future studies that explore the cause of those discrepancies (types of jobs, income, ethnicity, etc.).</p>
+<p>This research topic will compare the number of teenagers (12-17) with substance abuse disorders to young adults (18-15) by state. This involves first comparing the numerical (quantitative) data from the “Totals.Alcohol.Use Disorder Past Year.12-17’’ observation column to the”Totals.Alcohol.Use Disorder Past Year.18-25” column. After general trends are observed in substance use disorders across age, we can look at how these trends are magnified or intensified in certain states or regions. To do this second level of analysis, we will use the categorical observation column called “State” (which holds Strings) to compare increases/decreases in substance use disorders across states. We may even group states into regions (eg. southeast, northeast…) to get a broader understanding of the distribution of substance use disorders across the country. We hypothesize that there will be a consistent increase in substance use disorders between the 12-17 group and the 18-25 group, but this jump will be more dramatic (bigger increase) in states with large urban hubs known to struggle with high crime rates (including NYC, Chicago, Detroit, Baltimore, and St.&nbsp;Louis).&nbsp;</p>
+<p>Our three variables will be Totals.Alcohol.Use Disorder Past Year.12-17 (Quantitative - Integer), Totals.Alcohol.Use Disorder Past Year.18-2 (Quantitative - Integer), and State (Categorical - String).</p>
 </section>
 <section id="literature" class="level2">
 <h2 class="anchored" data-anchor-id="literature">Literature</h2>
 <ul>
-<li><p>Find one published credible article on the topic you are interested in researching.</p></li>
-<li><p>Provide a one paragraph summary about the article.</p></li>
+<li><p>Find one published credible article on the topic you are interested in researching.</p>
+<p><a href="https://pubmed.ncbi.nlm.nih.gov/34396554/">Ignaszewski MJ. The Epidemiology of Drug Abuse. J Clin Pharmacol. 2021 Aug;61 Suppl 2:S10-S17. doi: 10.1002/jcph.1937. PMID: 34396554.</a></p></li>
+<li><p>Provide a one paragraph summary about the article.</p>
+<p>The prevalence of substance abuse disorders has been largely considered a public health crisis, particularly with the rise of opioid overdose deaths in 2016. In the United States, the majority of the population will partake in some use of substances, and among users, nicotine, alcohol, and cannabis are the most common drugs of choice. In terms of nicotine consumption, while cigarette smoking has declined significantly in the past few decades, nicotine and cannabis vaping had risen over 2-fold by 2017. There was a brief dip in alcohol consumption, followed by large increases in the past decade, part of which the authors suggest may have been caused by the increased accessibility and time throughout the COVID-19 pandemic. Cannabis use has increased, especially with the rise of legalization across US states. After cannabis, opioids and then heroin were the most common illicit substances, both of which are linked to high rates of overdose. Experts are shifting to understand substance abuse disorder as characterized by neurobiological and social risk factors.</p></li>
 <li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p></li>
 </ul>
+<p>As research focuses more on the balance between biological and environmental factors, it becomes increasingly important to understand the nuances of situational factors - such as location. The article states that alcohol abuse increased over the course of the pandemic, so our research question seeks to understand how risk of alcohol use disorder varies across age groups, and how the prevalence of it changes across states and regions.</p>
 </section>
 <section id="glimpse-of-data" class="level2">
 <h2 class="anchored" data-anchor-id="glimpse-of-data">Glimpse of data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>  drugs <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/drugs (1).csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 867 Columns: 53
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (1): State
+dbl (52): Year, Population.12-17, Population.18-25, Population.26+, Totals.A...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>(drugs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 867
+Columns: 53
+$ State                                               &lt;chr&gt; "Alabama", "Alaska…
+$ Year                                                &lt;dbl&gt; 2002, 2002, 2002, …
+$ `Population.12-17`                                  &lt;dbl&gt; 380805, 69400, 485…
+$ `Population.18-25`                                  &lt;dbl&gt; 499453, 62791, 602…
+$ `Population.26+`                                    &lt;dbl&gt; 2812905, 368460, 3…
+$ `Totals.Alcohol.Use Disorder Past Year.12-17`       &lt;dbl&gt; 18, 4, 36, 14, 173…
+$ `Totals.Alcohol.Use Disorder Past Year.18-25`       &lt;dbl&gt; 68, 12, 117, 53, 5…
+$ `Totals.Alcohol.Use Disorder Past Year.26+`         &lt;dbl&gt; 138, 27, 258, 101,…
+$ `Rates.Alcohol.Use Disorder Past Year.12-17`        &lt;dbl&gt; 0.048336, 0.061479…
+$ `Rates.Alcohol.Use Disorder Past Year.18-25`        &lt;dbl&gt; 0.136490, 0.187891…
+$ `Rates.Alcohol.Use Disorder Past Year.26+`          &lt;dbl&gt; 0.049068, 0.073677…
+$ `Totals.Alcohol.Use Past Month.12-17`               &lt;dbl&gt; 57, 11, 91, 39, 48…
+$ `Totals.Alcohol.Use Past Month.18-25`               &lt;dbl&gt; 254, 38, 352, 162,…
+$ `Totals.Alcohol.Use Past Month.26+`                 &lt;dbl&gt; 1048, 206, 1774, 6…
+$ `Rates.Alcohol.Use Past Month.12-17`                &lt;dbl&gt; 0.150033, 0.158988…
+$ `Rates.Alcohol.Use Past Month.18-25`                &lt;dbl&gt; 0.509551, 0.598311…
+$ `Rates.Alcohol.Use Past Month.26+`                  &lt;dbl&gt; 0.372703, 0.559151…
+$ `Totals.Tobacco.Cigarette Past Month.12-17`         &lt;dbl&gt; 52, 9, 62, 37, 235…
+$ `Totals.Tobacco.Cigarette Past Month.18-25`         &lt;dbl&gt; 196, 28, 234, 154,…
+$ `Totals.Tobacco.Cigarette Past Month.26+`           &lt;dbl&gt; 728, 92, 919, 539,…
+$ `Rates.Tobacco.Cigarette Past Month.12-17`          &lt;dbl&gt; 0.136906, 0.132517…
+$ `Rates.Tobacco.Cigarette Past Month.18-25`          &lt;dbl&gt; 0.392404, 0.439749…
+$ `Rates.Tobacco.Cigarette Past Month.26+`            &lt;dbl&gt; 0.258844, 0.249578…
+$ `Totals.Illicit Drugs.Cocaine Used Past Year.12-17` &lt;dbl&gt; 6, 2, 16, 4, 53, 1…
+$ `Totals.Illicit Drugs.Cocaine Used Past Year.18-25` &lt;dbl&gt; 27, 5, 51, 18, 259…
+$ `Totals.Illicit Drugs.Cocaine Used Past Year.26+`   &lt;dbl&gt; 49, 5, 86, 26, 410…
+$ `Rates.Illicit Drugs.Cocaine Used Past Year.12-17`  &lt;dbl&gt; 0.016556, 0.024400…
+$ `Rates.Illicit Drugs.Cocaine Used Past Year.18-25`  &lt;dbl&gt; 0.054892, 0.083680…
+$ `Rates.Illicit Drugs.Cocaine Used Past Year.26+`    &lt;dbl&gt; 0.017513, 0.013838…
+$ `Totals.Marijuana.New Users.12-17`                  &lt;dbl&gt; 20, 4, 25, 13, 158…
+$ `Totals.Marijuana.New Users.18-25`                  &lt;dbl&gt; 18, 2, 18, 10, 126…
+$ `Totals.Marijuana.New Users.26+`                    &lt;dbl&gt; 2, 0, 3, 1, 17, 3,…
+$ `Rates.Marijuana.New Users.12-17`                   &lt;dbl&gt; 0.059732, 0.077736…
+$ `Rates.Marijuana.New Users.18-25`                   &lt;dbl&gt; 0.062325, 0.084250…
+$ `Rates.Marijuana.New Users.26+`                     &lt;dbl&gt; 0.000914, 0.001625…
+$ `Totals.Marijuana.Used Past Month.12-17`            &lt;dbl&gt; 24, 8, 38, 19, 241…
+$ `Totals.Marijuana.Used Past Month.18-25`            &lt;dbl&gt; 62, 15, 91, 50, 63…
+$ `Totals.Marijuana.Used Past Month.26+`              &lt;dbl&gt; 73, 26, 122, 57, 9…
+$ `Rates.Marijuana.Used Past Month.12-17`             &lt;dbl&gt; 0.063662, 0.110781…
+$ `Rates.Marijuana.Used Past Month.18-25`             &lt;dbl&gt; 0.124672, 0.239907…
+$ `Rates.Marijuana.Used Past Month.26+`               &lt;dbl&gt; 0.025967, 0.071362…
+$ `Totals.Marijuana.Used Past Year.12-17`             &lt;dbl&gt; 49, 13, 82, 37, 44…
+$ `Totals.Marijuana.Used Past Year.18-25`             &lt;dbl&gt; 119, 24, 166, 87, …
+$ `Totals.Marijuana.Used Past Year.26+`               &lt;dbl&gt; 141, 46, 215, 104,…
+$ `Rates.Marijuana.Used Past Year.12-17`              &lt;dbl&gt; 0.127535, 0.188730…
+$ `Rates.Marijuana.Used Past Year.18-25`              &lt;dbl&gt; 0.237880, 0.389026…
+$ `Rates.Marijuana.Used Past Year.26+`                &lt;dbl&gt; 0.050275, 0.124566…
+$ `Totals.Tobacco.Use Past Month.12-17`               &lt;dbl&gt; 63, 11, 73, 46, 29…
+$ `Totals.Tobacco.Use Past Month.18-25`               &lt;dbl&gt; 226, 30, 240, 169,…
+$ `Totals.Tobacco.Use Past Month.26+`                 &lt;dbl&gt; 930, 112, 1032, 66…
+$ `Rates.Tobacco.Use Past Month.12-17`                &lt;dbl&gt; 0.166578, 0.163918…
+$ `Rates.Tobacco.Use Past Month.18-25`                &lt;dbl&gt; 0.451976, 0.484270…
+$ `Rates.Tobacco.Use Past Month.26+`                  &lt;dbl&gt; 0.330659, 0.304220…</code></pre>
+</div>
 </div>
 </section>
 </section>
@@ -257,32 +319,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Data 2</h1>
 <section id="introduction-and-data-1" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-and-data-1">Introduction and data</h2>
-<ul>
-<li><p>Identify the source of the data.</p></li>
-<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p></li>
-<li><p>Write a brief description of the observations.</p></li>
-</ul>
+<p>The data comes from the Washington Post. It was published with the intent to bolster the evidence-base of police killings for the Black Lives Matter movement.</p>
+<p>The data was originally collected by manually combing through local news reports; combining information from law enforcement websites, social media, and other databases (including Fatal Encounters and the “Killed by Police” project). Data collection started in 2015 spurred by a slew of fatal shootings, and the information was updated in 2022. There are no apparent ethical concerns with data collection or presentation.&nbsp;</p>
+<p>The observations include details about police-involved killings in the United States. The variables include race, age, gender, armed vs not armed status, location, and if the person killed had a mental illness. The observations are primarily focused on key descriptions of the person killed, but do include some details about the police involved (including the presence/lack of a police body camera and the threat of the person as perceived by police).</p>
 </section>
 <section id="research-question-1" class="level2">
 <h2 class="anchored" data-anchor-id="research-question-1">Research question</h2>
-<ul>
-<li>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</li>
-<li>A description of the research topic along with a concise statement of your hypotheses on this topic.</li>
-<li>Identify the types of variables in your research question. Categorical? Quantitative?</li>
-</ul>
+<p>How does the average <strong>age</strong> differ by <strong>race</strong> for victims of police shootings who experience more violence <strong>(shot and tasered)</strong> compared to just shot?</p>
+<p>This question is important because it directly draws a distinction between the type of violence people experience based on their race. Findings may indicate that younger people of certain races are targeted with disproportionate levels of police violence, which could lead to a push for police reform. Investigating the intricacies of police violence through the lens of race and age is crucial to identifying systemic issues in the criminal justice system.</p>
+<p>The research topic seeks to investigate if young people of minority races are targeted with more police violence. We will analyze the variables “Person.Age,” “Person.Race,” and “Shooting.Manner” to narrow down which demographic experiences “shot and Tasered” vs “shot” at higher rates. We <strong>hypothesize</strong> that minority victims (African American, Hispanic, Native American, other) are more likely to be shot and tazed (experience more violence) at a younger age than white victims.</p>
+<p>The age variable is quantitative, and the race and shooting manner variables are categorical.</p>
 </section>
 <section id="literature-1" class="level2">
 <h2 class="anchored" data-anchor-id="literature-1">Literature</h2>
 <ul>
-<li><p>Find one published credible article on the topic you are interested in researching.</p></li>
-<li><p>Provide a one paragraph summary about the article.</p></li>
+<li><p>Find one published credible article on the topic you are interested in researching.</p>
+<p><a href="https://jech.bmj.com/content/jech/75/4/394.full.pdf">Lett E, Asabor EN, Corbin T, et al.&nbsp;Racial inequity in fatal US police shootings, 2015–2020J Epidemiol Community Health 2021;<strong>75:</strong>394-397.</a></p></li>
+<li><p>Provide a one paragraph summary about the article.</p>
+<p>As police brutality and violence has come to a national forefront, data has indicated that the burden of fatal police shootings falls disproportionately on BIPOC in terms of mortality and years of life lost (YLL). Data was sourced from the Washington Post repository on fatal police shootings between 2015-2020, which is dependent on curated news reports and thus may exclude necessary data such as gender and minority status. During this time interval, 5367 fatalities were recorded, 4740 presented with significant racial data for analysis, and 4653 included both sufficient racial and age data for YLL calculation. Contrary to popular hypotheses, while there was a small decline in deaths of white victims, there was no significant trend in death rates among all other race/ethnic groups (i.e.&nbsp;rates were stable across the 5 year interval). In order, mean deaths pqpm were as follows: highest among Native Americans (1.74), then Blacks (1.49), Hispanics (0.74) , Whites (0.57), and Asians (0.25). The authors call for the treatment of police violence as a public health crisis and suggest police demilitarization as a potential intervention.</p></li>
 <li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p></li>
 </ul>
+<p>Our research question seeks to further analyze the difference in how BIPOC are treated by police compared to white victims. The article provides many statistics that prove minorities are targeted at higher frequencies than white victims, but our research question goes a step further to understand how the intensity of police brutality directed at young people changes based on race.</p>
 </section>
 <section id="glimpse-of-data-1" class="level2">
 <h2 class="anchored" data-anchor-id="glimpse-of-data-1">Glimpse of data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>police_shootings <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/police_shootings (1).csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 6569 Columns: 16
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (9): Person.Name, Person.Gender, Person.Race, Incident.Location.City, I...
+dbl  (4): Person.Age, Incident.Date.Month, Incident.Date.Day, Incident.Date....
+lgl  (2): Factors.Mental-Illness, Shooting.Body-Camera
+date (1): Incident.Date.Full
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(police_shootings)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 6,569
+Columns: 16
+$ Person.Name              &lt;chr&gt; "Tim Elliot", "Lewis Lee Lembke", "John Paul …
+$ Person.Age               &lt;dbl&gt; 53, 47, 23, 32, 39, 18, 22, 35, 34, 47, 25, 3…
+$ Person.Gender            &lt;chr&gt; "Male", "Male", "Male", "Male", "Male", "Male…
+$ Person.Race              &lt;chr&gt; "Asian", "White", "Hispanic", "White", "Hispa…
+$ Incident.Date.Month      &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …
+$ Incident.Date.Day        &lt;dbl&gt; 2, 2, 3, 4, 4, 4, 5, 6, 6, 6, 6, 7, 7, 7, 7, …
+$ Incident.Date.Year       &lt;dbl&gt; 2015, 2015, 2015, 2015, 2015, 2015, 2015, 201…
+$ Incident.Date.Full       &lt;date&gt; 2015-01-02, 2015-01-02, 2015-01-03, 2015-01-…
+$ Incident.Location.City   &lt;chr&gt; "Shelton", "Aloha", "Wichita", "San Francisco…
+$ Incident.Location.State  &lt;chr&gt; "WA", "OR", "KS", "CA", "CO", "OK", "AZ", "KS…
+$ Factors.Armed            &lt;chr&gt; "gun", "gun", "unarmed", "toy weapon", "nail …
+$ `Factors.Mental-Illness` &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU…
+$ `Factors.Threat-Level`   &lt;chr&gt; "attack", "attack", "other", "attack", "attac…
+$ Factors.Fleeing          &lt;chr&gt; "Not fleeing", "Not fleeing", "Not fleeing", …
+$ Shooting.Manner          &lt;chr&gt; "shot", "shot", "shot and Tasered", "shot", "…
+$ `Shooting.Body-Camera`   &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRU…</code></pre>
+</div>
 </div>
 </section>
 </section>
@@ -290,32 +385,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Data 3</h1>
 <section id="introduction-and-data-2" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-and-data-2">Introduction and data</h2>
-<ul>
-<li><p>Identify the source of the data.</p></li>
-<li><p>State when and how it was originally collected (by the original data curator, not necessarily how you found the data).</p></li>
-<li><p>Write a brief description of the observations.</p></li>
-</ul>
+<p>The data comes from the Peterson Institute for International Economics: an independent nonprofit, nonpartisan research organization dedicated to strengthening prosperity and human welfare in the global economy through expert analysis and practical policy solutions.</p>
+<p>Data was collected from the Forbes World’s Billionaires lists from 1996-2014.</p>
+<p>The data observations include the company type, sector, location, demographic of the billionaire, and how much of the wealth was inherited. Data analysis shows that super-rich in the United States are more dynamic than in Europe, with over half of European billionaires inheriting their fortunes, compared with one-third in the United States. Traditional sectors explain more than half of the rise in wealth in Europe; the financial sector and technology-related sectors together are largely responsible for the rise in US wealth. There are no apparent ethical concerns with data collection or presentation.&nbsp;</p>
 </section>
 <section id="research-question-2" class="level2">
 <h2 class="anchored" data-anchor-id="research-question-2">Research question</h2>
+<p>As of 2014, what were the most popular sectors for female billionaires, and how rich were they in comparison to male billionaires in the same sectors?</p>
+<p>This research topic is important in order to understand sex-associated wealth disparities among the uber-rich. One of the major criticisms today in the intersecting fields of gender and employment is the gender based pay gap that many working and middle class people experience. This wealth gap however has not been heavily scrutinized with regards to the super-wealthy. It is common knowledge that there are many more male than female billionaires. However, in the fields in which females do manage to break through, we wanted to explore how large the gap was, if at all, and if fields with more percentages of female billionaires had less or greater gaps in terms of overall net worth.</p>
+<p>We hypothesize that fields in which there is a greater percentage of female billionaires will have less differences in terms of percent difference of net worth as compared to overall among all sectors.</p>
 <ul>
-<li>A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)</li>
-<li>A description of the research topic along with a concise statement of your hypotheses on this topic.</li>
 <li>Identify the types of variables in your research question. Categorical? Quantitative?</li>
 </ul>
+<p>The research topic seeks to investigate the wealth differences between female and male billionaires across sectors. We will analyze the variables “<code>wealth.how.industry</code>”, “<code>year</code>”, “<code>demographics.gender</code>”, “<code>company.sector</code>” and “<code>wealth.worth in billions</code>” to be able to compare the wealth disparity among female billionaires in their most dominant sectors as compared to overall among billionaires. These variables are respectively Categorical, Quantitative, Categorical, Categorical, and Quantitative.</p>
 </section>
 <section id="literature-2" class="level2">
 <h2 class="anchored" data-anchor-id="literature-2">Literature</h2>
 <ul>
-<li><p>Find one published credible article on the topic you are interested in researching.</p></li>
-<li><p>Provide a one paragraph summary about the article.</p></li>
+<li><p>Find one published credible article on the topic you are interested in researching.</p>
+<p>Freund, Caroline and Oliver, Sarah, The Origins of the Superrich: The Billionaire Characteristics Database (February 1, 2016). Peterson Institute for International Economics Working Paper No.&nbsp;16-1, Available at SSRN: <a href="https://ssrn.com/abstract=2731353" class="uri">https://ssrn.com/abstract=2731353</a> or <a href="https://dx.doi.org/10.2139/ssrn.2731353">http://dx.doi.org/10.2139/ssrn.2731353</a></p></li>
+<li><p>Provide a one paragraph summary about the article.</p>
+<p>This article aims to provide an overview of the new billionaires dataset to begin analyzing changes in extreme wealth across advanced countries. The data largely comes from Forbes World’s Billionaires list from 1996-2015. Thus far, they have identified three significant trends: 1) wealth is growing faster in emerging markets; 2) wealth is trending towards increasingly self-made; 3) there are large regional differences in wealth trends. In the US, for example, extreme wealth is more likely to be the result of financial and investing endeavors, while European wealth continues to be, for the most part, inherited. The authors also argue that rather than the combined net worth of billionaires rising as a consequence of current billionaires acquiring more wealth, it is more likely that these numbers come from the increase of total billionaires worldwide. The study of billionaires and the accumulation of wealth is important to understand global wealth distributions and income inequality, as well as allowing experts to suggest means of potential redistribution and benevolent problem-solving targets.&nbsp;</p></li>
 <li><p>In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.</p></li>
 </ul>
+<p>The cited article attempts to explain the rise of billionaires with the sources of wealth, such as the regions from which billionaires are sourced, and how it was made (self/inherited, market). However, we are comparing billionaires to billionaires in order to explore the correlations between gender and net worth, specifically in the fields in which females are more prevalent, which is a completely different research question.</p>
 </section>
 <section id="glimpse-of-data-2" class="level2">
 <h2 class="anchored" data-anchor-id="glimpse-of-data-2">Glimpse of data</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>billionaires <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/billionaires (1).csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 2614 Columns: 22
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (13): name, company.name, company.relationship, company.sector, company....
+dbl  (6): rank, year, company.founded, demographics.age, location.gdp, wealt...
+lgl  (3): wealth.how.from emerging, wealth.how.was founder, wealth.how.was p...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(billionaires)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 2,614
+Columns: 22
+$ name                       &lt;chr&gt; "Bill Gates", "Bill Gates", "Bill Gates", "…
+$ rank                       &lt;dbl&gt; 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5…
+$ year                       &lt;dbl&gt; 1996, 2001, 2014, 1996, 2001, 2014, 1996, 2…
+$ company.founded            &lt;dbl&gt; 1975, 1975, 1975, 1962, 1962, 1990, 1896, 1…
+$ company.name               &lt;chr&gt; "Microsoft", "Microsoft", "Microsoft", "Ber…
+$ company.relationship       &lt;chr&gt; "founder", "founder", "founder", "founder",…
+$ company.sector             &lt;chr&gt; "Software", "Software", "Software", "Financ…
+$ company.type               &lt;chr&gt; "new", "new", "new", "new", "new", "privati…
+$ demographics.age           &lt;dbl&gt; 40, 45, 58, 65, 70, 74, 0, 48, 77, 68, 56, …
+$ demographics.gender        &lt;chr&gt; "male", "male", "male", "male", "male", "ma…
+$ location.citizenship       &lt;chr&gt; "United States", "United States", "United S…
+$ `location.country code`    &lt;chr&gt; "USA", "USA", "USA", "USA", "USA", "MEX", "…
+$ location.gdp               &lt;dbl&gt; 8.10e+12, 1.06e+13, 0.00e+00, 8.10e+12, 1.0…
+$ location.region            &lt;chr&gt; "North America", "North America", "North Am…
+$ wealth.type                &lt;chr&gt; "founder non-finance", "founder non-finance…
+$ `wealth.worth in billions` &lt;dbl&gt; 18.5, 58.7, 76.0, 15.0, 32.3, 72.0, 13.1, 3…
+$ wealth.how.category        &lt;chr&gt; "New Sectors", "New Sectors", "New Sectors"…
+$ `wealth.how.from emerging` &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, T…
+$ wealth.how.industry        &lt;chr&gt; "Technology-Computer", "Technology-Computer…
+$ wealth.how.inherited       &lt;chr&gt; "not inherited", "not inherited", "not inhe…
+$ `wealth.how.was founder`   &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, T…
+$ `wealth.how.was political` &lt;lgl&gt; TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, T…</code></pre>
+</div>
 </div>
 
 
@@ -392,7 +528,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
