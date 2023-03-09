@@ -15,6 +15,8 @@ library(readr)
 
 # Data 1
 
+## Introduction and data
+
 This data came from the Substance Abuse and Mental Health Data Archive (SAMHDA). 
 
 It was originally collected from individual states in a NSDUH study, and data collection ranges from 2002 to 2018. It was intended to provide information about national substance abuse in different demographics to better understand public health and guide policy.
@@ -100,13 +102,23 @@ glimpse(police_shootings)
 
 ## Introduction and data
 
+The data comes from the Peterson Institute for International Economics: an independent nonprofit, nonpartisan research organization dedicated to strengthening prosperity and human welfare in the global economy through expert analysis and practical policy solutions.
+
+Data was collected from the Forbes World’s Billionaires lists from 1996-2014.
+
+The data observations include the company type, sector, location, demographic of the billionaire, and how much of the wealth was inherited. Data analysis shows that superrich in the United States are more dynamic than in Europe, with over half of European billionaires inheriting their fortunes, compared with one-third in the United States. Traditional sectors explain more than half of the rise in wealth in Europe; the financial sector and technology-related sectors together are largely responsible for the rise in US wealth.
+
 ## Research question
 
--   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
+As of 2014, what were the most popular sectors for female billionaires, and how rich were they in comparison to male billionaires in the same sectors?
 
--   A description of the research topic along with a concise statement of your hypotheses on this topic.
+This research topic is important in order to understand sex-associated wealth disparities among the uber-rich. One of the major criticisms today in the intersecting fields of gender and employment is the gender based pay gap that many working and middle class people experience. This wealth gap however has not  been heavily scrutinized with regards to the super-wealthy. It is common knowledge that there are many more male than female billionaires. However, in the fields in which females do manage to break through, we wanted to explore how large the gap was, if at all, and if fields with more percentages of female billionaires had less or greater gaps in terms of overall net worth.
+
+We hypothesize that fields in which there is a greater percentage of female billionaires will have less differences in terms of percent difference of net worth as compared to overall among all sectors.
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
+
+The research topic seeks to investigate the wealth differences between female and male billionaires across sectors. We will analyze the variables “`wealth.how.industry`”, "`year`", “`demographics.gender`”, “`company.sector`” and “`wealth.worth in billions`” to be able to compare the wealth disparity among female billionaires in their most dominant sectors as compared to overall among billionaires.
 
 ## Literature
 
@@ -116,9 +128,11 @@ glimpse(police_shootings)
 
 -   Provide a one paragraph summary about the article.
 
-    This article aims to provide an overview of the new billionaires dataset to begin analyzing changes in extreme wealth across advanced countries. The data largely comes from Forbes World's Billionaires list from 1996-2015. Thus far, they have identified three significant trends: 1) wealth is growing faster in emerging markets; 2) wealth is trending towards increasingly self-made; 3) there are large regional differences in wealth trends. In the US, for example, extreme wealth is more likely to be the result of financial and investing endeavors, while European wealth continues to be, for the most part, inherited. The authors also argue that rather than the net worth of billionaires rising as a consequence of current billionaires acquiring more wealth, it is more likely that these numbers come from the increase of total billionaires worldwide. The study of billionaires and the accumulation of wealth is important to understand global wealth distributions and income inequality, as well as allowing experts to suggest means of potential redistribution and benevolent problem-solving targets. 
+    This article aims to provide an overview of the new billionaires dataset to begin analyzing changes in extreme wealth across advanced countries. The data largely comes from Forbes World's Billionaires list from 1996-2015. Thus far, they have identified three significant trends: 1) wealth is growing faster in emerging markets; 2) wealth is trending towards increasingly self-made; 3) there are large regional differences in wealth trends. In the US, for example, extreme wealth is more likely to be the result of financial and investing endeavors, while European wealth continues to be, for the most part, inherited. The authors also argue that rather than the combined net worth of billionaires rising as a consequence of current billionaires acquiring more wealth, it is more likely that these numbers come from the increase of total billionaires worldwide. The study of billionaires and the accumulation of wealth is important to understand global wealth distributions and income inequality, as well as allowing experts to suggest means of potential redistribution and benevolent problem-solving targets. 
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
+
+The cited article attempts to explain the rise of billionaires with the sources of wealth, such as the regions from which billionaires are sourced, and how it was made (self/inherited, market). However, we are comparing billionaires to billionaires in order to explore the correlations between gender and net worth, specifically in the fields in which females are more prevalent, which is a completely different research question.
 
 ## Glimpse of data
 
@@ -127,15 +141,4 @@ glimpse(police_shootings)
 
 billionaires <- read_csv("data/billionaires (1).csv")
 glimpse(billionaires)
-```
-
-```{r}
-# colnames(billionaires)
-
-# unique(billionaires[,6]) |> print(n = 74)
-
-billionaires |>
-  count(year)
-  #select(`wealth.how.was political`)# |>
-  #unique()
 ```
