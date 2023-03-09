@@ -2,7 +2,7 @@
 title: "Statisfactory"
 subtitle: "Proposal"
 format: html
-editor: visual
+editor: visual 
 ---
 
 ```{r}
