@@ -9,6 +9,62 @@ execute:
 
 1.  **Introduction and data**
 
-2.  **Methodology**
+\*\*notes
 
-3.  **Results**
+# **Mini lit review**
+
+**(book) Shielded from Justice: Police brutality and accountability in the United States**
+
+-   Conducted studies across 14 large US cities over 2.5 years (Atl, Boston, Chicago, Detroit, Indianapolis, LA, Minneapolis, NOLA, NY, Philly, Portland, Providence, SF, DC)
+
+-   High costs of police violence: cities pay tens of millions for civil lawsuits
+
+    -   Warp general ideals of public service and public trust of police forces as designed to protect them 
+
+-   Issue of human rights violations when police violence is disproportionately mounted against minority groups 
+
+-   Severe barriers to accountability allow these violent acts to continue; historically police officers have been \"above the law\" in their actions 
+
+    -   (other sources, 1968 Kerner commission report, 1981 report of US commission on civil rights)
+
+    -   Barriers to reporting police violence -- processes are inefficient, largely ineffectual (rarely result in punishment), and the individual reporting may face backlash from the agency 
+
+    -   Civil lawsuits rarely go through and result in appropriate punishment
+
+    -   Oversight procedures following incidents are not typically carried out in an effective way -- officers allowed back into field with little regulation 
+
+    -   \"The public, to whom police departments should be held accountable, thus cannot ascertain whether, in fact, the police are policing themselves.\"
+
+    -   Police depts can claim privacy issues to avoid transparency with the public 
+
+\
+
+[**Adultification of black children negatively affects their health: recommendations for health care providers**](https://pubmed.ncbi.nlm.nih.gov/35575413/)
+
+-   Adultification - tendency to view black children as older than they are
+
+\
+
+[**\'They saw me as calculating, not a child\': How adultification leads to black children being treated as criminals**](https://www.theguardian.com/society/2022/jul/05/they-saw-me-as-calculating-not-a-child-how-adultification-leads-to-black-children-being-treated-as-criminals)
+
+-   While studies have reported on adultification phenomena, personal narratives are particularly poignant
+
+-   Tells the story of \"Ahmed\" (fake name) being ambushed by police despite being the perceived child rape victim, having his phone searched and privacy violated -- at just 12 years old, they ignored his requests for his parents to be present and were quoted as saying \"We\'ll just stay here all night until you confess.\" His parents were not called for hours.
+
+-   \" \"When I read back the report they wrote about me when I was a child, I didn\'t even know the words they used about me, like manipulative,\" Ahmed says. \"Now, I think: \'How could they speak like that about a child?\' I was treated as an adult.\"
+
+-   \"What makes it worse is that the headteacher didn\'t intervene. Now I look back and it\'s so shocking that he left me in a room with those officers and I was crying. I don\'t even remember him checking to see if I was OK. He didn\'t call my family and he didn\'t seem to care.\"
+
+-   A few days after the incident at school, one of the officers turned up at Ahmed\'s house. He showed Ahmed\'s parents and brother messages between Ahmed and the perpetrator, including a graphic picture or video of Ahmed naked. \"
+
+-   Diagnosed with PTSD, currently speaking out about his horrifying experience 
+
+[**Adultification bias within child protection and safeguarding**](https://www.justiceinspectorates.gov.uk/hmiprobation/wp-content/uploads/sites/5/2022/06/Academic-Insights-Adultification-bias-within-child-protection-and-safeguarding.pdf)
+
+-   \'The concept of adultification is when notions of innocence and vulnerability are not afforded to certain children. This is determined by people and institutions who hold power over them. When adultification occurs outside of the home it is always founded within discrimination and bias.
+
+-   There are various definitions of adultification, all relate to a child\'s personal characteristics, socio-economic influences and/or lived experiences. Regardless of the context in which adultification take place, the impact results in children\'s rights being either diminished or not upheld.\'
+
+1.  **Methodology**
+
+2.  **Results**
