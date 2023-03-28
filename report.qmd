@@ -11,6 +11,24 @@ execute:
 
 \*\*notes
 
+With the police killings of Eric Garner, Breonna Taylor, George Floyd, and many others, excess police force on people of color has been brought to the forefront of the American mind. National protests have commanded sustained attention to racialized violence against civilians. A 2020 study based on data from the Washington Post concluded that BIPOC Americans were on average 2-3 times more likely to be killed by police than white Americans. (SOURCE)
+
+As police brutality and violence has come to a national forefront, data has indicated that the burden of fatal police shootings falls disproportionately on BIPOC in terms of mortality and years of life lost (YLL). Data was sourced from the Washington Post repository on fatal police shootings between 2015-2020, which is dependent on curated news reports and thus may exclude necessary data such as gender and minority status. During this time interval, 5367 fatalities were recorded, 4740 presented with significant racial data for analysis, and 4653 included both sufficient racial and age data for YLL calculation. Contrary to popular hypotheses, while there was a small decline in deaths of white victims, there was no significant trend in death rates among all other race/ethnic groups (i.e. rates were stable across the 5 year interval). In order, mean deaths pqpm were as follows: highest among Native Americans (1.74), then Blacks (1.49), Hispanics (0.74) , Whites (0.57), and Asians (0.25). The authors call for the treatment of police violence as a public health crisis and suggest police demilitarization as a potential intervention.
+
+The US Department of Justice Office of Justice Programs conducted studies across 14 large US cities over 2.5 years to identify specific barriers in police accountability for the violence they perpetuate. There is an existing consensus around the high costs of police violence, both in terms of civil lawsuit financial costs to cities and regarding civilian trust in public service entities. Historically, people have perceived that police are internally positioned as \"above the law,\" which is further complicated by lack of transparency: \"The public, to whom police departments should be held accountable, thus cannot ascertain whether, in fact, the police are policing themselves.\" Processes to report police officials are largely inefficient and ineffectual, and the individual reporting may fear backlash from the agency. Furthermore, civil lawsuits are rarely carried through to effect appropriate punishment, and the oversight procedures that do take place often do not provide adequate supervision, allowing offending officers back into the field with little regulation. 
+
+Adultification 
+
+-   Elissa section 
+
+According to a study by the Proceedings of the National Academy of Sciences, men are far more likely to be subject to police violence; the average lifetime odds of being killed by police is about 1 in 2,000 for men and about 1 in 33,000 for women. (SOURCE) Risk of death by police for all gender and race groups peak between the ages of 20 y and 35 y and decline with age. This pattern is similar for non-fatal police violence. Studies conclude that police violence is a leading cause of death for young men of color, but not for any other demographic. 
+
+The data comes from the Washington Post. It was published with the intent to bolster the evidence-base of police killings for the Black Lives Matter movement.
+
+The data was originally collected by manually combing through local news reports; combining information from law enforcement websites, social media, and other databases (including Fatal Encounters and the "Killed by Police" project). Data collection started in 2015 spurred by a slew of fatal shootings, and the information was updated in 2022. There are no apparent ethical concerns with data collection or presentation. 
+
+The observations include details about police-involved killings in the United States. The variables include race, age, gender, armed vs not armed status, location, and if the person killed had a mental illness. The observations are primarily focused on key descriptions of the person killed, but do include some details about the police involved (including the presence/lack of a police body camera and the threat of the person as perceived by police).
+
 s# **Mini lit review**
 
 **(book) Shielded from Justice: Police brutality and accountability in the United States**
@@ -23,7 +41,7 @@ s# **Mini lit review**
 
 -   Issue of human rights violations when police violence is disproportionately mounted against minority groups 
 
--   Severe barriers to accountability allow these violent acts to continue; historically police officers have been \"above the law\" in their actions 
+-   Severe barriers to accountability allow these violent acts to continue; historically police officers have been "above the law" in their actions 
 
     -   (other sources, 1968 Kerner commission report, 1981 report of US commission on civil rights)
 
@@ -33,7 +51,7 @@ s# **Mini lit review**
 
     -   Oversight procedures following incidents are not typically carried out in an effective way -- officers allowed back into field with little regulation 
 
-    -   \"The public, to whom police departments should be held accountable, thus cannot ascertain whether, in fact, the police are policing themselves.\"
+    -   "The public, to whom police departments should be held accountable, thus cannot ascertain whether, in fact, the police are policing themselves."
 
     -   Police depts can claim privacy issues to avoid transparency with the public 
 
@@ -45,30 +63,33 @@ s# **Mini lit review**
 
 \
 
-[**\'They saw me as calculating, not a child\': How adultification leads to black children being treated as criminals**](https://www.theguardian.com/society/2022/jul/05/they-saw-me-as-calculating-not-a-child-how-adultification-leads-to-black-children-being-treated-as-criminals)
+[**'They saw me as calculating, not a child': How adultification leads to black children being treated as criminals**](https://www.theguardian.com/society/2022/jul/05/they-saw-me-as-calculating-not-a-child-how-adultification-leads-to-black-children-being-treated-as-criminals)
 
 -   While studies have reported on adultification phenomena, personal narratives are particularly poignant
 
--   Tells the story of \"Ahmed\" (fake name) being ambushed by police despite being the perceived child rape victim, having his phone searched and privacy violated -- at just 12 years old, they ignored his requests for his parents to be present and were quoted as saying \"We\'ll just stay here all night until you confess.\" His parents were not called for hours.
+-   Tells the story of "Ahmed" (fake name) being ambushed by police despite being the perceived child rape victim, having his phone searched and privacy violated -- at just 12 years old, they ignored his requests for his parents to be present and were quoted as saying "We'll just stay here all night until you confess." His parents were not called for hours.
 
--   \" \"When I read back the report they wrote about me when I was a child, I didn\'t even know the words they used about me, like manipulative,\" Ahmed says. \"Now, I think: \'How could they speak like that about a child?\' I was treated as an adult.\"
+-   " "When I read back the report they wrote about me when I was a child, I didn't even know the words they used about me, like manipulative," Ahmed says. "Now, I think: 'How could they speak like that about a child?' I was treated as an adult."
 
--   \"What makes it worse is that the headteacher didn\'t intervene. Now I look back and it\'s so shocking that he left me in a room with those officers and I was crying. I don\'t even remember him checking to see if I was OK. He didn\'t call my family and he didn\'t seem to care.\"
+-   "What makes it worse is that the headteacher didn't intervene. Now I look back and it's so shocking that he left me in a room with those officers and I was crying. I don't even remember him checking to see if I was OK. He didn't call my family and he didn't seem to care."
 
--   A few days after the incident at school, one of the officers turned up at Ahmed\'s house. He showed Ahmed\'s parents and brother messages between Ahmed and the perpetrator, including a graphic picture or video of Ahmed naked. \"
+-   A few days after the incident at school, one of the officers turned up at Ahmed's house. He showed Ahmed's parents and brother messages between Ahmed and the perpetrator, including a graphic picture or video of Ahmed naked. "
 
 -   Diagnosed with PTSD, currently speaking out about his horrifying experience 
 
 [**Adultification bias within child protection and safeguarding**](https://www.justiceinspectorates.gov.uk/hmiprobation/wp-content/uploads/sites/5/2022/06/Academic-Insights-Adultification-bias-within-child-protection-and-safeguarding.pdf)
 
--   \'The concept of adultification is when notions of innocence and vulnerability are not afforded to certain children. This is determined by people and institutions who hold power over them. When adultification occurs outside of the home it is always founded within discrimination and bias.
+-   'The concept of adultification is when notions of innocence and vulnerability are not afforded to certain children. This is determined by people and institutions who hold power over them. When adultification occurs outside of the home it is always founded within discrimination and bias.
 
--   There are various definitions of adultification, all relate to a child\'s personal characteristics, socio-economic influences and/or lived experiences. Regardless of the context in which adultification take place, the impact results in children\'s rights being either diminished or not upheld.\'
+-   There are various definitions of adultification, all relate to a child's personal characteristics, socio-economic influences and/or lived experiences. Regardless of the context in which adultification take place, the impact results in children's rights being either diminished or not upheld.'
 
 1.  **Methodology**
 
 2.  **Results**
-    1.  	We plan to represent our four variables through a series of six graphics. Our preliminary graph will be a box plot to compare the ages of those shot vs shot and tasered. We will facet by shot/shot tasered, and our axis values will be age. 
+
+    1.  
+
+             We plan to represent our four variables through a series of six graphics. Our preliminary graph will be a box plot to compare the ages of those shot vs shot and tasered. We will facet by shot/shot tasered, and our axis values will be age. 
 
         Our next two graphs will compare age, race, and shot/shot tasered. We will create one histogram faceted by race and filled by age, filtered for those only shot. Our next graph will be the same, except filtered for those shot and tasered; this will help visualize how age differs by race between those just shot and those shot and tasered. 
 
