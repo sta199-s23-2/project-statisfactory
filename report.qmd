@@ -7,4 +7,8 @@ execute:
   echo: true
 ---
 
-Add project writeup here.
+1.  **Introduction and data**
+
+2.  **Methodology**
+
+3.  **Results**
