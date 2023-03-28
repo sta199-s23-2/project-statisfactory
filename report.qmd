@@ -1,6 +1,6 @@
 ---
-title: "Project title"
-subtitle: "Report"
+title: "Project Statisfactory"
+subtitle: "Report: Sammy, Griffin, Josh, Elissa, Sancia"
 format: html
 editor: visual
 execute:
