@@ -1,8 +1,8 @@
 ---
-title: "Statisfactory"
+title: "Project title"
 subtitle: "Proposal"
 format: html
-editor: visual 
+editor: visual
 ---
 
 ```{r}
@@ -15,23 +15,27 @@ library(readr)
 
 # Data 1
 
+This data came from the Substance Abuse and Mental Health Data Archive.
+
+It was originally collected from individual states in a NSDUH study, and data collection ranges from 2002 to 2018. It was intended to provide information about national substance abuse to better understand public health.
+
+This data shows substance abuse across different age groups and states in the U.S. The types of substances include cigarettes, marijuana, cocaine, and alcohol use. It includes the population of the users in three different age groups in different years, as well as the totals and rates of the different substance uses in each age group.
+
 ## Introduction and data
 
-This data came from the Substance Abuse and Mental Health Data Archive (SAMHDA). 
+-   Identify the source of the data.
 
-It was originally collected from individual states in a NSDUH study, and data collection ranges from 2002 to 2018. It was intended to provide information about national substance abuse in different demographics to better understand public health and guide policy.
+-   State when and how it was originally collected (by the original data curator, not necessarily how you found the data).
 
-This data shows substance abuse across different age groups and states in the U.S. The types of substances include cigarettes, marijuana, cocaine, and alcohol use. It includes the population of the users in three different age groups in different years, as well as the totals and rates of the different substance uses in each age group. There are no apparent ethical concerns with data collection or presentation. 
+-   Write a brief description of the observations.
 
 ## Research question
 
-How do the quantities of people with alcohol use disorder in the last year aged 12-17 compared to 18-25 differ across states?
+-   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
-This question is important because it draws attention to how youth substance abuse trends differ across regions of the United States. The resulting conclusions may guide targeted and more effective policy to more rural or urban states (depending on the results). Having an understanding of what regions have larger populations of youth with substance abuse disorders can also guide future studies that explore the cause of those discrepancies (types of jobs, income, ethnicity, etc.).
+-   A description of the research topic along with a concise statement of your hypotheses on this topic.
 
-This research topic will compare the number of teenagers (12-17) with substance abuse disorders to young adults (18-15) by state. This involves first comparing the numerical (quantitative) data from the "Totals.Alcohol.Use Disorder Past Year.12-17'' observation column to the"Totals.Alcohol.Use Disorder Past Year.18-25" column. After general trends are observed in substance use disorders across age, we can look at how these trends are magnified or intensified in certain states or regions. To do this second level of analysis, we will use the categorical observation column called "State" (which holds Strings) to compare increases/decreases in substance use disorders across states. We may even group states into regions (eg. southeast, northeast...) to get a broader understanding of the distribution of substance use disorders across the country. We hypothesize that there will be a consistent increase in substance use disorders between the 12-17 group and the 18-25 group, but this jump will be more dramatic (bigger increase) in states with large urban hubs known to struggle with high crime rates (including NYC, Chicago, Detroit, Baltimore, and St. Louis). 
-
-Our three variables will be Totals.Alcohol.Use Disorder Past Year.12-17 (Quantitative - Integer), Totals.Alcohol.Use Disorder Past Year.18-2 (Quantitative - Integer), and State (Categorical - String).
+-   Identify the types of variables in your research question. Categorical? Quantitative?
 
 ## Literature
 
@@ -44,8 +48,6 @@ Our three variables will be Totals.Alcohol.Use Disorder Past Year.12-17 (Quantit
     The prevalence of substance abuse disorders has been largely considered a public health crisis, particularly with the rise of opioid overdose deaths in 2016. In the United States, the majority of the population will partake in some use of substances, and among users, nicotine, alcohol, and cannabis are the most common drugs of choice. In terms of nicotine consumption, while cigarette smoking has declined significantly in the past few decades, nicotine and cannabis vaping had risen over 2-fold by 2017. There was a brief dip in alcohol consumption, followed by large increases in the past decade, part of which the authors suggest may have been caused by the increased accessibility and time throughout the COVID-19 pandemic. Cannabis use has increased, especially with the rise of legalization across US states. After cannabis, opioids and then heroin were the most common illicit substances, both of which are linked to high rates of overdose. Experts are shifting to understand substance abuse disorder as characterized by neurobiological and social risk factors.
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
-
-As research focuses more on the balance between biological and environmental factors, it becomes increasingly important to understand the nuances of situational factors - such as location. The article states that alcohol abuse increased over the course of the pandemic, so our research question seeks to understand how risk of alcohol use disorder varies across age groups, and how the prevalence of it changes across states and regions.
 
 ## Glimpse of data
 
@@ -61,19 +63,17 @@ As research focuses more on the balance between biological and environmental fac
 
 The data comes from the Washington Post. It was published with the intent to bolster the evidence-base of police killings for the Black Lives Matter movement.
 
-The data was originally collected by manually combing through local news reports; combining information from law enforcement websites, social media, and other databases (including Fatal Encounters and the "Killed by Police" project). Data collection started in 2015 spurred by a slew of fatal shootings, and the information was updated in 2022. There are no apparent ethical concerns with data collection or presentation. 
+The data was originally collected by manually combing through local news reports; combining information from law enforcement websites, social media, and other databases (including Fatal Encounters and the "Killed by Police" project). Data collection started in 2015 spurred by a slew of fatal shootings, and the information was updated in 2022.
 
 The observations include details about police-involved killings in the United States. The variables include race, age, gender, armed vs not armed status, location, and if the person killed had a mental illness. The observations are primarily focused on key descriptions of the person killed, but do include some details about the police involved (including the presence/lack of a police body camera and the threat of the person as perceived by police).
 
 ## Research question
 
-How does the average **age** differ by **race** for victims of police shootings who experience more violence **(shot and tasered)** compared to just shot?
+-   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
-This question is important because it directly draws a distinction between the type of violence people experience based on their race. Findings may indicate that younger people of certain races are targeted with disproportionate levels of police violence, which could lead to a push for police reform. Investigating the intricacies of police violence through the lens of race and age is crucial to identifying systemic issues in the criminal justice system.
+-   A description of the research topic along with a concise statement of your hypotheses on this topic.
 
-The research topic seeks to investigate if young people of minority races are targeted with more police violence. We will analyze the variables "Person.Age," "Person.Race," and "Shooting.Manner" to narrow down which demographic experiences "shot and Tasered" vs "shot" at higher rates. We **hypothesize** that minority victims (African American, Hispanic, Native American, other) are more likely to be shot and tazed (experience more violence) at a younger age than white victims.
-
-The age variable is quantitative, and the race and shooting manner variables are categorical.
+-   Identify the types of variables in your research question. Categorical? Quantitative?
 
 ## Literature
 
@@ -86,8 +86,6 @@ The age variable is quantitative, and the race and shooting manner variables are
     As police brutality and violence has come to a national forefront, data has indicated that the burden of fatal police shootings falls disproportionately on BIPOC in terms of mortality and years of life lost (YLL). Data was sourced from the Washington Post repository on fatal police shootings between 2015-2020, which is dependent on curated news reports and thus may exclude necessary data such as gender and minority status. During this time interval, 5367 fatalities were recorded, 4740 presented with significant racial data for analysis, and 4653 included both sufficient racial and age data for YLL calculation. Contrary to popular hypotheses, while there was a small decline in deaths of white victims, there was no significant trend in death rates among all other race/ethnic groups (i.e. rates were stable across the 5 year interval). In order, mean deaths pqpm were as follows: highest among Native Americans (1.74), then Blacks (1.49), Hispanics (0.74) , Whites (0.57), and Asians (0.25). The authors call for the treatment of police violence as a public health crisis and suggest police demilitarization as a potential intervention.
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
-
-Our research question seeks to further analyze the difference in how BIPOC are treated by police compared to white victims. The article provides many statistics that prove minorities are targeted at higher frequencies than white victims, but our research question goes a step further to understand how the intensity of police brutality directed at young people changes based on race.
 
 ## Glimpse of data
 
@@ -102,23 +100,13 @@ glimpse(police_shootings)
 
 ## Introduction and data
 
-The data comes from the Peterson Institute for International Economics: an independent nonprofit, nonpartisan research organization dedicated to strengthening prosperity and human welfare in the global economy through expert analysis and practical policy solutions.
-
-Data was collected from the Forbes World's Billionaires lists from 1996-2014.
-
-The data observations include the company type, sector, location, demographic of the billionaire, and how much of the wealth was inherited. Data analysis shows that super-rich in the United States are more dynamic than in Europe, with over half of European billionaires inheriting their fortunes, compared with one-third in the United States. Traditional sectors explain more than half of the rise in wealth in Europe; the financial sector and technology-related sectors together are largely responsible for the rise in US wealth. There are no apparent ethical concerns with data collection or presentation. 
-
 ## Research question
 
-As of 2014, what were the most popular sectors for female billionaires, and how rich were they in comparison to male billionaires in the same sectors?
+-   A well formulated research question. (You may include more than one research question if you want to receive feedback on different ideas for your project. However, one per data set is required.)
 
-This research topic is important in order to understand sex-associated wealth disparities among the uber-rich. One of the major criticisms today in the intersecting fields of gender and employment is the gender based pay gap that many working and middle class people experience. This wealth gap however has not been heavily scrutinized with regards to the super-wealthy. It is common knowledge that there are many more male than female billionaires. However, in the fields in which females do manage to break through, we wanted to explore how large the gap was, if at all, and if fields with more percentages of female billionaires had less or greater gaps in terms of overall net worth.
-
-We hypothesize that fields in which there is a greater percentage of female billionaires will have less differences in terms of percent difference of net worth as compared to overall among all sectors.
+-   A description of the research topic along with a concise statement of your hypotheses on this topic.
 
 -   Identify the types of variables in your research question. Categorical? Quantitative?
-
-The research topic seeks to investigate the wealth differences between female and male billionaires across sectors. We will analyze the variables "`wealth.how.industry`", "`year`", "`demographics.gender`", "`company.sector`" and "`wealth.worth in billions`" to be able to compare the wealth disparity among female billionaires in their most dominant sectors as compared to overall among billionaires. These variables are respectively Categorical, Quantitative, Categorical, Categorical, and Quantitative.
 
 ## Literature
 
@@ -128,11 +116,9 @@ The research topic seeks to investigate the wealth differences between female an
 
 -   Provide a one paragraph summary about the article.
 
-    This article aims to provide an overview of the new billionaires dataset to begin analyzing changes in extreme wealth across advanced countries. The data largely comes from Forbes World's Billionaires list from 1996-2015. Thus far, they have identified three significant trends: 1) wealth is growing faster in emerging markets; 2) wealth is trending towards increasingly self-made; 3) there are large regional differences in wealth trends. In the US, for example, extreme wealth is more likely to be the result of financial and investing endeavors, while European wealth continues to be, for the most part, inherited. The authors also argue that rather than the combined net worth of billionaires rising as a consequence of current billionaires acquiring more wealth, it is more likely that these numbers come from the increase of total billionaires worldwide. The study of billionaires and the accumulation of wealth is important to understand global wealth distributions and income inequality, as well as allowing experts to suggest means of potential redistribution and benevolent problem-solving targets. 
+    This article aims to provide an overview of the new billionaires dataset to begin analyzing changes in extreme wealth across advanced countries. The data largely comes from Forbes World's Billionaires list from 1996-2015. Thus far, they have identified three significant trends: 1) wealth is growing faster in emerging markets; 2) wealth is trending towards increasingly self-made; 3) there are large regional differences in wealth trends. In the US, for example, extreme wealth is more likely to be the result of financial and investing endeavors, while European wealth continues to be, for the most part, inherited. The authors also argue that rather than the net worth of billionaires rising as a consequence of current billionaires acquiring more wealth, it is more likely that these numbers come from the increase of total billionaires worldwide. The study of billionaires and the accumulation of wealth is important to understand global wealth distributions and income inequality, as well as allowing experts to suggest means of potential redistribution and benevolent problem-solving targets. 
 
 -   In 1-2 sentences, explain how your research question builds on / is different than the article you have cited.
-
-The cited article attempts to explain the rise of billionaires with the sources of wealth, such as the regions from which billionaires are sourced, and how it was made (self/inherited, market). However, we are comparing billionaires to billionaires in order to explore the correlations between gender and net worth, specifically in the fields in which females are more prevalent, which is a completely different research question.
 
 ## Glimpse of data
 
@@ -141,4 +127,15 @@ The cited article attempts to explain the rise of billionaires with the sources 
 
 billionaires <- read_csv("data/billionaires (1).csv")
 glimpse(billionaires)
+```
+
+```{r}
+# colnames(billionaires)
+
+# unique(billionaires[,6]) |> print(n = 74)
+
+billionaires |>
+  count(year)
+  #select(`wealth.how.was political`)# |>
+  #unique()
 ```
