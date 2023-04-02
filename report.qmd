@@ -164,9 +164,21 @@ police_shootings |>
   )
 ```
 
-6.  Factors.Fleeing (not fleeing, foot, car) vs shot/shot and tased because if the target is running away, this might determine the level of violence that is used on them - confounding variable 
-    -   Histogram
+6.  Fleeing Manner and shot vs shot and tased
 
-    -   X-axis: not fleeing, foot, car - fill by shot/shot and tased
+```{r}
+#| label: multiple-vars
 
-    -   Y-axis: count 
+police_shootings |>
+  ggplot(
+    aes(x = Factors.Fleeing, fill = Shooting.Manner)
+  ) +
+  geom_bar() +
+  labs(
+    x = "Fleeing Manner",
+    y = "Number of individuals shot vs shot and tasered",
+    title = "People shot and tasered or shot based on fleeing manner", 
+    legend = "Shooting Manner"
+  )
+
+```
