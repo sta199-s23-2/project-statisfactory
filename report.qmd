@@ -11,6 +11,22 @@ execute:
 
 \*\*notes
 
+With the police killings of Eric Garner, Breonna Taylor, George Floyd, and many others, excess police force on people of color has been brought to the forefront of the American mind. National protests have commanded sustained attention to racialized violence against civilians. A 2020 study based on data from the Washington Post concluded that BIPOC Americans were on average 2-3 times more likely to be killed by police than white Americans. (SOURCE)
+
+As police brutality and violence has come to a national forefront, data has indicated that the burden of fatal police shootings falls disproportionately on BIPOC in terms of mortality and years of life lost (YLL). Data was sourced from the Washington Post repository on fatal police shootings between 2015-2020, which is dependent on curated news reports and thus may exclude necessary data such as gender and minority status. During this time interval, 5367 fatalities were recorded, 4740 presented with significant racial data for analysis, and 4653 included both sufficient racial and age data for YLL calculation. Contrary to popular hypotheses, while there was a small decline in deaths of white victims, there was no significant trend in death rates among all other race/ethnic groups (i.e. rates were stable across the 5 year interval). In order, mean deaths pqpm were as follows: highest among Native Americans (1.74), then Blacks (1.49), Hispanics (0.74) , Whites (0.57), and Asians (0.25). The authors call for the treatment of police violence as a public health crisis and suggest police demilitarization as a potential intervention.
+
+The US Department of Justice Office of Justice Programs conducted studies across 14 large US cities over 2.5 years to identify specific barriers in police accountability for the violence they perpetuate. There is an existing consensus around the high costs of police violence, both in terms of civil lawsuit financial costs to cities and regarding civilian trust in public service entities. Historically, people have perceived that police are internally positioned as "above the law," which is further complicated by lack of transparency: "The public, to whom police departments should be held accountable, thus cannot ascertain whether, in fact, the police are policing themselves." Processes to report police officials are largely inefficient and ineffectual, and the individual reporting may fear backlash from the agency. Furthermore, civil lawsuits are rarely carried through to effect appropriate punishment, and the oversight procedures that do take place often do not provide adequate supervision, allowing offending officers back into the field with little regulation. 
+
+The concept of adultification describes a phenomenon in which "notions of innocence and vulnerability are not afforded to certain children... the impact results in children's rights being either diminished or not upheld" (Davis 2022). Current literature has focused primarily on this phenomenon in black children, as it provides a theoretical framework for the tendency to view black children as older than they are. As a direct result, more physical and systemic violence may be mounted against them (Koch & Kozhumam, 2022). While studies have reported on this phenomenon, personal accounts are particularly poignant in illustrating the need for policy change. "Ahmed" describes his experiences with law enforcement officers at just 12 years old; he recounts having his phone searched and privacy violated when police ambushed him at school despite his only involvement being as a child rape victim. They ignored requests for his parents to be present and were quoted as saying "We'll just stay here all night until you confess." He further recalls being treated like a criminal, with no support or intervention from his teachers and adults that were supposed to protect him (Mohdin 2022).
+
+According to a study by the Proceedings of the National Academy of Sciences, men are far more likely to be subject to police violence; the average lifetime odds of being killed by police is about 1 in 2,000 for men and about 1 in 33,000 for women. (SOURCE) Risk of death by police for all gender and race groups peak between the ages of 20 y and 35 y and decline with age. This pattern is similar for non-fatal police violence. Studies conclude that police violence is a leading cause of death for young men of color, but not for any other demographic. 
+
+The data comes from the Washington Post. It was published with the intent to bolster the evidence-base of police killings for the Black Lives Matter movement.
+
+The data was originally collected by manually combing through local news reports; combining information from law enforcement websites, social media, and other databases (including Fatal Encounters and the "Killed by Police" project). Data collection started in 2015 spurred by a slew of fatal shootings, and the information was updated in 2022. There are no apparent ethical concerns with data collection or presentation. 
+
+The observations include details about police-involved killings in the United States. The variables include race, age, gender, armed vs not armed status, location, and if the person killed had a mental illness. The observations are primarily focused on key descriptions of the person killed, but do include some details about the police involved (including the presence/lack of a police body camera and the threat of the person as perceived by police).
+
 s# **Mini lit review**
 
 **(book) Shielded from Justice: Police brutality and accountability in the United States**
@@ -71,12 +87,99 @@ s# **Mini lit review**
 
     1.  
 
+
              We plan to represent our four variables through a series of six graphics. Our preliminary graph will be a box plot to compare the ages of those shot vs shot and tasered. We will facet by shot/shot tasered, and our axis values will be age.
 
-        Our next two graphs will compare age, race, and shot/shot tasered. We will create one histogram faceted by race and filled by age, filtered for those only shot. Our next graph will be the same, except filtered for those shot and tasered; this will help visualize how age differs by race between those just shot and those shot and tasered. 
+        Our next two graphs will compare age, race, and shot/shot tasered. We will create one histogram faceted by race and filled by age, filtered for those only shot. Our next graph will be the same, except filtered for those shot and tasered; this will help visualize how age differs by race between those just shot and those shot and tasered.
 
         Next, we will create two graphs to compare age, gender, and shot/shot tasered. The first will be for females, and put age on the x-axis and use logistic regression to compare shot (0) vs shot and tasered (1). The second will be the same method, except using a graph filtered for males.
 
         Finally, we will include a graph of our additional variable, if the victim was fleeing or not (and how so). We predict that this variable might have an impact on if the victim was shot or shot and tasered, so we think it is important to include a representation of it. We will use a histogram with the three possibilities for fleeing on the x-axis (not fleeing, car, foot), and we will fill the graph by shot or shot and tasered.
 
 3.  **Results**
+
+```{r}
+#| label: load-data-2
+
+library(tidyverse)
+library(tidymodels)
+
+police_shootings <- read_csv("data/police_shootings (1).csv")
+glimpse(police_shootings)
+```
+
+1.  Age, shot vs age, shot and tasered
+
+```{r}
+#| label: boxplot-shot/age
+
+ police_shootings |>
+  ggplot(
+    aes(x = Person.Age, y = Shooting.Manner)) +
+    geom_boxplot(show.legend = F) +
+    geom_jitter(alpha = 0.08) +
+  labs(
+    x = "Age",
+    y = "Shooting Manner",
+    title = "People shot vs shot and tasered by age"
+  )
+
+
+```
+
+2)  Age, race, shot
+
+```{r}
+#| label: age-race-shot
+
+police_shootings |>
+  filter(Shooting.Manner == "shot") |>
+  ggplot(
+    aes(x = Person.Age)
+  ) +
+  geom_histogram(fill = "blue") +
+  facet_wrap("Person.Race", ncol = 2) +
+  labs(
+    x = "Age",
+    y = "Number of individuals shot",
+    title = "People shot by race and age"
+  )
+```
+
+3)  Age, race, shot and tasered
+
+```{r}
+#| label: age-race-shot-and-tasered
+
+police_shootings |>
+  filter(Shooting.Manner == "shot and Tasered") |>
+  ggplot(
+    aes(x = Person.Age)
+  ) +
+  geom_histogram(fill = "blue") +
+  facet_wrap("Person.Race", ncol = 2) +
+  labs(
+    x = "Age",
+    y = "Number of individuals shot and tasered",
+    title = "People shot and tasered by race and age"
+  )
+```
+
+6.  Fleeing Manner and shot vs shot and tased
+
+```{r}
+#| label: multiple-vars
+
+police_shootings |>
+  ggplot(
+    aes(x = Factors.Fleeing, fill = Shooting.Manner)
+  ) +
+  geom_bar() +
+  labs(
+    x = "Fleeing Manner",
+    y = "Number of individuals shot vs shot and tasered",
+    title = "People shot and tasered or shot based on fleeing manner", 
+    legend = "Shooting Manner"
+  )
+
+```
