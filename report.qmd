@@ -23,7 +23,7 @@ s# **Mini lit review**
 
 -   Issue of human rights violations when police violence is disproportionately mounted against minority groups 
 
--   Severe barriers to accountability allow these violent acts to continue; historically police officers have been \"above the law\" in their actions 
+-   Severe barriers to accountability allow these violent acts to continue; historically police officers have been "above the law" in their actions 
 
     -   (other sources, 1968 Kerner commission report, 1981 report of US commission on civil rights)
 
@@ -33,7 +33,7 @@ s# **Mini lit review**
 
     -   Oversight procedures following incidents are not typically carried out in an effective way -- officers allowed back into field with little regulation 
 
-    -   \"The public, to whom police departments should be held accountable, thus cannot ascertain whether, in fact, the police are policing themselves.\"
+    -   "The public, to whom police departments should be held accountable, thus cannot ascertain whether, in fact, the police are policing themselves."
 
     -   Police depts can claim privacy issues to avoid transparency with the public 
 
@@ -45,30 +45,33 @@ s# **Mini lit review**
 
 \
 
-[**\'They saw me as calculating, not a child\': How adultification leads to black children being treated as criminals**](https://www.theguardian.com/society/2022/jul/05/they-saw-me-as-calculating-not-a-child-how-adultification-leads-to-black-children-being-treated-as-criminals)
+[**'They saw me as calculating, not a child': How adultification leads to black children being treated as criminals**](https://www.theguardian.com/society/2022/jul/05/they-saw-me-as-calculating-not-a-child-how-adultification-leads-to-black-children-being-treated-as-criminals)
 
 -   While studies have reported on adultification phenomena, personal narratives are particularly poignant
 
--   Tells the story of \"Ahmed\" (fake name) being ambushed by police despite being the perceived child rape victim, having his phone searched and privacy violated -- at just 12 years old, they ignored his requests for his parents to be present and were quoted as saying \"We\'ll just stay here all night until you confess.\" His parents were not called for hours.
+-   Tells the story of "Ahmed" (fake name) being ambushed by police despite being the perceived child rape victim, having his phone searched and privacy violated -- at just 12 years old, they ignored his requests for his parents to be present and were quoted as saying "We'll just stay here all night until you confess." His parents were not called for hours.
 
--   \" \"When I read back the report they wrote about me when I was a child, I didn\'t even know the words they used about me, like manipulative,\" Ahmed says. \"Now, I think: \'How could they speak like that about a child?\' I was treated as an adult.\"
+-   " "When I read back the report they wrote about me when I was a child, I didn't even know the words they used about me, like manipulative," Ahmed says. "Now, I think: 'How could they speak like that about a child?' I was treated as an adult."
 
--   \"What makes it worse is that the headteacher didn\'t intervene. Now I look back and it\'s so shocking that he left me in a room with those officers and I was crying. I don\'t even remember him checking to see if I was OK. He didn\'t call my family and he didn\'t seem to care.\"
+-   "What makes it worse is that the headteacher didn't intervene. Now I look back and it's so shocking that he left me in a room with those officers and I was crying. I don't even remember him checking to see if I was OK. He didn't call my family and he didn't seem to care."
 
--   A few days after the incident at school, one of the officers turned up at Ahmed\'s house. He showed Ahmed\'s parents and brother messages between Ahmed and the perpetrator, including a graphic picture or video of Ahmed naked. \"
+-   A few days after the incident at school, one of the officers turned up at Ahmed's house. He showed Ahmed's parents and brother messages between Ahmed and the perpetrator, including a graphic picture or video of Ahmed naked. "
 
 -   Diagnosed with PTSD, currently speaking out about his horrifying experience 
 
 [**Adultification bias within child protection and safeguarding**](https://www.justiceinspectorates.gov.uk/hmiprobation/wp-content/uploads/sites/5/2022/06/Academic-Insights-Adultification-bias-within-child-protection-and-safeguarding.pdf)
 
--   \'The concept of adultification is when notions of innocence and vulnerability are not afforded to certain children. This is determined by people and institutions who hold power over them. When adultification occurs outside of the home it is always founded within discrimination and bias.
+-   'The concept of adultification is when notions of innocence and vulnerability are not afforded to certain children. This is determined by people and institutions who hold power over them. When adultification occurs outside of the home it is always founded within discrimination and bias.
 
--   There are various definitions of adultification, all relate to a child\'s personal characteristics, socio-economic influences and/or lived experiences. Regardless of the context in which adultification take place, the impact results in children\'s rights being either diminished or not upheld.\'
+-   There are various definitions of adultification, all relate to a child's personal characteristics, socio-economic influences and/or lived experiences. Regardless of the context in which adultification take place, the impact results in children's rights being either diminished or not upheld.'
 
 1.  **Methodology**
 
 2.  **Results**
-    1.  	We plan to represent our four variables through a series of six graphics. Our preliminary graph will be a box plot to compare the ages of those shot vs shot and tasered. We will facet by shot/shot tasered, and our axis values will be age. 
+
+    1.  
+
+             We plan to represent our four variables through a series of six graphics. Our preliminary graph will be a box plot to compare the ages of those shot vs shot and tasered. We will facet by shot/shot tasered, and our axis values will be age. 
 
         Our next two graphs will compare age, race, and shot/shot tasered. We will create one histogram faceted by race and filled by age, filtered for those only shot. Our next graph will be the same, except filtered for those shot and tasered; this will help visualize how age differs by race between those just shot and those shot and tasered. 
 
