@@ -107,7 +107,27 @@ police_shootings <- read_csv("data/police_shootings (1).csv")
 glimpse(police_shootings)
 ```
 
-2) Age, race, shot
+1.  Age, shot vs age, shot and tasered
+
+```{r}
+#| label: boxplot-shot/age
+
+ police_shootings |>
+  ggplot(
+    aes(x = Person.Age, y = Shooting.Manner)) +
+    geom_boxplot(show.legend = F) +
+    geom_jitter(alpha = 0.08) +
+  labs(
+    x = "Age",
+    y = "Shooting Manner",
+    title = "People shot vs shot and tasered by age"
+  )
+
+
+```
+
+2)  Age, race, shot
+
 ```{r}
 #| label: age-race-shot
 
@@ -124,7 +144,8 @@ police_shootings |>
     title = "People shot by race and age"
   )
 ```
-3) Age, race, shot and tasered
+
+3)  Age, race, shot and tasered
 
 ```{r}
 #| label: age-race-shot-and-tasered
@@ -142,3 +163,10 @@ police_shootings |>
     title = "People shot and tasered by race and age"
   )
 ```
+
+6.  Factors.Fleeing (not fleeing, foot, car) vs shot/shot and tased because if the target is running away, this might determine the level of violence that is used on them - confounding variable 
+    -   Histogram
+
+    -   X-axis: not fleeing, foot, car - fill by shot/shot and tased
+
+    -   Y-axis: count 
