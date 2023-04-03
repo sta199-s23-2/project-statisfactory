@@ -106,24 +106,6 @@ police_shootings |>
 
 6.  Fleeing Manner and shot vs shot and tased
 
-```{r}
-#| label: multiple-vars
-
-police_shootings |>
-  ggplot(
-    aes(x = Factors.Fleeing, fill = Shooting.Manner)
-  ) +
-  geom_bar(position = "fill") +
-  labs(
-    x = "Fleeing Manner",
-    y = "Number of individuals shot vs shot and tasered",
-    title = "People shot and tasered or shot based on fleeing manner", 
-    legend = "Shooting Manner"
-  )
-
-
-```
-
 **Predictions and inferences:**
 
 1.  We predict that younger age ranges will experience higher rates of violence (shot and tasered vs shot). People in the age range of young adult to mid-thirties (approximately 20 - 35) will experience higher rates of shot and tasered vs just shot. (graph 1)
