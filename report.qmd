@@ -11,7 +11,7 @@ execute:
 
 \*\*notes
 
-With the police killings of Eric Garner, Breonna Taylor, George Floyd, and many others, excess police force on people of color has been brought to the forefront of the American mind. National protests have commanded sustained attention to racialized violence against civilians. A 2020 study based on data from the Washington Post concluded that BIPOC Americans were on average 2-3 times more likely to be killed by police than white Americans. (SOURCE)
+With the police killings of Eric Garner, Breonna Taylor, George Floyd, and many others, excess police force on people of color has been brought to the forefront of the American mind. National protests have commanded sustained attention to racialized violence against civilians. A 2020 study based on data from the Washington Post concluded that BIPOC Americans were on average 2-3 times more likely to be killed by police than white Americans.(Washington Post)
 
 As police brutality and violence has come to a national forefront, data has indicated that the burden of fatal police shootings falls disproportionately on BIPOC in terms of mortality and years of life lost (YLL). Data was sourced from the Washington Post repository on fatal police shootings between 2015-2020, which is dependent on curated news reports and thus may exclude necessary data such as gender and minority status. During this time interval, 5367 fatalities were recorded, 4740 presented with significant racial data for analysis, and 4653 included both sufficient racial and age data for YLL calculation. Contrary to popular hypotheses, while there was a small decline in deaths of white victims, there was no significant trend in death rates among all other race/ethnic groups (i.e. rates were stable across the 5 year interval). In order, mean deaths pqpm were as follows: highest among Native Americans (1.74), then Blacks (1.49), Hispanics (0.74) , Whites (0.57), and Asians (0.25). The authors call for the treatment of police violence as a public health crisis and suggest police demilitarization as a potential intervention.
 
@@ -27,17 +27,15 @@ The data was originally collected by manually combing through local news reports
 
 The observations include details about police-involved killings in the United States. The variables include race, age, gender, armed vs not armed status, location, and if the person killed had a mental illness. The observations are primarily focused on key descriptions of the person killed, but do include some details about the police involved (including the presence/lack of a police body camera and the threat of the person as perceived by police).
 
-1.  **Methodology**
+2.  **Methodology**
 
-             We plan to represent our four variables through a series of six graphics. Our preliminary graph will be a box plot to compare the ages of those shot vs shot and tasered. We will facet by shot/shot tasered, and our axis values will be age.
+We plan to represent our four variables through a series of six graphics. Our preliminary graph will be a box plot to compare the ages of those shot vs shot and tasered. We will facet by shot/shot tasered, and our axis values will be age. This will help create a baseline understanding of what ages are most vulnerable to more violence. Having this knowledge will add significance to the future graphs that incorperate gender and race.
 
-        Our next two graphs will compare age, race, and shot/shot tasered. We will create one histogram faceted by race and filled by age, filtered for those only shot. Our next graph will be the same, except filtered for those shot and tasered; this will help visualize how age differs by race between those just shot and those shot and tasered.
+Our next two graphs will compare age, race, and shot/shot tasered. We will create one histogram faceted by race and filled by age, filtered for those only shot. Our next graph will be the same, except filtered for those shot and tasered; this will help visualize how age differs by race between those just shot and those shot and tasered.
 
-        Next, we will create two graphs to compare age, gender, and shot/shot tasered. The first will be for females, and put age on the x-axis and use logistic regression to compare shot (0) vs shot and tasered (1). The second will be the same method, except using a graph filtered for males.
+Next, we will create two graphs to compare age, gender, and shot/shot tasered. The first will be for females, and put age on the x-axis and use logistic regression to compare shot (0) vs shot and tasered (1). The second will be the same method, except using a graph filtered for males. These two graphs have a similar purpose to graphs 2 and 3, except they will be examining the affect of gender on level of violence instead of race.
 
-        Finally, we will include a graph of our additional variable, if the victim was fleeing or not (and how so). We predict that this variable might have an impact on if the victim was shot or shot and tasered, so we think it is important to include a representation of it. We will use a histogram with the three possibilities for fleeing on the x-axis (not fleeing, car, foot), and we will fill the graph by shot or shot and tasered.
-
-3.  **Graphs**
+Finally, we will include a graph of our additional variable, if the victim was fleeing or not (and how so). We predict that this variable might have an impact on if the victim was shot or shot and tasered, so we think it is important to include a representation of it. We will use a histogram with the three possibilities for fleeing on the x-axis (not fleeing, car, foot), and we will fill the graph by shot or shot and tasered. When making equations to analyze our data, we can use multiple linear regression analysis to estimate the importance and relevance of the extra explanatory variable (fleeing) and the response variable (level of violence). This helps account for fleeing status as a potentially confounding variable.
 
 ```{r}
 #| label: load-data-2
@@ -123,18 +121,27 @@ police_shootings |>
     legend = "Shooting Manner"
   )
 
+
 ```
 
-4. **Results**
+**Predictions and inferences:**
 
-1. This graph relates age to the shooting manner of the police officer. We can see that the majority of those in both groups (shot, and shot and tasered) center around ages 25 to 40. This is contrary to our prediction, that the age group would be younger for those who were shot and tasered, compared to those who were just shot. However, it seems that, from our results, age had very little effect on whether or not someone was shot or shot and tasered.
+1.  We predict that younger age ranges will experience higher rates of violence (shot and tasered vs shot). People in the age range of young adult to mid-thirties (approximately 20 - 35) will experience higher rates of shot and tasered vs just shot. (graph 1)
 
-2. This graph shows the effect of race and age on victims who were shot. The trend across graphs was that the majority of those shot were in their late twenties to thirties, especially in the white population. This matched with our predictions. The races with the highest count of those shot were in the African American, White, and Hispanic populations. We assumed that those of minority populations would be among the most targeted, and the data partially represents that hypothesis.
-This graph shows the effect of race and age on victims who were both shot and tasered. Again the trends center on those in the African American, Hispanic, and White populations, however the age spread is wider and older than the graphs of those who were only shot. Contrary to our assumptions, this seems to indicate that those shot and tasered span victims ages twenty to fifty in all races, and there is no definitive correlation between age and whether or not someone was shot, or shot and tasered. However, there were peaks in the graph in victims of African American descent in their late twenties and early thirties, as well as white and Hispanic victims in their thirties. The majority of those shot and tasered were in their twenties to thirties and African American, Hispanic, and white races. However, this is very similar to the trend among those who were shot and not tasered, and there is no definitive effect of race and age on the police officer’s shooting manner.
+2.  (prediction for comparing 2 and 3) We predict that hispanic and african american targets will be shot and tased comparatively more than just shot; oppositely, white and asian targets will be shot comparatively more than shot and tased.
 
-3. Xx
+3.  (prediction for comparing 4 and 5) We predict that male gender targets will be shot and tased comparatively more than just shot; oppositely, female (or other) gender targets will be shot comparatively more than shot and tased. 
 
-4. Xx
+4.  When making a visualization of fleeing status vs. shot/shot and tased, we are making an inference that the victim\'s fleeing status affects the level of violence. We predict that those not fleeing will be shot and tased at the highest rate compared to just shot (because they\'re in close proximity to tase), followed by fleeing on foot, and finally fleeing with a car. This prediction is based on how convenient and easy it is to taze and shoot compared to just shooting.
 
-5. This graph shows the relationship between fleeing manner and whether or not someone was shot or shot and tasered. Overall, there is little correlation between these two variables. There is a slightly higher probability that someone was shot and tasered if they were not fleeing or on foot as opposed to in a car or pursuing an unknown/other manner of departure. However, there is not a large enough correlation to relate shooting manner and fleeing manner.
+**3. Results**
 
+1.  Graph 1: This graph relates age to the shooting manner of the police officer. We can see that the majority of those in both groups (shot, and shot and tasered) center around ages 25 to 40. This is contrary to our prediction, that the age group would be younger for those who were shot and tasered, compared to those who were just shot. However, it seems that, from our results, age had very little effect on whether or not someone was shot or shot and tasered.
+
+2.  Graphs 2 and 3: This graph shows the effect of race and age on victims who were shot. The trend across graphs was that the majority of those shot were in their late twenties to thirties, especially in the white population. This matched with our predictions. The races with the highest count of those shot were in the African American, White, and Hispanic populations. We assumed that those of minority populations would be among the most targeted, and the data partially represents that hypothesis. This graph shows the effect of race and age on victims who were both shot and tasered. Again the trends center on those in the African American, Hispanic, and White populations, however the age spread is wider and older than the graphs of those who were only shot. Contrary to our assumptions, this seems to indicate that those shot and tasered span victims ages twenty to fifty in all races, and there is no definitive correlation between age and whether or not someone was shot, or shot and tasered. However, there were peaks in the graph in victims of African American descent in their late twenties and early thirties, as well as white and Hispanic victims in their thirties. The majority of those shot and tasered were in their twenties to thirties and African American, Hispanic, and white races. However, this is very similar to the trend among those who were shot and not tasered, and there is no definitive effect of race and age on the police officer's shooting manner.
+
+3.  Xx
+
+4.  Xx
+
+5.  Graph 6: This graph shows the relationship between fleeing manner and whether or not someone was shot or shot and tasered. Overall, there is little correlation between these two variables. There is a slightly higher probability that someone was shot and tasered if they were not fleeing or on foot as opposed to in a car or pursuing an unknown/other manner of departure. However, there is not a large enough correlation to relate shooting manner and fleeing manner.
