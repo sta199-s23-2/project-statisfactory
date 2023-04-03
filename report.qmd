@@ -83,11 +83,6 @@ s# **Mini lit review**
 
 1.  **Methodology**
 
-2.  **Results**
-
-    1.  
-
-
              We plan to represent our four variables through a series of six graphics. Our preliminary graph will be a box plot to compare the ages of those shot vs shot and tasered. We will facet by shot/shot tasered, and our axis values will be age.
 
         Our next two graphs will compare age, race, and shot/shot tasered. We will create one histogram faceted by race and filled by age, filtered for those only shot. Our next graph will be the same, except filtered for those shot and tasered; this will help visualize how age differs by race between those just shot and those shot and tasered.
@@ -96,7 +91,7 @@ s# **Mini lit review**
 
         Finally, we will include a graph of our additional variable, if the victim was fleeing or not (and how so). We predict that this variable might have an impact on if the victim was shot or shot and tasered, so we think it is important to include a representation of it. We will use a histogram with the three possibilities for fleeing on the x-axis (not fleeing, car, foot), and we will fill the graph by shot or shot and tasered.
 
-3.  **Results**
+3.  **Graphs**
 
 ```{r}
 #| label: load-data-2
@@ -183,3 +178,7 @@ police_shootings |>
   )
 
 ```
+
+4. **Results**
+
+
