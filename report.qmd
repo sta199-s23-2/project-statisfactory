@@ -114,7 +114,7 @@ police_shootings |>
 
 3.  (prediction for comparing 4 and 5) We predict that male gender targets will be shot and tased comparatively more than just shot; oppositely, female (or other) gender targets will be shot comparatively more than shot and tased. 
 
-4.  When making a visualization of fleeing status vs. shot/shot and tased, we are making an inference that the victim\'s fleeing status affects the level of violence. We predict that those not fleeing will be shot and tased at the highest rate compared to just shot (because they\'re in close proximity to tase), followed by fleeing on foot, and finally fleeing with a car. This prediction is based on how convenient and easy it is to taze and shoot compared to just shooting.
+4.  When making a visualization of fleeing status vs. shot/shot and tased, we are making an inference that the victim's fleeing status affects the level of violence. We predict that those not fleeing will be shot and tased at the highest rate compared to just shot (because they're in close proximity to tase), followed by fleeing on foot, and finally fleeing with a car. This prediction is based on how convenient and easy it is to taze and shoot compared to just shooting.
 
 **3. Results**
 
