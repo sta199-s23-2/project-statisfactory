@@ -169,7 +169,7 @@ police_shootings |>
   ggplot(
     aes(x = Factors.Fleeing, fill = Shooting.Manner)
   ) +
-  geom_bar() +
+  geom_bar(position = "fill") +
   labs(
     x = "Fleeing Manner",
     y = "Number of individuals shot vs shot and tasered",
@@ -181,4 +181,14 @@ police_shootings |>
 
 4. **Results**
 
+1. This graph relates age to the shooting manner of the police officer. We can see that the majority of those in both groups (shot, and shot and tasered) center around ages 25 to 40. This is contrary to our prediction, that the age group would be younger for those who were shot and tasered, compared to those who were just shot. However, it seems that, from our results, age had very little effect on whether or not someone was shot or shot and tasered.
+
+2. This graph shows the effect of race and age on victims who were shot. The trend across graphs was that the majority of those shot were in their late twenties to thirties, especially in the white population. This matched with our predictions. The races with the highest count of those shot were in the African American, White, and Hispanic populations. We assumed that those of minority populations would be among the most targeted, and the data partially represents that hypothesis.
+This graph shows the effect of race and age on victims who were both shot and tasered. Again the trends center on those in the African American, Hispanic, and White populations, however the age spread is wider and older than the graphs of those who were only shot. Contrary to our assumptions, this seems to indicate that those shot and tasered span victims ages twenty to fifty in all races, and there is no definitive correlation between age and whether or not someone was shot, or shot and tasered. However, there were peaks in the graph in victims of African American descent in their late twenties and early thirties, as well as white and Hispanic victims in their thirties. The majority of those shot and tasered were in their twenties to thirties and African American, Hispanic, and white races. However, this is very similar to the trend among those who were shot and not tasered, and there is no definitive effect of race and age on the police officer’s shooting manner.
+
+3. Xx
+
+4. Xx
+
+5. This graph shows the relationship between fleeing manner and whether or not someone was shot or shot and tasered. Overall, there is little correlation between these two variables. There is a slightly higher probability that someone was shot and tasered if they were not fleeing or on foot as opposed to in a car or pursuing an unknown/other manner of departure. However, there is not a large enough correlation to relate shooting manner and fleeing manner.
 
