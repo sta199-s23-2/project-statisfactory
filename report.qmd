@@ -102,7 +102,7 @@ police_shootings |>
   )
 ```
 
-4. Age and shot/shot tasered (female)
+4.  Age and shot/shot tasered (female)
 
 ```{r}
 #| label: violence-age-f
@@ -113,6 +113,8 @@ dataset_4 <- police_shootings |>
          Shooting.Manner == "shot") |>
   mutate(Shooting.Manner = as.factor(Shooting.Manner),
          Shooting.Manner_binary = if_else(Shooting.Manner == "shot and Tasered", 1, 0))
+
+dataset_4
 ```
 
 ```{r}
@@ -138,8 +140,7 @@ dataset_4 |>
   
 ```
 
-5. Age and shot/shot tasered (male)
-
+5.  Age and shot/shot tasered (male)
 
 ```{r}
 #| label: violence-age-m
