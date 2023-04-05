@@ -102,6 +102,46 @@ police_shootings |>
   )
 ```
 
+4. Age and shot/shot tasered (female)
+
+```{r}
+#| label: violence-byage-female
+
+dataset_4 <- police_shootings |>
+  filter(Person.Gender == "Female",
+         Shooting.Manner == "shot and Tasered" | 
+         Shooting.Manner == "shot") |>
+  mutate(Shooting.Manner = as.factor(Shooting.Manner),
+         Shooting.Manner_binary = if_else(Shooting.Manner == "shot and Tasered", 1, 0))
+
+female_model <- logistic_reg() |>
+  set_engine("glm") |>
+  fit(Shooting.Manner ~ Person.Age, data = dataset_4, family = "binomial") 
+
+
+dataset_4 |>
+  ggplot(aes(x = Person.Age, y = Shooting.Manner_binary)) +
+  geom_point() +
+  stat_smooth(method = "glm",
+              color = "green",
+              se = FALSE,
+              method.args = list(family = binomial)) +
+  labs(x = "Age",
+       y = "Manner of Violence",
+       title = "Police violence by age for females")
+
+
+```
+
+5. Age and shot/shot tasered (male)
+
+```{r}
+#| label: violence-byage-male
+
+
+```
+
+
 6.  Fleeing Manner and shot vs shot and tased
 
 ```{r}
@@ -114,10 +154,10 @@ police_shootings |>
   geom_bar(position = "fill") +
   labs(
     x = "Fleeing Manner",
-    y = "Number of individuals shot vs shot and tasered",
+    y = "Number of individuals shot\n vs shot and tasered",
     title = "People shot and tasered or shot based on fleeing manner",
-    legend = "Shooting Manner"
-  )
+    fill = "Shooting Manner"
+    )
 ```
 
 **Predictions and inferences:**
