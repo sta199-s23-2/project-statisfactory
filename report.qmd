@@ -105,7 +105,7 @@ police_shootings |>
 4. Age and shot/shot tasered (female)
 
 ```{r}
-#| label: violence-byage-female
+#| label: violence-age-f
 
 dataset_4 <- police_shootings |>
   filter(Person.Gender == "Female",
@@ -113,11 +113,10 @@ dataset_4 <- police_shootings |>
          Shooting.Manner == "shot") |>
   mutate(Shooting.Manner = as.factor(Shooting.Manner),
          Shooting.Manner_binary = if_else(Shooting.Manner == "shot and Tasered", 1, 0))
+```
 
-female_model <- logistic_reg() |>
-  set_engine("glm") |>
-  fit(Shooting.Manner ~ Person.Age, data = dataset_4, family = "binomial") 
-
+```{r}
+#| label: graph4
 
 dataset_4 |>
   ggplot(aes(x = Person.Age, y = Shooting.Manner_binary)) +
@@ -128,19 +127,52 @@ dataset_4 |>
               method.args = list(family = binomial)) +
   labs(x = "Age",
        y = "Manner of Violence",
-       title = "Police violence by age for females")
-
-
+       title = "Police violence by age for females") +
+  theme(
+    axis.text.y=element_blank(),
+    axis.ticks.y=element_blank() 
+  ) +
+  annotate(geom="text", x=6, y=1, label="Shot&Tasered", color="black") +
+  annotate(geom="text", x=0, y=0, label="Shot", color="black")
+  
+  
 ```
 
 5. Age and shot/shot tasered (male)
 
+
 ```{r}
-#| label: violence-byage-male
+#| label: violence-age-m
 
-
+dataset_5 <- police_shootings |>
+  filter(Person.Gender == "Male",
+         Shooting.Manner == "shot and Tasered" | 
+         Shooting.Manner == "shot") |>
+  mutate(Shooting.Manner = as.factor(Shooting.Manner),
+         Shooting.Manner_binary = if_else(Shooting.Manner == "shot and Tasered", 1, 0))
 ```
 
+```{r}
+#| label: graph5
+
+dataset_5 |>
+  ggplot(aes(x = Person.Age, y = Shooting.Manner_binary)) +
+  geom_point() +
+  stat_smooth(method = "glm",
+              color = "green",
+              se = FALSE,
+              method.args = list(family = binomial)) +
+  labs(x = "Age",
+       y = "Manner of Violence",
+       title = "Police violence by age for males") +
+  theme(
+    axis.text.y=element_blank(),
+    axis.ticks.y=element_blank() 
+  ) +
+  annotate(geom="text", x=6, y=1, label="Shot&Tasered", color="black") +
+  annotate(geom="text", x=0, y=0, label="Shot", color="black")
+
+```
 
 6.  Fleeing Manner and shot vs shot and tased
 
