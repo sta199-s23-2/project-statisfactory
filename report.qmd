@@ -74,7 +74,7 @@ police_shootings |>
   ggplot(
     aes(x = Person.Age)
   ) +
-  geom_histogram(fill = "blue") +
+  geom_histogram(fill = "blue", alpha = 0.7) +
   facet_wrap("Person.Race", ncol = 2) +
   labs(
     x = "Age",
@@ -93,7 +93,7 @@ police_shootings |>
   ggplot(
     aes(x = Person.Age)
   ) +
-  geom_histogram(fill = "blue") +
+  geom_histogram(fill = "blue", alpha = 0.7) +
   facet_wrap("Person.Race", ncol = 2) +
   labs(
     x = "Age",
@@ -184,7 +184,7 @@ police_shootings |>
   ggplot(
     aes(x = Factors.Fleeing, fill = Shooting.Manner)
   ) +
-  geom_bar(position = "fill") +
+  geom_bar() +
   labs(
     x = "Fleeing Manner",
     y = "Number of individuals shot\n vs shot and tasered",
