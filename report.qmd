@@ -223,3 +223,20 @@ police_shootings |>
 4.  Graph 5: Compared to the graph for females, the male graph has a weaker correlation. It seems that age has barely any difference in whether or not people were just shot, or shot and tasered. However, there is still a weak positive correlation, perhaps due to the explanation given for graph 4 (that older people were more often tasered first, due to being perceived as less of a threat).
 
 5.  Graph 6: This graph shows the relationship between fleeing manner and whether or not someone was shot, or shot and tasered. Overall, there is little correlation between these two variables. There is a slightly higher probability that someone was shot and tasered if they were not fleeing or on foot as opposed to in a car or pursuing an unknown/other manner of departure. However, there is not a large enough correlation to relate shooting manner and fleeing manner.
+
+
+**References**
+
+Collins, A. (1998). Shielded from justice: Police brutality and accountability in the United States. London. 
+
+Davis, J., &amp; Marsh, N. (2020). Boys to men: The cost of ‘adultification’ in safeguarding responses to black boys. Critical and Radical Social Work, 8(2), 255–259. https://doi.org/10.1332/204986020x15945756023543 
+
+Edwards, F., Lee, H., &amp; Esposito, M. H. (2019). Risk of being killed by police use of force in the United States by age, race–ethnicity, and sex. PNAS. https://doi.org/10.31235/osf.io/kw9cu 
+
+Koch, A., &amp; Kozhumam, A. (2022). Adultification of black children negatively impacts their health: Recommendations for Health Care Providers. Nursing Forum, 57(5), 963–967. https://doi.org/10.1111/nuf.12736 
+
+Lett, E., Asabor, E. N., Corbin, T., &amp; Boatright, D. (2020). Racial inequity in fatal US police shootings, 2015–2020. Journal of Epidemiology and Community Health, 75(4), 394–397. https://doi.org/10.1136/jech-2020-215097 
+
+Mohdin, A. (2022, July 5). 'they saw me as calculating, not a child': How adultification leads to black children being treated as criminals. The Guardian. Retrieved April 11, 2023, from https://www.theguardian.com/society/2022/jul/05/they-saw-me-as-calculating-not-a-child-how-adultification-leads-to-black-children-being-treated-as-criminals 
+
+Staff, W. P. (2022, December 5). Police shootings database 2015-2023: Search by race, age, Department. The Washington Post. Retrieved April 11, 2023, from https://www.washingtonpost.com/graphics/investigations/police-shootings-database/ 
