@@ -9,7 +9,7 @@ execute:
 
 1.  **Introduction and data**
 
-With the police killings of Eric Garner, Breonna Taylor, George Floyd, and many others, excess police force on people of color has been brought to the forefront of the American mind. National protests have commanded sustained attention to racialized violence against civilians. A 2020 study based on data from the Washington Post concluded that BIPOC Americans were on average 2-3 times more likely to be killed by police than white Americans. (Washington Post)
+With the police killings of Eric Garner, Breonna Taylor, George Floyd, and many others, excess police force on people of color has been brought to the forefront of the American mind. National protests have commanded sustained attention to racialized violence against civilians. A 2020 study based on data from the Washington Post concluded that BIPOC Americans were on average 2-3 times more likely to be killed by police than white Americans (Washington Post).
 
 As police brutality and violence has come to a national forefront, data has indicated that the burden of fatal police shootings falls disproportionately on BIPOC in terms of mortality and years of life lost (YLL). Data was sourced from the Washington Post repository on fatal police shootings between 2015-2020, which is dependent on curated news reports and thus may exclude necessary data such as gender and minority status. During this time interval, 5367 fatalities were recorded, of which 4740 offered significant racial data for analysis, and 4653 included both sufficient racial and age data for YLL calculation. Contrary to popular hypotheses, while there was a small decline in deaths of white victims, there was no significant trend in death rates among all other race/ethnic groups (i.e. rates were stable across the 5 year interval). In order, mean deaths were as follows: highest among Native Americans (1.74), then Blacks (1.49), Hispanics (0.74) , Whites (0.57), and Asians (0.25). The authors of the article call for the treatment of police violence as a public health crisis and suggest police demilitarization as a potential intervention.
 
@@ -24,6 +24,15 @@ The data comes from the Washington Post. It was published with the intent to bol
 The data was originally collected by manually combing through local news reports; combining information from law enforcement websites, social media, and other databases (including Fatal Encounters and the "Killed by Police" project). Data collection started in 2015 spurred by a slew of fatal shootings, and the information was updated in 2022. There are no apparent ethical concerns with data collection or presentation.
 
 The observations include details about police-involved killings in the United States. The variables include race, age, gender, armed vs not armed status, location, and if the person killed had a mental illness. The observations are primarily focused on key descriptions of the person killed, but do include some details about the police involved (including the presence/lack of a police body camera and the threat of the person as perceived by police).
+
+The present study aims to investigate the following research question: How does the average age differ by race for victims of police shootings who experience more violence (shot and tasered) compared to just shot?
+
+This question is important because it directly draws a distinction between the type of violence people experience based on their race. Findings may indicate that younger people of certain races are targeted with disproportionate police violence, which could lead to a push for police reform. Investigating the intricacies of police violence through the lens of race and age is crucial to identifying systemic issues in the criminal justice system. 
+
+The research topic seeks to investigate if young people of minority races are targeted with more police violence. We will analyze the variables “Person.Age,” “Person.Race,” and “Shooting.Manner” to narrow down which demographic experiences “shot and Tasered” vs “shot.” We hypothesize that minority victims (African American, Hispanic, Native American, other) are more likely to be shot and tased (experience more violence) at a younger age than white victims.
+
+The age variable is quantitative, and the race and shooting manner variables are categorical.
+
 
 2.  **Methodology**
 
