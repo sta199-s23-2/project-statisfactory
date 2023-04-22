@@ -25,11 +25,11 @@ The data was originally collected by manually combing through local news reports
 
 The observations include details about police-involved killings in the United States. The variables include race, age, gender, armed vs not armed status, location, and if the person killed had a mental illness. The observations are primarily focused on key descriptions of the person killed, but do include some details about the police involved (including the presence/lack of a police body camera and the threat of the person as perceived by police).
 
-The present study aims to investigate the following research question: How does the average age differ by race for victims of police shootings who experience more violence (shot and tasered) compared to just shot?
+The present study aims to investigate the following research question: How does the average race differ by age and gender for victims of police shootings who experience more violence (shot and tasered) compared to just shot?
 
 This question is important because it directly draws a distinction between the type of violence people experience based on their race. Findings may indicate that younger people of certain races are targeted with disproportionate police violence, which could lead to a push for police reform. Investigating the intricacies of police violence through the lens of race and age is crucial to identifying systemic issues in the criminal justice system.
 
-The research topic seeks to investigate if young people of minority races are targeted with more police violence. We will analyze the variables "Person.Age," "Person.Race," and "Shooting.Manner" to narrow down which demographic experiences "shot and Tasered" vs "shot." The age variable is quantitative, and the race and shooting manner variables are categorical. We hypothesize that minority victims (African American, Hispanic, Native American, other) are more likely to be shot and tased (experience more violence) at a younger age than white victims.
+The research topic seeks to investigate if young people of minority races are targeted with more police violence. We will analyze the variables "Person.Age," "Person.Race," and "Shooting.Manner" to narrow down which demographic experiences "shot and Tasered" vs "shot." The age variable is quantitative, and the race and shooting manner variables are categorical. We hypothesize that minority victims (African American, Hispanic, Native American, other) are more likely to be shot and tasered (experience more violence) at a younger age than white victims. We also hypothesize that male minority victims are more likely to be shot and tasered than white victims.
 
 2.  **Methodology**
 
