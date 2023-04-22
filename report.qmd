@@ -205,7 +205,7 @@ police_shootings |>
   ggplot(
     aes(x = Person.Age)
   ) +
-  geom_histogram(fill = "#0099CC", alpha = 0.7) +
+  geom_histogram(fill = "#0099CC", alpha = 0.7, binwidth = 5) +
   facet_wrap("Person.Race", ncol = 2) +
   labs(
     x = "Age",
@@ -237,7 +237,7 @@ police_shootings |>
   ggplot(
     aes(x = Person.Age)
   ) +
-  geom_histogram(fill = "#FF6666", alpha = 0.7) +
+  geom_histogram(fill = "#FF6666", alpha = 0.7, binwidth = 5) +
   facet_wrap("Person.Race", ncol = 2) +
   labs(
     x = "Age",
