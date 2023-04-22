@@ -49,6 +49,11 @@ library(tidymodels)
 
 police_shootings <- read_csv("data/police_shootings (1).csv")
 glimpse(police_shootings)
+
+
+police_shootings <- police_shootings |>
+  filter(Person.Age > 0)
+glimpse(police_shootings)
 ```
 
 Forward selection with AIC
@@ -148,11 +153,7 @@ police_shootings |>
 
 4.  Age and shot/shot tasered (female)
 
-Hypothesis test
-$H_o$: $\mu_1 = \mu_2$ 
-The mean age for females shot vs shot and tasered is equal.
-$H_a$ : $\mu_1 > \mu_2$
-The mean age for females shot and tasered is greater than the mean age for shot alone.
+Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for females shot vs shot and tasered is equal. $H_a$ : $\mu_1 > \mu_2$ The mean age for females shot and tasered is greater than the mean age for shot alone.
 
 ```{r}
 #| label: null-dist-F
@@ -174,6 +175,7 @@ police_shootings |>
   group_by(Shooting.Manner) |>
   summarise(mean_age = mean(Person.Age))
 ```
+
 obs_stat: $\bar{x_1} - \bar{x_2}$ = 38.40 - 36.35714 = 2.04286
 
 ```{r}
@@ -183,6 +185,7 @@ null_dist_F |>
      get_p_value(obs_stat = 2.04286, direction = "greater")
 
 ```
+
 ##need writeup
 
 ```{r}
@@ -223,11 +226,7 @@ dataset_4 |>
 
 5.  Age and shot/shot tasered (male)
 
-Hypothesis test
-$H_o$: $\mu_1 = \mu_2$ 
-The mean age for males shot vs shot and tasered is equal.
-$H_a$ : $\mu_1 > \mu_2$
-The mean age for males shot and tasered is greater than the mean age for shot alone.
+Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for males shot vs shot and tasered is equal. $H_a$ : $\mu_1 > \mu_2$ The mean age for males shot and tasered is greater than the mean age for shot alone.
 
 ```{r}
 #| label: null-dist-F
@@ -249,6 +248,7 @@ police_shootings |>
   group_by(Shooting.Manner) |>
   summarise(mean_age = mean(Person.Age))
 ```
+
 obs_stat: $\bar{x_1} - \bar{x_2}$ = 36.00632 - 35.30898 = 0.69725
 
 ```{r}
@@ -258,7 +258,8 @@ null_dist_F |>
      get_p_value(obs_stat = 0.69725, direction = "greater")
 
 ```
-##ADD WRITEUP 
+
+##ADD WRITEUP
 
 ```{r}
 #| label: violence-age-m
