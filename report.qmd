@@ -159,7 +159,12 @@ police_shootings |>
 ```{r}
 #| label: model
 
-
+logistic_reg() |>
+  set_engine("glm") |>
+  fit(Shooting.Manner ~ Person.Race + Person.Age, 
+      data = police_shootings_fix, family = "binomial") |>
+  tidy()
+  
 ```
 
 3)  Age, race, shot and tasered
