@@ -111,6 +111,43 @@ police_shootings |>
 
 4.  Age and shot/shot tasered (female)
 
+Hypothesis test
+$H_o$: $\mu_1 = \mu_2$ 
+The mean age for females shot vs shot and tasered is equal.
+$H_a$ : $\mu_1 > \mu_2$
+The mean age for females shot and tasered is greater than the mean age for shot alone.
+
+```{r}
+#| label: null-dist-F
+
+null_dist_F <- police_shootings |>
+  filter(Person.Gender == "Female") |>
+  specify(response = Person.Age, explanatory = Shooting.Manner) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute") |>
+  calculate(stat = "diff in means", order = c("shot and Tasered", "shot"))
+  
+```
+
+```{r}
+#| label: obs-stat-F
+
+police_shootings |>
+  filter(Person.Gender == "Female") |>
+  group_by(Shooting.Manner) |>
+  summarise(mean_age = mean(Person.Age))
+```
+obs_stat: $\bar{x_1} - \bar{x_2}$ = 38.40 - 36.35714 = 2.04286
+
+```{r}
+#| label: hypothesis-test_F
+
+null_dist_F |>
+     get_p_value(obs_stat = 2.04286, direction = "greater")
+
+```
+##need writeup
+
 ```{r}
 #| label: violence-age-f
 
@@ -148,6 +185,43 @@ dataset_4 |>
 ```
 
 5.  Age and shot/shot tasered (male)
+
+Hypothesis test
+$H_o$: $\mu_1 = \mu_2$ 
+The mean age for males shot vs shot and tasered is equal.
+$H_a$ : $\mu_1 > \mu_2$
+The mean age for males shot and tasered is greater than the mean age for shot alone.
+
+```{r}
+#| label: null-dist-F
+
+null_dist_M <- police_shootings |>
+  filter(Person.Gender == "Male") |>
+  specify(response = Person.Age, explanatory = Shooting.Manner) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute") |>
+  calculate(stat = "diff in means", order = c("shot and Tasered", "shot"))
+  
+```
+
+```{r}
+#| label: obs-stat-M
+
+police_shootings |>
+  filter(Person.Gender == "Male") |>
+  group_by(Shooting.Manner) |>
+  summarise(mean_age = mean(Person.Age))
+```
+obs_stat: $\bar{x_1} - \bar{x_2}$ = 36.00632 - 35.30898 = 0.69725
+
+```{r}
+#| label: hypothesis-test_M
+
+null_dist_F |>
+     get_p_value(obs_stat = 0.69725, direction = "greater")
+
+```
+##ADD WRITEUP 
 
 ```{r}
 #| label: violence-age-m
