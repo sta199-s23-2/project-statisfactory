@@ -112,7 +112,8 @@ dataset_4 <- police_shootings |>
          Shooting.Manner == "shot and Tasered" | 
          Shooting.Manner == "shot") |>
   mutate(Shooting.Manner = as.factor(Shooting.Manner),
-         Shooting.Manner_binary = if_else(Shooting.Manner == "shot and Tasered", 1, 0))
+         Shooting.Manner_binary = if_else(Shooting.Manner == "shot and Tasered", 
+                                          1, 0))
 
 dataset_4
 ```
@@ -121,21 +122,13 @@ dataset_4
 #| label: graph4
 
 dataset_4 |>
-  ggplot(aes(x = Person.Age, y = Shooting.Manner_binary)) +
-  geom_point() +
-  stat_smooth(method = "glm",
-              color = "green",
-              se = FALSE,
-              method.args = list(family = binomial)) +
-  labs(x = "Age",
-       y = "Manner of Violence",
-       title = "Police violence by age for females") +
-  theme(
-    axis.text.y=element_blank(),
-    axis.ticks.y=element_blank() 
-  ) +
-  annotate(geom="text", x=6, y=1, label="Shot&Tasered", color="black") +
-  annotate(geom="text", x=0, y=0, label="Shot", color="black")
+  ggplot(aes(x = Person.Age, color = "shot and Tasered")) +
+  geom_density() +
+  geom_density(aes(x = Shooting.Manner_binary, color = "shot")) +
+  scale_color_manual(values = c("shot and Tasered" = "red", "shot" = "blue")) +
+  labs(title = "Police violence by age for females",
+       x = "Age",
+       y = "violence")
   
   
 ```
