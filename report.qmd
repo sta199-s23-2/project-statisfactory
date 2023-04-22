@@ -85,6 +85,14 @@ logistic_reg() |>
   glance() |> 
   pull(AIC)
 
+## adding gender 
+logistic_reg() |> 
+  set_engine("glm") |> 
+  fit(Shooting.Manner ~ Person.Gender, 
+      data = police_shootings_fix, family = "binomial") |> 
+  glance() |> 
+  pull(AIC)
+
 ## adding age, race 
 logistic_reg() |> 
   set_engine("glm") |> 
@@ -201,8 +209,8 @@ null_dist_F |>
      get_p_value(obs_stat = 2.04286, direction = "greater")
 
 ```
-The probability of observing a difference in means of 2.04 years or more extreme between females shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.307. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis. 
 
+The probability of observing a difference in means of 2.04 years or more extreme between females shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.307. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
 
 ```{r}
 #| label: violence-age-f
@@ -267,7 +275,8 @@ null_dist_F |>
      get_p_value(obs_stat = 0.69725, direction = "greater")
 
 ```
-The probability of observing a difference in means of 0.69725 years or more extreme between males shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.412. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis. 
+
+The probability of observing a difference in means of 0.69725 years or more extreme between males shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.412. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
 
 ```{r}
 #| label: violence-age-m
