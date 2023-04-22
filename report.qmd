@@ -161,13 +161,13 @@ police_shootings |>
 ```
 
 ```{r}
-#| label: model
+#| label: summary-stats
 
-logistic_reg() |>
-  set_engine("glm") |>
-  fit(Shooting.Manner ~ Person.Race + Person.Age, 
-      data = police_shootings_fix, family = "binomial") |>
-  tidy()
+police_shootings |>
+  filter(Person.Age > 0) |>
+  filter(Shooting.Manner == "shot") |>
+  group_by(Person.Race) |>
+  summarise(mean_age = mean(Person.Age))
   
 ```
 
