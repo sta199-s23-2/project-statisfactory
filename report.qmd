@@ -248,6 +248,7 @@ police_shootings |>
 
 ```{r}
 #| label: summary-stats2
+#| echo: false
 
 police_shootings |>
   filter(Person.Age > 0) |>
@@ -436,7 +437,7 @@ police_shootings |>
 
 2.  (prediction for comparing 2 and 3) We predict that hispanic and african american targets will be shot and tased comparatively more than just shot; oppositely, white and asian targets will be shot comparatively more than shot and tased.
 
-3.  (prediction for comparing 4 and 5) We predict that male gender targets will be shot and tased comparatively more than just shot; oppositely, female (or other) gender targets will be shot comparatively more than shot and tased. 
+3.  (prediction for comparing 4 and 5) We predict that male gender targets will be shot and tased comparatively more than just shot; oppositely, female gender targets will be shot comparatively more than shot and tased.
 
 4.  When making a visualization of fleeing status vs. shot/shot and tased, we are making an inference that the victim's fleeing status affects the level of violence. We predict that those not fleeing will be shot and tased at the highest rate compared to just shot (because they're in close proximity to tase), followed by fleeing on foot, and finally fleeing with a car. This prediction is based on how convenient and easy it is to taze and shoot compared to just shooting.
 
@@ -446,9 +447,11 @@ police_shootings |>
 
 2.  Graphs 2 and 3: This graph shows the effect of race and age on victims who were shot. The trend across graphs was that the majority of those shot were in their late twenties to thirties, especially in the white population. This matched with our predictions. The races with the highest count of those shot were in the African American, White, and Hispanic populations. We assumed that those of minority populations would be among the most targeted, and the data partially represents that hypothesis. This graph shows the effect of race and age on victims who were both shot and tasered. Again the trends center on those in the African American, Hispanic, and White populations, however the age spread is wider and older than the graphs of those who were only shot. Contrary to our assumptions, this seems to indicate that those shot and tasered span victims ages twenty to fifty in all races, and there is no definitive correlation between age and whether or not someone was shot, or shot and tasered. However, there were peaks in the graph in victims of African American descent in their late twenties and early thirties, as well as white and Hispanic victims in their thirties. The majority of those shot and tasered were in their twenties to thirties and African American, Hispanic, and white races. However, this is very similar to the trend among those who were shot and not tasered, and there is no definitive effect of race and age on the police officer's shooting manner.
 
-3.  Graph 4: This Graph is showing the logistic regression line for females, with individuals both shot and tased at the top, and individuals only shot at the bottom. There is not a very high correlation, as we can see the logistic regression line does not show much shape. Based on the trends of the graph, if we greatly extended the x-axis age, we would see the full logistic line. Surprisingly, against what we would have predicted, there seems to be a small positive correlation between being tased & shot and age. Perhaps that is due to the fact that police officers view older people as less of a threat, and start off by using a taser, which, if not effective, turns into a lethal shooting. Of note is the fact that every piece of data in this dataset is people who had been shot.
+3.  Graph 4: This Graph is showing the overlaid density plot for females, comparing both `shot` and `shot and Tasered`. As we can see from the density plot, there seems to be three hotspots at which people experience more violence (`shot and Tasered`), around ages 10, 37, and 60. 
 
-4.  Graph 5: Compared to the graph for females, the male graph has a weaker correlation. It seems that age has barely any difference in whether or not people were just shot, or shot and tasered. However, there is still a weak positive correlation, perhaps due to the explanation given for graph 4 (that older people were more often tasered first, due to being perceived as less of a threat).
+There is not a very high correlation, as we can see the logistic regression line does not show much shape. Based on the trends of the graph, if we greatly extended the x-axis age, we would see the full logistic line. Surprisingly, against what we would have predicted, there seems to be a small positive correlation between being tased & shot and age. Perhaps that is due to the fact that police officers view older people as less of a threat, and start off by using a taser, which, if not effective, turns into a lethal shooting. Of note is the fact that every piece of data in this dataset is people who had been shot.
+
+4.  Graph 5: Compared to the graph for females, the male graph is pretty much indistinguishable comparing `shot` and `shot and Tasered`. This seems to suggest that at least for males, whether or not they were tasered in addition to being shot did not really matter. Thus, perhaps the only variable in this situtation that would correlate is sugguested to being shot itself. Thus, perhaps a graph comparing `shot` and `not shot` by age would have potentially shown a difference in age. However, our current graph does noth show a significant visual difference between the age distributions between `shot` and `shot and Tasered`. This matches with our hypothesis testing which gave insufficient evidence to reject the null hypothesis.
 
 5.  Graph 6: This graph shows the relationship between fleeing manner and whether or not someone was shot, or shot and tasered. Overall, there is little correlation between these two variables. There is a slightly higher probability that someone was shot and tasered if they were not fleeing or on foot as opposed to in a car or pursuing an unknown/other manner of departure. However, there is not a large enough correlation to relate shooting manner and fleeing manner.
 
