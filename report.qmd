@@ -119,6 +119,14 @@ logistic_reg() |>
   glance() |> 
   pull(AIC)
 
+## interaction age, gender
+logistic_reg() |> 
+  set_engine("glm") |> 
+  fit(Shooting.Manner ~ Person.Age * Person.Gender, 
+      data = police_shootings_fix, family = "binomial") |> 
+  glance() |> 
+  pull(AIC)
+
 ## adding age, race, gender 
 logistic_reg() |> 
   set_engine("glm") |> 
@@ -322,6 +330,13 @@ dataset_5 |>
 ```
 
 6.  Fleeing Manner and shot vs shot and tased
+
+```{r}
+#| fleeing-model
+
+logistic_reg 
+```
+
 
 ```{r}
 #| label: multiple-vars
