@@ -166,6 +166,7 @@ Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for people shot vs shot and 
 ```{r}
 #| label: null-dist
 
+set.seed(3)
 null_dist <- police_shootings |>
   specify(response = Person.Age, explanatory = Shooting.Manner) |>
   hypothesize(null = "independence") |>
@@ -191,7 +192,7 @@ null_dist |>
      get_p_value(obs_stat = 0.73068, direction = "greater")
 
 ```
-The probability of observing a difference in means of 0.73068 years or more extreme between people shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.196. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
+The probability of observing a difference in means of 0.73068 years or more extreme between people shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.214. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
 
 2)  Age, race, shot
 
@@ -264,6 +265,7 @@ Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for females shot vs shot and
 #| label: null-dist-F
 #| echo: false
 
+set.seed(3)
 null_dist_F <- police_shootings |>
   filter(Person.Gender == "Female") |>
   specify(response = Person.Age, explanatory = Shooting.Manner) |>
@@ -294,7 +296,7 @@ null_dist_F |>
 
 ```
 
-The probability of observing a difference in means of 2.04 years or more extreme between females shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.307. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
+The probability of observing a difference in means of 2.04 years or more extreme between females shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.321. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
 
 ```{r}
 #| label: violence-age-f
@@ -330,9 +332,10 @@ dataset_4 |>
 Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for males shot vs shot and tasered is equal. $H_a$ : $\mu_1 > \mu_2$ The mean age for males shot and tasered is greater than the mean age for shot alone.
 
 ```{r}
-#| label: null-dist-F
+#| label: null-dist-M
 #| echo: false
 
+set.seed(3)
 null_dist_M <- police_shootings |>
   filter(Person.Gender == "Male") |>
   specify(response = Person.Age, explanatory = Shooting.Manner) |>
@@ -363,7 +366,7 @@ null_dist_F |>
 
 ```
 
-The probability of observing a difference in means of 0.69725 years or more extreme between males shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.409. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
+The probability of observing a difference in means of 0.69725 years or more extreme between males shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.411. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
 
 ```{r}
 #| label: violence-age-m
