@@ -337,7 +337,15 @@ dataset_5 |>
 ```{r}
 #| fleeing-model
 
-logistic_reg 
+data <- police_shootings |>
+  mutate(Factors.Fleeing = factor(Factors.Fleeing), 
+         Shooting.Manner = factor(Shooting.Manner)) 
+
+logistic_reg() |>
+  set_engine("glm") |>
+  fit(Shooting.Manner ~ Factors.Fleeing, data = data, 
+      family = "binomial") |>
+  tidy()
 ```
 
 
