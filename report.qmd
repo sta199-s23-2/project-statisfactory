@@ -123,16 +123,17 @@ logistic_reg() |>
 ```{r}
 #| label: boxplot-shot/age
 
- police_shootings |>
+police_shootings |>
   ggplot(
     aes(x = Person.Age, y = Shooting.Manner)) +
     geom_boxplot(show.legend = F) +
     geom_point(alpha = 0.08) +
   labs(
     x = "Age",
-    y = "Shooting Manner",
-    title = "People shot vs shot and tasered by age"
-  )
+    y = element_text("Shooting Manner", angle = 90, hjust = 1),
+    title = "People shot vs shot and tasered by age") +
+  theme(axis.text.y = element_text(angle = 90, hjust = 0.5))
+
 
 
 ```
@@ -147,13 +148,13 @@ police_shootings |>
   ggplot(
     aes(x = Person.Age)
   ) +
-  geom_histogram(fill = "blue", alpha = 0.7) +
+  geom_histogram(fill = "blue", alpha = 0.25) +
   facet_wrap("Person.Race", ncol = 2) +
   labs(
     x = "Age",
     y = "Number of individuals shot",
-    title = "People shot by race and age"
-  )
+    title = "People shot by race and age") +
+  theme_minimal()
 ```
 
 ```{r}
@@ -172,13 +173,13 @@ police_shootings |>
   ggplot(
     aes(x = Person.Age)
   ) +
-  geom_histogram(fill = "blue", alpha = 0.7) +
+  geom_histogram(fill = "blue", alpha = 0.25) +
   facet_wrap("Person.Race", ncol = 2) +
   labs(
     x = "Age",
     y = "Number of individuals shot and tasered",
-    title = "People shot and tasered by race and age"
-  )
+    title = "People shot and tasered by race and age") +
+  theme_minimal()
 ```
 
 4.  Age and shot/shot tasered (female)
@@ -240,7 +241,8 @@ dataset_4 |>
        subtitle = "Overlaid density plot",
        x = "Age",
        y = "Density",
-       fill = "Manner of Violence")
+       fill = "Manner of Violence") +
+  theme_minimal()
   
 ```
 
@@ -300,7 +302,8 @@ dataset_5 |>
        subtitle = "Overlaid density plot",
        x = "Age",
        y = "Density",
-       fill = "Manner of Violence")
+       fill = "Manner of Violence") +
+  theme_minimal()
 ```
 
 6.  Fleeing Manner and shot vs shot and tased
@@ -317,8 +320,8 @@ police_shootings |>
     x = "Fleeing Manner",
     y = "Proportion of individuals shot\n vs shot and tasered",
     title = "People shot and tasered or shot based on fleeing",
-    fill = "Shooting Manner"
-    )
+    fill = "Shooting Manner") +
+  theme_minimal()
 ```
 
 **Predictions and inferences:**
