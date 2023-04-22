@@ -160,6 +160,17 @@ police_shootings |>
   )
 ```
 
+```{r}
+#| label: model
+
+logistic_reg() |>
+  set_engine("glm") |>
+  fit(Shooting.Manner ~ Person.Race + Person.Age, 
+      data = police_shootings_fix, family = "binomial") |>
+  tidy()
+  
+```
+
 3)  Age, race, shot and tasered
 
 ```{r}
@@ -223,9 +234,7 @@ dataset_4 <- police_shootings |>
   filter(Person.Gender == "Female",
          Shooting.Manner == "shot and Tasered" | 
          Shooting.Manner == "shot") |>
-  mutate(Shooting.Manner = as.factor(Shooting.Manner),
-         Shooting.Manner_binary = if_else(Shooting.Manner == "shot and Tasered", 
-                                          1, 0))
+  mutate(Shooting.Manner = as.factor(Shooting.Manner))
 
 dataset_4
 ```
@@ -234,14 +243,13 @@ dataset_4
 #| label: graph4
 
 dataset_4 |>
-  ggplot(aes(x = Person.Age, color = "shot and Tasered")) +
-  geom_density() +
-  geom_density(aes(x = Shooting.Manner_binary, color = "shot")) +
-  scale_color_manual(values = c("shot and Tasered" = "red", "shot" = "blue")) +
+  ggplot(aes(x = Person.Age, fill = Shooting.Manner)) +
+  geom_density(alpha = .25) +
   labs(title = "Police violence by age for females",
+       subtitle = "Overlaid density plot",
        x = "Age",
-       y = "violence")
-  
+       y = "Density",
+       fill = "Manner of Violence")
   
 ```
 
@@ -270,7 +278,7 @@ police_shootings |>
   summarise(mean_age = mean(Person.Age))
 ```
 
-obs_stat: $\bar{x_1} - \bar{x_2}$ = 36.00632 - 35.30898 = 0.69725
+obs_stat: $\bar{x_1} - \bar{x_2}$ = 36.00623 - 35.30898 = 0.69725
 
 ```{r}
 #| label: hypothesis-test_M
@@ -279,8 +287,7 @@ null_dist_F |>
      get_p_value(obs_stat = 0.69725, direction = "greater")
 
 ```
-
-The probability of observing a difference in means of 0.69725 years or more extreme between males shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.412. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
+The probability of observing a difference in means of 0.69725 years or more extreme between males shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.409. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis. 
 
 ```{r}
 #| label: violence-age-m
@@ -289,30 +296,20 @@ dataset_5 <- police_shootings |>
   filter(Person.Gender == "Male",
          Shooting.Manner == "shot and Tasered" | 
          Shooting.Manner == "shot") |>
-  mutate(Shooting.Manner = as.factor(Shooting.Manner),
-         Shooting.Manner_binary = if_else(Shooting.Manner == "shot and Tasered", 1, 0))
+  mutate(Shooting.Manner = as.factor(Shooting.Manner))
 ```
 
 ```{r}
 #| label: graph5
 
 dataset_5 |>
-  ggplot(aes(x = Person.Age, y = Shooting.Manner_binary)) +
-  geom_point() +
-  stat_smooth(method = "glm",
-              color = "green",
-              se = FALSE,
-              method.args = list(family = binomial)) +
-  labs(x = "Age",
-       y = "Manner of Violence",
-       title = "Police violence by age for males") +
-  theme(
-    axis.text.y=element_blank(),
-    axis.ticks.y=element_blank() 
-  ) +
-  annotate(geom="text", x=6, y=1, label="Shot&Tasered", color="black") +
-  annotate(geom="text", x=0, y=0, label="Shot", color="black")
-
+  ggplot(aes(x = Person.Age, fill = Shooting.Manner)) +
+  geom_density(alpha = .25) +
+  labs(title = "Police violence by age for males",
+       subtitle = "Overlaid density plot",
+       x = "Age",
+       y = "Density",
+       fill = "Manner of Violence")
 ```
 
 6.  Fleeing Manner and shot vs shot and tased
