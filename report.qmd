@@ -140,6 +140,12 @@ police_shootings |>
   )
 ```
 
+```{r}
+#| label: model
+
+
+```
+
 3)  Age, race, shot and tasered
 
 ```{r}
@@ -250,7 +256,7 @@ police_shootings |>
   summarise(mean_age = mean(Person.Age))
 ```
 
-obs_stat: $\bar{x_1} - \bar{x_2}$ = 36.00632 - 35.30898 = 0.69725
+obs_stat: $\bar{x_1} - \bar{x_2}$ = 36.00623 - 35.30898 = 0.69725
 
 ```{r}
 #| label: hypothesis-test_M
@@ -259,7 +265,7 @@ null_dist_F |>
      get_p_value(obs_stat = 0.69725, direction = "greater")
 
 ```
-The probability of observing a difference in means of 0.69725 years or more extreme between males shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.412. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis. 
+The probability of observing a difference in means of 0.69725 years or more extreme between males shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.409. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis. 
 
 ```{r}
 #| label: violence-age-m
