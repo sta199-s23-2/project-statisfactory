@@ -33,6 +33,8 @@ The research topic seeks to investigate if young people of minority races are ta
 
 2.  **Methodology**
 
+AIC was used as a model selection criterion as it punishes the addition of variables that do not confer advantages in modeling the data by increasing AIC. Therefore, the model with the lower AIC is a better model of the data. Specifically, we used forward selection. First, we started with a model that had no predictors, then we fit each variable in a logistic regression model with a single independent variable to investigate which one has the lowest AIC. We compared the AIC scores after adding variables to the model with no predictors to select the best model with 1 additional explanatory variable. Then, we added variables in different combinations to reach the best model and inform our later graphics. C
+
 We plan to represent our four variables through a series of six graphics. Our preliminary graph will be a box plot to compare the ages of those shot vs shot and tasered. We will facet by shot/shot tasered, and our axis values will be age. This will help create a baseline understanding of what ages are most vulnerable to more violence. Having this knowledge will add significance to the future graphs that incorperate gender and race.
 
 Our next two graphs will compare age, race, and shot/shot tasered. We will create one histogram faceted by race and filled by age, filtered for those only shot. Our next graph will be the same, except filtered for those shot and tasered; this will help visualize how age differs by race between those just shot and those shot and tasered.
@@ -56,7 +58,7 @@ police_shootings <- police_shootings |>
 glimpse(police_shootings)
 ```
 
-Forward selection with AIC
+Forward selection with AIC:
 
 ```{r}
 #| label: forward
@@ -70,14 +72,14 @@ logistic_reg() |>
   glance() |> 
   pull(AIC) 
 
-## adding age 
+## age 
 logistic_reg() |> 
   set_engine("glm") |> 
   fit(Shooting.Manner ~ Person.Age, data = police_shootings_fix, family = "binomial") |> 
   glance() |> 
   pull(AIC)
 
-## adding race 
+## race 
 logistic_reg() |> 
   set_engine("glm") |> 
   fit(Shooting.Manner ~ Person.Race, 
@@ -85,7 +87,7 @@ logistic_reg() |>
   glance() |> 
   pull(AIC)
 
-## adding gender 
+## gender 
 logistic_reg() |> 
   set_engine("glm") |> 
   fit(Shooting.Manner ~ Person.Gender, 
@@ -117,6 +119,8 @@ logistic_reg() |>
   glance() |> 
   pull(AIC)
 ```
+
+Based on the results, the model with the lowest AIC of one additional variable is age. Once examining the interactions of gender and race with age, we conclude the most prominent factors related to the shooting manner (violence) are age, followed by gender, followed by race. This means we may want to further investigate the correlation between age and gender in predicting shooting manner. For our purposes, we also decided to examine how race affects level of violence because many current systemic issues in policing involve race. However, this AIC testing gave a baseline understanding that in this data set, age is the most prominent predictor of shooting manner followed by gender.
 
 1.  Age, shot vs age, shot and tasered
 
