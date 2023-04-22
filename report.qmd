@@ -45,6 +45,7 @@ Finally, we will include a graph of our additional variable, if the victim was f
 
 ```{r}
 #| label: load-data-2
+#| echo: false
  
 library(tidyverse)
 library(tidymodels)
@@ -62,6 +63,7 @@ Forward selection with AIC:
 
 ```{r}
 #| label: forward
+#| echo: false
 
 police_shootings_fix <- police_shootings |>
   mutate(Shooting.Manner = as.factor(Shooting.Manner))
@@ -142,6 +144,7 @@ Based on the results, the model with the lowest AIC of one additional variable i
 
 ```{r}
 #| label: boxplot-shot/age
+#| echo: false
 
 police_shootings |>
   ggplot(
@@ -162,6 +165,7 @@ police_shootings |>
 
 ```{r}
 #| label: age-race-shot
+#| echo: false
 
 police_shootings |>
   filter(Shooting.Manner == "shot") |>
@@ -179,6 +183,7 @@ police_shootings |>
 
 ```{r}
 #| label: summary-stats
+#| echo: false
 
 police_shootings |>
   filter(Person.Age > 0) |>
@@ -192,6 +197,7 @@ police_shootings |>
 
 ```{r}
 #| label: age-race-shot-and-tasered
+#| echo: false
 
 police_shootings |>
   filter(Shooting.Manner == "shot and Tasered") |>
@@ -223,6 +229,7 @@ Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for females shot vs shot and
 
 ```{r}
 #| label: null-dist-F
+#| echo: false
 
 null_dist_F <- police_shootings |>
   filter(Person.Gender == "Female") |>
@@ -235,6 +242,7 @@ null_dist_F <- police_shootings |>
 
 ```{r}
 #| label: obs-stat-F
+#| echo: false
 
 police_shootings |>
   filter(Person.Gender == "Female") |>
@@ -246,6 +254,7 @@ obs_stat: $\bar{x_1} - \bar{x_2}$ = 38.40 - 36.35714 = 2.04286
 
 ```{r}
 #| label: hypothesis-test_F
+#| echo: false
 
 null_dist_F |>
      get_p_value(obs_stat = 2.04286, direction = "greater")
@@ -256,6 +265,7 @@ The probability of observing a difference in means of 2.04 years or more extreme
 
 ```{r}
 #| label: violence-age-f
+#| echo: false
 
 dataset_4 <- police_shootings |>
   filter(Person.Gender == "Female",
@@ -268,6 +278,7 @@ dataset_4
 
 ```{r}
 #| label: graph4
+#| echo: false
 
 dataset_4 |>
   ggplot(aes(x = Person.Age, fill = Shooting.Manner)) +
@@ -287,6 +298,7 @@ Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for males shot vs shot and t
 
 ```{r}
 #| label: null-dist-F
+#| echo: false
 
 null_dist_M <- police_shootings |>
   filter(Person.Gender == "Male") |>
@@ -299,6 +311,7 @@ null_dist_M <- police_shootings |>
 
 ```{r}
 #| label: obs-stat-M
+#| echo: false
 
 police_shootings |>
   filter(Person.Gender == "Male") |>
@@ -310,6 +323,7 @@ obs_stat: $\bar{x_1} - \bar{x_2}$ = 36.00623 - 35.30898 = 0.69725
 
 ```{r}
 #| label: hypothesis-test_M
+#| echo: false
 
 null_dist_F |>
      get_p_value(obs_stat = 0.69725, direction = "greater")
@@ -320,6 +334,7 @@ The probability of observing a difference in means of 0.69725 years or more extr
 
 ```{r}
 #| label: violence-age-m
+#| echo: false
 
 dataset_5 <- police_shootings |>
   filter(Person.Gender == "Male",
@@ -330,6 +345,7 @@ dataset_5 <- police_shootings |>
 
 ```{r}
 #| label: graph5
+#| echo: false
 
 dataset_5 |>
   ggplot(aes(x = Person.Age, fill = Shooting.Manner)) +
@@ -346,6 +362,7 @@ dataset_5 |>
 
 ```{r}
 #| fleeing-model
+#| echo: false
 
 data <- police_shootings |>
   mutate(Factors.Fleeing = factor(Factors.Fleeing), 
@@ -361,6 +378,7 @@ logistic_reg() |>
 
 ```{r}
 #| label: multiple-vars
+#| echo: false
 
 police_shootings |>
   ggplot(
