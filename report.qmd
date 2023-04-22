@@ -151,7 +151,7 @@ police_shootings |>
   ggplot(
     aes(x = Person.Age)
   ) +
-  geom_histogram(fill = "blue", alpha = 0.7) +
+  geom_histogram(fill = "#0099CC", alpha = 0.7) +
   facet_wrap("Person.Race", ncol = 2) +
   labs(
     x = "Age",
@@ -181,7 +181,7 @@ police_shootings |>
   ggplot(
     aes(x = Person.Age)
   ) +
-  geom_histogram(fill = "blue", alpha = 0.7) +
+  geom_histogram(fill = "#FF6666", alpha = 0.7) +
   facet_wrap("Person.Race", ncol = 2) +
   labs(
     x = "Age",
@@ -309,7 +309,8 @@ dataset_5 |>
        subtitle = "Overlaid density plot",
        x = "Age",
        y = "Density",
-       fill = "Manner of Violence")
+       fill = "Manner of Violence") +
+  scale_color_manual()
 ```
 
 6.  Fleeing Manner and shot vs shot and tased
