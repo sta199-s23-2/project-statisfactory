@@ -157,8 +157,6 @@ police_shootings |>
     title = "People shot vs shot and tasered by age") +
   theme(axis.text.y = element_text(angle = 90, hjust = 0.5))
 
-
-
 ```
 
 Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for people shot vs shot and tasered is equal. $H_a$ : $\mu_1 > \mu_2$ The mean age for people shot and tasered is greater than the mean age for shot alone.
@@ -422,7 +420,8 @@ police_shootings |>
   ggplot(
     aes(x = Factors.Fleeing, fill = Shooting.Manner)
   ) +
-  geom_bar() +
+  geom_bar(alpha = .8) +
+  scale_fill_manual(values = c("#FF6666", "#0099CC")) +
   labs(
     x = "Fleeing Manner",
     y = "Proportion of individuals shot\n vs shot and tasered",
