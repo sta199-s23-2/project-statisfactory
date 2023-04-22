@@ -77,6 +77,22 @@ logistic_reg() |>
   glance() |> 
   pull(AIC)
 
+## adding race 
+logistic_reg() |> 
+  set_engine("glm") |> 
+  fit(Shooting.Manner ~ Person.Race, 
+      data = police_shootings_fix, family = "binomial") |> 
+  glance() |> 
+  pull(AIC)
+
+## adding gender 
+logistic_reg() |> 
+  set_engine("glm") |> 
+  fit(Shooting.Manner ~ Person.Gender, 
+      data = police_shootings_fix, family = "binomial") |> 
+  glance() |> 
+  pull(AIC)
+
 ## adding age, race 
 logistic_reg() |> 
   set_engine("glm") |> 
@@ -85,10 +101,10 @@ logistic_reg() |>
   glance() |> 
   pull(AIC)
 
-## adding age, race -- interaction model
+## adding age, gender
 logistic_reg() |> 
   set_engine("glm") |> 
-  fit(Shooting.Manner ~ Person.Age * Person.Race, 
+  fit(Shooting.Manner ~ Person.Age + Person.Gender, 
       data = police_shootings_fix, family = "binomial") |> 
   glance() |> 
   pull(AIC)
@@ -138,6 +154,12 @@ police_shootings |>
     y = "Number of individuals shot",
     title = "People shot by race and age"
   )
+```
+
+```{r}
+#| label: model
+
+
 ```
 
 3)  Age, race, shot and tasered
@@ -194,7 +216,7 @@ null_dist_F |>
 
 ```
 
-##need writeup
+The probability of observing a difference in means of 2.04 years or more extreme between females shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.307. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
 
 ```{r}
 #| label: violence-age-f
@@ -247,7 +269,7 @@ police_shootings |>
   summarise(mean_age = mean(Person.Age))
 ```
 
-obs_stat: $\bar{x_1} - \bar{x_2}$ = 36.00632 - 35.30898 = 0.69725
+obs_stat: $\bar{x_1} - \bar{x_2}$ = 36.00623 - 35.30898 = 0.69725
 
 ```{r}
 #| label: hypothesis-test_M
@@ -256,8 +278,7 @@ null_dist_F |>
      get_p_value(obs_stat = 0.69725, direction = "greater")
 
 ```
-
-##ADD WRITEUP
+The probability of observing a difference in means of 0.69725 years or more extreme between males shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.409. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis. 
 
 ```{r}
 #| label: violence-age-m
