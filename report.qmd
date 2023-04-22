@@ -136,7 +136,7 @@ logistic_reg() |>
   pull(AIC)
 ```
 
-Based on the results, the model with the lowest AIC of one additional variable is age. Once examining the affects of gender, race and age on shooting manner independently of one another, we conclude the most prominent factors related to the violence level are age, followed by gender, followed by race. Between the additive models, age and gender had a lower AIC than age and race, and the addition of all three variables had the highest AIC but the result is worth exploring further through graphics. In the interactive models, age and gender also had a lower AIC than age and race. This means we may want to further investigate the correlation between age and gender in predicting shooting manner. For our purposes, we also decided to examine how race affects level of violence because many current systemic issues in policing involve race. However, this AIC testing gave a baseline understanding that in this data set, age is the most prominent predictor of shooting manner followed by gender.
+Based on the results, the model with the lowest AIC of one additional variable is age. Once examining the effects of gender, race and age on shooting manner independently of one another, we conclude the most prominent factors related to the violence level are age, followed by gender, followed by race. Between the additive models, age and gender had a lower AIC than age and race, and the addition of all three variables had the highest AIC but the result is worth exploring further through graphics. In the interactive models, age and gender also had a lower AIC than age and race. This means we may want to further investigate the correlation between age and gender in predicting shooting manner. For our purposes, we also decided to examine how race effects level of violence because many current systemic issues in policing involve race. However, this AIC testing gave a baseline understanding that in this data set, age is the most prominent predictor of shooting manner followed by gender.
 
 1.  Age, shot vs age, shot and tasered
 
@@ -206,6 +206,7 @@ police_shootings |>
     title = "People shot and tasered by race and age") +
   theme_minimal()
 ```
+
 ```{r}
 #| label: summary-stats2
 
@@ -347,8 +348,16 @@ dataset_5 |>
 
 ```{r}
 #| fleeing-model
+data <- police_shootings |>
+  mutate(Factors.Fleeing = factor(Factors.Fleeing), 
+         Shooting.Manner = factor(Shooting.Manner)) 
 
-logistic_reg 
+logistic_reg() |>
+  set_engine("glm") |>
+  fit(Shooting.Manner ~ Factors.Fleeing, data = data, 
+      family = "binomial") |>
+  tidy()
+
 ```
 
 
