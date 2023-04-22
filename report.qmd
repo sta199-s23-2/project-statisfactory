@@ -77,6 +77,14 @@ logistic_reg() |>
   glance() |> 
   pull(AIC)
 
+## adding race 
+logistic_reg() |> 
+  set_engine("glm") |> 
+  fit(Shooting.Manner ~ Person.Race, 
+      data = police_shootings_fix, family = "binomial") |> 
+  glance() |> 
+  pull(AIC)
+
 ## adding age, race 
 logistic_reg() |> 
   set_engine("glm") |> 
@@ -85,10 +93,10 @@ logistic_reg() |>
   glance() |> 
   pull(AIC)
 
-## adding age, race -- interaction model
+## adding age, gender
 logistic_reg() |> 
   set_engine("glm") |> 
-  fit(Shooting.Manner ~ Person.Age * Person.Race, 
+  fit(Shooting.Manner ~ Person.Age + Person.Gender, 
       data = police_shootings_fix, family = "binomial") |> 
   glance() |> 
   pull(AIC)
