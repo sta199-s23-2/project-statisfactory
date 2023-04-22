@@ -119,7 +119,7 @@ logistic_reg() |>
   glance() |> 
   pull(AIC)
 
-## adding age, gender
+## interaction age, gender
 logistic_reg() |> 
   set_engine("glm") |> 
   fit(Shooting.Manner ~ Person.Age * Person.Gender, 
