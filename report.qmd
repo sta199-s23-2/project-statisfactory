@@ -39,7 +39,7 @@ We plan to represent our four variables through a series of six graphics. Our pr
 
 Our next two graphs will compare age, race, and shot/shot tasered. We will create one histogram faceted by race and filled by age, filtered for those only shot. Our next graph will be the same, except filtered for those shot and tasered; this will help visualize how age differs by race between those just shot and those shot and tasered.
 
-Next, we will create two graphs to compare age, gender, and shot/shot tasered. The first will be for females, and put age on the x-axis and use logistic regression to compare shot (0) vs shot and tasered (1). The second will be the same method, except using a graph filtered for males. These two graphs have a similar purpose to graphs 2 and 3, except they will be examining the affect of gender on level of violence instead of race.
+Next, we will create two overlaid density plots to compare age, gender, and shot/shot tasered. The first will be for females and put age on the x-axis and density on the y-axis, overlaying the graphs for `shot` and `shot and Tasered`. The second will be the same method, except using a graph filtered for males. These two graphs have a similar purpose to graphs 2 and 3, except they will be examining the affect of gender on level of violence instead of race.
 
 Finally, we will include a graph of our additional variable, if the victim was fleeing or not (and how so). We predict that this variable might have an impact on if the victim was shot or shot and tasered, so we think it is important to include a representation of it. We will use a histogram with the three possibilities for fleeing on the x-axis (not fleeing, car, foot), and we will fill the graph by shot or shot and tasered. When making equations to analyze our data, we can use multiple linear regression analysis to estimate the importance and relevance of the extra explanatory variable (fleeing) and the response variable (level of violence). This helps account for fleeing status as a potentially confounding variable.
 
@@ -168,7 +168,7 @@ police_shootings |>
   ggplot(
     aes(x = Person.Age)
   ) +
-  geom_histogram(fill = "blue", alpha = 0.25) +
+  geom_histogram(fill = "#0099CC", alpha = 0.7) +
   facet_wrap("Person.Race", ncol = 2) +
   labs(
     x = "Age",
@@ -198,7 +198,7 @@ police_shootings |>
   ggplot(
     aes(x = Person.Age)
   ) +
-  geom_histogram(fill = "blue", alpha = 0.25) +
+  geom_histogram(fill = "#FF6666", alpha = 0.7) +
   facet_wrap("Person.Race", ncol = 2) +
   labs(
     x = "Age",
@@ -347,7 +347,15 @@ dataset_5 |>
 ```{r}
 #| fleeing-model
 
-logistic_reg 
+data <- police_shootings |>
+  mutate(Factors.Fleeing = factor(Factors.Fleeing), 
+         Shooting.Manner = factor(Shooting.Manner)) 
+
+logistic_reg() |>
+  set_engine("glm") |>
+  fit(Shooting.Manner ~ Factors.Fleeing, data = data, 
+      family = "binomial") |>
+  tidy()
 ```
 
 
