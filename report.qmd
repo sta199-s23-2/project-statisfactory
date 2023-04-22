@@ -19,7 +19,7 @@ Contributing to further distrust is the concept of adultification: a phenomenon 
 
 According to a study by the Proceedings of the National Academy of Sciences, men are far more likely to be subject to police violence; the average lifetime odds of being killed by police is about 1 in 2,000 for men and about 1 in 33,000 for women (Edwards et al., 2019). Risk of death by police for all gender and race groups peak between the ages of 20 y and 35 y and decline with age. This pattern is similar for non-fatal police violence. Studies conclude that police violence is a leading cause of death for young men of color, but not for any other demographic.
 
-Data was sourced from the Washington Post repository on fatal police shootings between 2015-2020, which is dependent on curated news reports and thus may exclude necessary data such as gender and minority status. It was published with the intent to bolster the evidence-base of police killings for the Black Lives Matter movement. During this time interval, 5367 fatalities were recorded, of which 4740 offered significant racial data for analysis, and 4653 included both sufficient racial and age data for YLL calculation. 
+Data was sourced from the Washington Post repository on fatal police shootings between 2015-2020, which is dependent on curated news reports and thus may exclude necessary data such as gender and minority status. It was published with the intent to bolster the evidence-base of police killings for the Black Lives Matter movement. During this time interval, 5367 fatalities were recorded, of which 4740 offered significant racial data for analysis, and 4653 included both sufficient racial and age data for YLL calculation.
 
 The data was originally collected by manually combing through local news reports, combining information from law enforcement websites, social media, and other databases (including Fatal Encounters and the "Killed by Police" project). Data collection started in 2015 spurred by a slew of fatal shootings, and the information was updated in 2022. There are no apparent ethical concerns with data collection or presentation.
 
@@ -27,10 +27,9 @@ The observations include details about police-involved killings in the United St
 
 The present study aims to investigate the following research question: How does the average age differ by race for victims of police shootings who experience more violence (shot and tasered) compared to just shot?
 
-This question is important because it directly draws a distinction between the type of violence people experience based on their race. Findings may indicate that younger people of certain races are targeted with disproportionate police violence, which could lead to a push for police reform. Investigating the intricacies of police violence through the lens of race and age is crucial to identifying systemic issues in the criminal justice system. 
+This question is important because it directly draws a distinction between the type of violence people experience based on their race. Findings may indicate that younger people of certain races are targeted with disproportionate police violence, which could lead to a push for police reform. Investigating the intricacies of police violence through the lens of race and age is crucial to identifying systemic issues in the criminal justice system.
 
-The research topic seeks to investigate if young people of minority races are targeted with more police violence. We will analyze the variables “Person.Age,” “Person.Race,” and “Shooting.Manner” to narrow down which demographic experiences “shot and Tasered” vs “shot.” The age variable is quantitative, and the race and shooting manner variables are categorical. We hypothesize that minority victims (African American, Hispanic, Native American, other) are more likely to be shot and tased (experience more violence) at a younger age than white victims. 
-
+The research topic seeks to investigate if young people of minority races are targeted with more police violence. We will analyze the variables "Person.Age," "Person.Race," and "Shooting.Manner" to narrow down which demographic experiences "shot and Tasered" vs "shot." The age variable is quantitative, and the race and shooting manner variables are categorical. We hypothesize that minority victims (African American, Hispanic, Native American, other) are more likely to be shot and tased (experience more violence) at a younger age than white victims.
 
 2.  **Methodology**
 
@@ -52,6 +51,44 @@ police_shootings <- read_csv("data/police_shootings (1).csv")
 glimpse(police_shootings)
 ```
 
+Forward selection with AIC
+
+```{r}
+#| label: forward
+
+police_shootings_fix <- police_shootings |>
+  mutate(Shooting.Manner = as.factor(Shooting.Manner))
+
+logistic_reg() |> 
+  set_engine("glm") |> 
+  fit(Shooting.Manner ~ 1, data = police_shootings_fix, family = "binomial") |> 
+  glance() |> 
+  pull(AIC) 
+
+## adding age 
+logistic_reg() |> 
+  set_engine("glm") |> 
+  fit(Shooting.Manner ~ Person.Age, data = police_shootings_fix, family = "binomial") |> 
+  glance() |> 
+  pull(AIC)
+
+## adding age, race 
+logistic_reg() |> 
+  set_engine("glm") |> 
+  fit(Shooting.Manner ~ Person.Age + Person.Race, 
+      data = police_shootings_fix, family = "binomial") |> 
+  glance() |> 
+  pull(AIC)
+
+## adding age, race, gender 
+logistic_reg() |> 
+  set_engine("glm") |> 
+  fit(Shooting.Manner ~ Person.Age + Person.Race + Person.Gender, 
+      data = police_shootings_fix, family = "binomial") |> 
+  glance() |> 
+  pull(AIC)
+```
+
 1.  Age, shot vs age, shot and tasered
 
 ```{r}
@@ -61,7 +98,7 @@ glimpse(police_shootings)
   ggplot(
     aes(x = Person.Age, y = Shooting.Manner)) +
     geom_boxplot(show.legend = F) +
-    geom_jitter(alpha = 0.08) +
+    geom_point(alpha = 0.08) +
   labs(
     x = "Age",
     y = "Shooting Manner",
@@ -194,8 +231,8 @@ police_shootings |>
   geom_bar() +
   labs(
     x = "Fleeing Manner",
-    y = "Number of individuals shot\n vs shot and tasered",
-    title = "People shot and tasered or shot based on fleeing manner",
+    y = "Proportion of individuals shot\n vs shot and tasered",
+    title = "People shot and tasered or shot based on fleeing",
     fill = "Shooting Manner"
     )
 ```
@@ -222,19 +259,18 @@ police_shootings |>
 
 5.  Graph 6: This graph shows the relationship between fleeing manner and whether or not someone was shot, or shot and tasered. Overall, there is little correlation between these two variables. There is a slightly higher probability that someone was shot and tasered if they were not fleeing or on foot as opposed to in a car or pursuing an unknown/other manner of departure. However, there is not a large enough correlation to relate shooting manner and fleeing manner.
 
-
 **References**
 
-Collins, A. (1998). Shielded from justice: Police brutality and accountability in the United States. London. 
+Collins, A. (1998). Shielded from justice: Police brutality and accountability in the United States. London.
 
-Davis, J., &amp; Marsh, N. (2020). Boys to men: The cost of ‘adultification’ in safeguarding responses to black boys. Critical and Radical Social Work, 8(2), 255–259. https://doi.org/10.1332/204986020x15945756023543 
+Davis, J., & Marsh, N. (2020). Boys to men: The cost of 'adultification' in safeguarding responses to black boys. Critical and Radical Social Work, 8(2), 255--259. https://doi.org/10.1332/204986020x15945756023543
 
-Edwards, F., Lee, H., &amp; Esposito, M. H. (2019). Risk of being killed by police use of force in the United States by age, race–ethnicity, and sex. PNAS. https://doi.org/10.31235/osf.io/kw9cu 
+Edwards, F., Lee, H., & Esposito, M. H. (2019). Risk of being killed by police use of force in the United States by age, race--ethnicity, and sex. PNAS. https://doi.org/10.31235/osf.io/kw9cu
 
-Koch, A., &amp; Kozhumam, A. (2022). Adultification of black children negatively impacts their health: Recommendations for Health Care Providers. Nursing Forum, 57(5), 963–967. https://doi.org/10.1111/nuf.12736 
+Koch, A., & Kozhumam, A. (2022). Adultification of black children negatively impacts their health: Recommendations for Health Care Providers. Nursing Forum, 57(5), 963--967. https://doi.org/10.1111/nuf.12736
 
-Lett, E., Asabor, E. N., Corbin, T., &amp; Boatright, D. (2020). Racial inequity in fatal US police shootings, 2015–2020. Journal of Epidemiology and Community Health, 75(4), 394–397. https://doi.org/10.1136/jech-2020-215097 
+Lett, E., Asabor, E. N., Corbin, T., & Boatright, D. (2020). Racial inequity in fatal US police shootings, 2015--2020. Journal of Epidemiology and Community Health, 75(4), 394--397. https://doi.org/10.1136/jech-2020-215097
 
-Mohdin, A. (2022, July 5). 'they saw me as calculating, not a child': How adultification leads to black children being treated as criminals. The Guardian. Retrieved April 11, 2023, from https://www.theguardian.com/society/2022/jul/05/they-saw-me-as-calculating-not-a-child-how-adultification-leads-to-black-children-being-treated-as-criminals 
+Mohdin, A. (2022, July 5). 'they saw me as calculating, not a child': How adultification leads to black children being treated as criminals. The Guardian. Retrieved April 11, 2023, from https://www.theguardian.com/society/2022/jul/05/they-saw-me-as-calculating-not-a-child-how-adultification-leads-to-black-children-being-treated-as-criminals
 
-Staff, W. P. (2022, December 5). Police shootings database 2015-2023: Search by race, age, Department. The Washington Post. Retrieved April 11, 2023, from https://www.washingtonpost.com/graphics/investigations/police-shootings-database/ 
+Staff, W. P. (2022, December 5). Police shootings database 2015-2023: Search by race, age, Department. The Washington Post. Retrieved April 11, 2023, from https://www.washingtonpost.com/graphics/investigations/police-shootings-database/
