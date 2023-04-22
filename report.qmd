@@ -25,11 +25,11 @@ The data was originally collected by manually combing through local news reports
 
 The observations include details about police-involved killings in the United States. The variables include race, age, gender, armed vs not armed status, location, and if the person killed had a mental illness. The observations are primarily focused on key descriptions of the person killed, but do include some details about the police involved (including the presence/lack of a police body camera and the threat of the person as perceived by police).
 
-The present study aims to investigate the following research question: How does the average race differ by age and gender for victims of police shootings who experience more violence (shot and tasered) compared to just shot?
+The present study aims to investigate the following research question: How does the average age differ by race and gender for victims of police shootings who experience more violence (shot and tasered) compared to just shot?
 
 This question is important because it directly draws a distinction between the type of violence people experience based on their race. Findings may indicate that younger people of certain races are targeted with disproportionate police violence, which could lead to a push for police reform. Investigating the intricacies of police violence through the lens of race and age is crucial to identifying systemic issues in the criminal justice system.
 
-The research topic seeks to investigate if young people of minority races are targeted with more police violence. We will analyze the variables "Person.Age," "Person.Race," and "Shooting.Manner" to narrow down which demographic experiences "shot and Tasered" vs "shot." The age variable is quantitative, and the race and shooting manner variables are categorical. We hypothesize that minority victims (African American, Hispanic, Native American, other) are more likely to be shot and tasered (experience more violence) at a younger age than white victims. We also hypothesize that male minority victims are more likely to be shot and tasered than white victims.
+The research topic seeks to investigate if young people or men of minority races are targeted with more police violence. We will analyze the variables "Person.Age," "Person.Race," and "Shooting.Manner" to narrow down which demographic experiences "shot and Tasered" vs "shot." The age variable is quantitative, and the race and shooting manner variables are categorical. We hypothesize that minority victims (African American, Hispanic, Native American, other) are more likely to be shot and tasered (experience more violence) at a younger age than white victims. We also hypothesize that male victims at a lower age are more likely to be shot and tasered than female victims.
 
 2.  **Methodology**
 
@@ -138,7 +138,7 @@ logistic_reg() |>
   pull(AIC)
 ```
 
-Based on the results, the model with the lowest AIC of one additional variable is age. Once examining the affects of gender, race and age on shooting manner independently of one another, we conclude the most prominent factors related to the violence level are age, followed by gender, followed by race. Between the additive models, age and gender had a lower AIC than age and race, and the addition of all three variables had the highest AIC but the result is worth exploring further through graphics. In the interactive models, age and gender also had a lower AIC than age and race. This means we may want to further investigate the correlation between age and gender in predicting shooting manner. For our purposes, we also decided to examine how race affects level of violence because many current systemic issues in policing involve race. However, this AIC testing gave a baseline understanding that in this data set, age is the most prominent predictor of shooting manner followed by gender.
+Based on the results, the model with the lowest AIC of one additional variable is age. Once examining the effects of gender, race and age on shooting manner independently of one another, we conclude the most prominent factors related to the violence level are age, followed by gender, followed by race. Between the additive models, age and gender had a lower AIC than age and race, and the addition of all three variables had the highest AIC but the result is worth exploring further through graphics. In the interactive models, age and gender also had a lower AIC than age and race. This means we may want to further investigate the correlation between age and gender in predicting shooting manner. For our purposes, we also decided to examine how race effects level of violence because many current systemic issues in policing involve race. However, this AIC testing gave a baseline understanding that in this data set, age is the most prominent predictor of shooting manner followed by gender.
 
 1.  Age, shot vs age, shot and tasered
 
@@ -161,6 +161,39 @@ police_shootings |>
 
 ```
 
+Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for people shot vs shot and tasered is equal. $H_a$ : $\mu_1 > \mu_2$ The mean age for people shot and tasered is greater than the mean age for shot alone.
+
+```{r}
+#| label: null-dist
+
+set.seed(3)
+null_dist <- police_shootings |>
+  specify(response = Person.Age, explanatory = Shooting.Manner) |>
+  hypothesize(null = "independence") |>
+  generate(reps = 1000, type = "permute") |>
+  calculate(stat = "diff in means", order = c("shot and Tasered", "shot"))
+  
+```
+
+```{r}
+#| label: obs-stat
+
+police_shootings |>
+  group_by(Shooting.Manner) |>
+  summarise(mean_age = mean(Person.Age))
+```
+
+obs_stat: $\bar{x_1} - \bar{x_2}$ = 36.07855 - 35.34787 = 0.73068
+
+```{r}
+#| label: hypothesis-test
+
+null_dist |>
+     get_p_value(obs_stat = 0.73068, direction = "greater")
+
+```
+The probability of observing a difference in means of 0.73068 years or more extreme between people shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.214. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
+
 2)  Age, race, shot
 
 ```{r}
@@ -172,7 +205,7 @@ police_shootings |>
   ggplot(
     aes(x = Person.Age)
   ) +
-  geom_histogram(fill = "#0099CC", alpha = 0.7) +
+  geom_histogram(fill = "#0099CC", alpha = 0.7, binwidth = 5) +
   facet_wrap("Person.Race", ncol = 2) +
   labs(
     x = "Age",
@@ -204,7 +237,7 @@ police_shootings |>
   ggplot(
     aes(x = Person.Age)
   ) +
-  geom_histogram(fill = "#FF6666", alpha = 0.7) +
+  geom_histogram(fill = "#FF6666", alpha = 0.7, binwidth = 5) +
   facet_wrap("Person.Race", ncol = 2) +
   labs(
     x = "Age",
@@ -233,6 +266,7 @@ Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for females shot vs shot and
 #| label: null-dist-F
 #| echo: false
 
+set.seed(3)
 null_dist_F <- police_shootings |>
   filter(Person.Gender == "Female") |>
   specify(response = Person.Age, explanatory = Shooting.Manner) |>
@@ -263,7 +297,7 @@ null_dist_F |>
 
 ```
 
-The p-value of observing a difference in means of 2.04 years or more extreme between females shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.307. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
+The probability of observing a difference in means of 2.04 years or more extreme between females shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.321. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
 
 ```{r}
 #| label: violence-age-f
@@ -299,9 +333,10 @@ dataset_4 |>
 Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for males shot vs shot and tasered is equal. $H_a$ : $\mu_1 > \mu_2$ The mean age for males shot and tasered is greater than the mean age for shot alone.
 
 ```{r}
-#| label: null-dist-F
+#| label: null-dist-M
 #| echo: false
 
+set.seed(3)
 null_dist_M <- police_shootings |>
   filter(Person.Gender == "Male") |>
   specify(response = Person.Age, explanatory = Shooting.Manner) |>
@@ -332,7 +367,7 @@ null_dist_F |>
 
 ```
 
-The p-value of observing a difference in means of 0.69725 years or more extreme between males shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.409. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
+The probability of observing a difference in means of 0.69725 years or more extreme between males shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.411. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
 
 ```{r}
 #| label: violence-age-m
@@ -365,9 +400,17 @@ dataset_5 |>
 
 ```{r}
 #| fleeing-model
-#| echo: false
 
-logistic_reg 
+data <- police_shootings |>
+  mutate(Factors.Fleeing = factor(Factors.Fleeing), 
+         Shooting.Manner = factor(Shooting.Manner)) 
+
+logistic_reg() |>
+  set_engine("glm") |>
+  fit(Shooting.Manner ~ Factors.Fleeing, data = data, 
+      family = "binomial") |>
+  tidy()
+
 ```
 
 
@@ -385,7 +428,7 @@ police_shootings |>
     y = "Proportion of individuals shot\n vs shot and tasered",
     title = "People shot and tasered or shot based on fleeing",
     fill = "Shooting Manner") +
-  theme_minimal()
+  theme_minimal() 
 ```
 
 **Predictions and inferences:**
