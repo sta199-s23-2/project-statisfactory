@@ -356,6 +356,7 @@ dataset_5 |>
        y = "Density",
        fill = "Manner of Violence") +
   theme_minimal()
+
 ```
 
 6.  Fleeing Manner and shot vs shot and tased
@@ -364,15 +365,7 @@ dataset_5 |>
 #| fleeing-model
 #| echo: false
 
-data <- police_shootings |>
-  mutate(Factors.Fleeing = factor(Factors.Fleeing), 
-         Shooting.Manner = factor(Shooting.Manner)) 
-
-logistic_reg() |>
-  set_engine("glm") |>
-  fit(Shooting.Manner ~ Factors.Fleeing, data = data, 
-      family = "binomial") |>
-  tidy()
+logistic_reg 
 ```
 
 
