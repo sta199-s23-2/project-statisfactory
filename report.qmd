@@ -161,7 +161,7 @@ police_shootings |>
 
 ```
 
-Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for people shot vs shot and tasered is equal. $H_a$ : $\mu_1 > \mu_2$ The mean age for people shot and tasered is greater than the mean age for shot alone.
+Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for people shot vs shot and tasered is equal. $H_a$ : $\mu_1 \neq \mu_2$ The mean age for people shot and tasered is different than the mean age for shot alone.
 
 ```{r}
 #| label: null-dist
@@ -260,7 +260,7 @@ police_shootings |>
 
 4.  Age and shot/shot tasered (female)
 
-Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for females shot vs shot and tasered is equal. $H_a$ : $\mu_1 > \mu_2$ The mean age for females shot and tasered is greater than the mean age for shot alone.
+Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for females shot vs shot and tasered is equal. $H_a$ : $\mu_1 \neq \mu_2$ The mean age for females shot and tasered is different than the mean age for shot alone.
 
 ```{r}
 #| label: null-dist-F
@@ -330,7 +330,7 @@ dataset_4 |>
 
 5.  Age and shot/shot tasered (male)
 
-Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for males shot vs shot and tasered is equal. $H_a$ : $\mu_1 > \mu_2$ The mean age for males shot and tasered is greater than the mean age for shot alone.
+Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for males shot vs shot and tasered is equal. $H_a$ : $\mu_1 \neq \mu_2$ The mean age for males shot and tasered is different than the mean age for shot alone. 
 
 ```{r}
 #| label: null-dist-M
