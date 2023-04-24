@@ -16,7 +16,7 @@ As police brutality and violence has come to a national forefront, data has indi
 
 The US Department of Justice Office of Justice Programs conducted studies across 14 large US cities over 2.5 years to identify specific barriers in police accountability for the violence they perpetuate. There is an existing consensus around the high costs of police violence, both in terms of civil lawsuit financial costs to cities and regarding civilian trust in public service entities. Historically, people have perceived that police are internally positioned as "above the law," which is further complicated by lack of transparency: "The public, to whom police departments should be held accountable, thus cannot ascertain whether, in fact, the police are policing themselves." Processes to report police officials are largely inefficient and ineffectual, and the individual reporting may fear backlash from the agency. Furthermore, civil lawsuits are rarely carried through to effect appropriate punishment, and the oversight procedures that do take place often do not provide adequate supervision, allowing offending officers back into the field with little regulation (Collins, 1998).
 
-Contributing to further distrust is the concept of adultification: a phenomenon in which "notions of innocence and vulnerability are not afforded to certain children... the impact results in children's rights being either diminished or not upheld" (Davis & Marsh, 2020). Current literature has focused primarily on this phenomenon in black children, as it provides a theoretical framework for the tendency to view black children as older than they are. As a direct result, more physical and systemic violence may be mounted against them (Koch & Kozhumam, 2022). 
+Contributing to further distrust is the concept of adultification: a phenomenon in which "notions of innocence and vulnerability are not afforded to certain children... the impact results in children's rights being either diminished or not upheld" (Davis & Marsh, 2020). Current literature has focused primarily on this phenomenon in black children, as it provides a theoretical framework for the tendency to view black children as older than they are. As a direct result, more physical and systemic violence may be mounted against them (Koch & Kozhumam, 2022).
 
 According to a study by the Proceedings of the National Academy of Sciences, men are far more likely to be subject to police violence; the average lifetime odds of being killed by police is about 1 in 2,000 for men and about 1 in 33,000 for women (Edwards et al., 2019). Risk of death by police for all gender and race groups peak between the ages of 20 y and 35 y and decline with age. This pattern is similar for non-fatal police violence. Studies conclude that police violence is a leading cause of death for young men of color, but not for any other demographic.
 
@@ -160,10 +160,9 @@ police_shootings |>
 
 ```
 
-Hypothesis test 
+Hypothesis test
 
-$H_o$: $\mu_1 = \mu_2$ The mean age for people shot vs shot and tasered is equal. 
-$H_a$ : $\mu_1 \neq \mu_2$ The mean age for people shot and tasered is different than the mean age for shot alone.
+$H_o$: $\mu_1 = \mu_2$ The mean age for people shot vs shot and tasered is equal. $H_a$ : $\mu_1 \neq \mu_2$ The mean age for people shot and tasered is different than the mean age for shot alone.
 
 ```{r}
 #| label: null-dist
@@ -266,8 +265,7 @@ police_shootings |>
 
 4.  Age and shot/shot tasered (female)
 
-Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for females shot vs shot and tasered is equal. 
-$H_a$ : $\mu_1 \neq \mu_2$ The mean age for females shot and tasered is different than the mean age for shot alone.
+Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for females shot vs shot and tasered is equal. $H_a$ : $\mu_1 \neq \mu_2$ The mean age for females shot and tasered is different than the mean age for shot alone.
 
 ```{r}
 #| label: null-dist-F
@@ -336,8 +334,7 @@ dataset_4 |>
 
 5.  Age and shot/shot tasered (male)
 
-Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for males shot vs shot and tasered is equal. 
-$H_a$ : $\mu_1 \neq \mu_2$ The mean age for males shot and tasered is different than the mean age for shot alone.
+Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for males shot vs shot and tasered is equal. $H_a$ : $\mu_1 \neq \mu_2$ The mean age for males shot and tasered is different than the mean age for shot alone.
 
 ```{r}
 #| label: null-dist-M
@@ -406,7 +403,7 @@ dataset_5 |>
 6.  Fleeing Manner and shot vs shot and tased
 
 ```{r}
-#| fleeing-model
+#| label: fleeing-model
 #| echo: false
 
 data <- police_shootings |>
