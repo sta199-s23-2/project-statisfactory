@@ -2,6 +2,7 @@
 title: "Project Statisfactory"
 subtitle: "Report: Sammy, Griffin, Josh, Elissa, Sancia"
 format: html
+bibliography: references.bib  
 editor: visual
 execute:
   echo: true
@@ -13,19 +14,17 @@ With the police killings of Eric Garner, Breonna Taylor, George Floyd, and many 
 
 As police brutality and violence has come to a national forefront, data has indicated that the burden of fatal police shootings falls disproportionately on BIPOC in terms of mortality and years of life lost (YLL). Contrary to popular hypotheses, while there was a small decline in deaths of white victims, there was no significant trend in death rates among all other race/ethnic groups (i.e. rates were stable across the 5 year interval). In order, mean deaths were as follows: highest among Native Americans (1.74), then Blacks (1.49), Hispanics (0.74) , Whites (0.57), and Asians (0.25). The authors of the article call for the treatment of police violence as a public health crisis and suggest police demilitarization as a potential intervention. (Lett et al., 2020)
 
-The US Department of Justice Office of Justice Programs conducted studies across 14 large US cities over 2.5 years to identify specific barriers in police accountability for the violence they perpetuate. There is an existing consensus around the high costs of police violence, both in terms of civil lawsuit financial costs to cities and regarding civilian trust in public service entities. Historically, people have perceived that police are internally positioned as "above the law," which is further complicated by lack of transparency: "The public, to whom police departments should be held accountable, thus cannot ascertain whether, in fact, the police are policing themselves." Processes to report police officials are largely inefficient and ineffectual, and the individual reporting may fear backlash from the agency. Furthermore, civil lawsuits are rarely carried through to effect appropriate punishment, and the oversight procedures that do take place often do not provide adequate supervision, allowing offending officers back into the field with little regulation. (Collins, 1998)
+The US Department of Justice Office of Justice Programs conducted studies across 14 large US cities over 2.5 years to identify specific barriers in police accountability for the violence they perpetuate. There is an existing consensus around the high costs of police violence, both in terms of civil lawsuit financial costs to cities and regarding civilian trust in public service entities. Historically, people have perceived that police are internally positioned as "above the law," which is further complicated by lack of transparency: "The public, to whom police departments should be held accountable, thus cannot ascertain whether, in fact, the police are policing themselves." Processes to report police officials are largely inefficient and ineffectual, and the individual reporting may fear backlash from the agency. Furthermore, civil lawsuits are rarely carried through to effect appropriate punishment, and the oversight procedures that do take place often do not provide adequate supervision, allowing offending officers back into the field with little regulation (Collins, 1998).
 
-Contributing to further distrust is the concept of adultification: a phenomenon in which "notions of innocence and vulnerability are not afforded to certain children... the impact results in children's rights being either diminished or not upheld" (Davis & Marsh, 2020). Current literature has focused primarily on this phenomenon in black children, as it provides a theoretical framework for the tendency to view black children as older than they are. As a direct result, more physical and systemic violence may be mounted against them (Koch & Kozhumam, 2022). While studies have reported on this phenomenon, personal accounts are particularly poignant in illustrating the need for policy change. "Ahmed" describes his experiences with law enforcement officers at just 12 years old; he recounts having his phone searched and privacy violated when police ambushed him at school despite his only involvement being as a child rape victim. They ignored requests for his parents to be present and were quoted as saying "We'll just stay here all night until you confess." He further recalls being treated like a criminal, with no support or intervention from his teachers and adults that were supposed to protect him (Mohdin, 2022).
+Contributing to further distrust is the concept of adultification: a phenomenon in which "notions of innocence and vulnerability are not afforded to certain children... the impact results in children's rights being either diminished or not upheld" (Davis & Marsh, 2020). Current literature has focused primarily on this phenomenon in black children, as it provides a theoretical framework for the tendency to view black children as older than they are. As a direct result, more physical and systemic violence may be mounted against them (Koch & Kozhumam, 2022). 
 
 According to a study by the Proceedings of the National Academy of Sciences, men are far more likely to be subject to police violence; the average lifetime odds of being killed by police is about 1 in 2,000 for men and about 1 in 33,000 for women (Edwards et al., 2019). Risk of death by police for all gender and race groups peak between the ages of 20 y and 35 y and decline with age. This pattern is similar for non-fatal police violence. Studies conclude that police violence is a leading cause of death for young men of color, but not for any other demographic.
 
-Data was sourced from the Washington Post repository on fatal police shootings between 2015-2020, which is dependent on curated news reports and thus may exclude necessary data such as gender and minority status. It was published with the intent to bolster the evidence-base of police killings for the Black Lives Matter movement. During this time interval, 5367 fatalities were recorded, of which 4740 offered significant racial data for analysis, and 4653 included both sufficient racial and age data for YLL calculation.
-
-The data was originally collected by manually combing through local news reports, combining information from law enforcement websites, social media, and other databases (including Fatal Encounters and the "Killed by Police" project). Data collection started in 2015 spurred by a slew of fatal shootings, and the information was updated in 2022. There are no apparent ethical concerns with data collection or presentation.
+Data was sourced from the Washington Post repository on fatal police shootings between 2015-2020, which is dependent on curated news reports and thus may exclude necessary data such as gender and minority status. It was published with the intent to bolster the evidence-base of police killings for the Black Lives Matter movement. During this time interval, 5367 fatalities were recorded, of which 4740 offered significant racial data for analysis, and 4653 included both sufficient racial and age data for YLL calculation. The data was originally collected by manually combing through local news reports, combining information from law enforcement websites, social media, and other databases (including Fatal Encounters and the "Killed by Police" project). Data collection started in 2015 spurred by a slew of fatal shootings, and the information was updated in 2022. There are no apparent ethical concerns with data collection or presentation.
 
 The observations include details about police-involved killings in the United States. The variables include race, age, gender, armed vs not armed status, location, and if the person killed had a mental illness. The observations are primarily focused on key descriptions of the person killed, but do include some details about the police involved (including the presence/lack of a police body camera and the threat of the person as perceived by police).
 
-The present study aims to investigate the following research question: How does the average age differ by race and gender for victims of police shootings who experience more violence (shot and tasered) compared to just shot?
+The present study aims to investigate the following research question: How does the average age differ by race and gender for victims of police shootings, and who experiences more violence (shot and tasered) compared to just shot?
 
 This question is important because it directly draws a distinction between the type of violence people experience based on their race. Findings may indicate that younger people of certain races are targeted with disproportionate police violence, which could lead to a push for police reform. Investigating the intricacies of police violence through the lens of race and age is crucial to identifying systemic issues in the criminal justice system.
 
@@ -33,7 +32,7 @@ The research topic seeks to investigate if young people of minority races or men
 
 2.  **Methodology**
 
-AIC was used as a model selection criterion as it punishes the addition of variables that do not confer advantages in modeling the data by increasing AIC. Therefore, the model with the lower AIC is a better model of the data. Specifically, we used forward selection. First, we started with a model that had no predictors, then we fit each variable in a logistic regression model with a single independent variable to investigate which one has the lowest AIC. We compared the AIC scores after adding variables to the model with no predictors to select the best model with 1 additional explanatory variable. Then, we added variables in different combinations to reach the best model and inform our later graphics.
+AIC was used as a model selection criterion as it punishes the addition of variables that do not confer advantages in modeling the data by increasing AIC. Therefore, the model with the lower AIC is usually a better model of the data (but other factors must be taken into account as well). Specifically, we used forward selection. First, we started with a model that had no predictors, then we fit each variable in a logistic regression model with a single independent variable to investigate which one has the lowest AIC. We compared the AIC scores after adding variables to the model with no predictors to select the best model with 1 additional explanatory variable. Then, we added variables in different combinations to reach the best model with more complex interactions and inform our later graphics. We considered the main variables of our study (age, race, and gender) to find which were the most prevalent in predicting level of police violence.
 
 We plan to represent our four variables through a series of six graphics. Our preliminary graph will be a box plot to compare the ages of those shot vs shot and tasered. We will facet by shot/shot tasered, and our axis values will be age. This will help create a baseline understanding of what ages are most vulnerable to more violence. Having this knowledge will add significance to the future graphs that incorperate gender and race.
 
@@ -70,14 +69,16 @@ police_shootings_fix <- police_shootings |>
 
 logistic_reg() |> 
   set_engine("glm") |> 
-  fit(Shooting.Manner ~ 1, data = police_shootings_fix, family = "binomial") |> 
+  fit(Shooting.Manner ~ 1, 
+      data = police_shootings_fix, family = "binomial") |> 
   glance() |> 
   pull(AIC) 
 
 ## age 
 logistic_reg() |> 
   set_engine("glm") |> 
-  fit(Shooting.Manner ~ Person.Age, data = police_shootings_fix, family = "binomial") |> 
+  fit(Shooting.Manner ~ Person.Age, 
+      data = police_shootings_fix, family = "binomial") |> 
   glance() |> 
   pull(AIC)
 
@@ -152,17 +153,21 @@ police_shootings |>
     geom_boxplot(show.legend = F) +
     geom_point(alpha = 0.08) +
   labs(
-    x = "Age",
+    x = "Age (years)",
     y = element_text("Shooting Manner", angle = 90, hjust = 1),
-    title = "People shot vs shot and tasered by age") +
+    title = "Age of people shot vs shot and tased by age") +
   theme(axis.text.y = element_text(angle = 90, hjust = 0.5))
 
 ```
 
-Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for people shot vs shot and tasered is equal. $H_a$ : $\mu_1 \neq \mu_2$ The mean age for people shot and tasered is different than the mean age for shot alone.
+Hypothesis test 
+
+$H_o$: $\mu_1 = \mu_2$ The mean age for people shot vs shot and tasered is equal. 
+$H_a$ : $\mu_1 \neq \mu_2$ The mean age for people shot and tasered is different than the mean age for shot alone.
 
 ```{r}
 #| label: null-dist
+#| echo: false
 
 set.seed(3)
 null_dist <- police_shootings |>
@@ -175,23 +180,25 @@ null_dist <- police_shootings |>
 
 ```{r}
 #| label: obs-stat
+#| echo: false
 
 police_shootings |>
   group_by(Shooting.Manner) |>
   summarise(mean_age = mean(Person.Age))
 ```
 
-obs_stat: $\bar{x_1} - \bar{x_2}$ = 36.07855 - 35.34787 = 0.73068
+obs_stat: $\bar{x_1} - \bar{x_2}$ = 37.13372 - 36.85802 = 0.2757
 
 ```{r}
 #| label: hypothesis-test
+#| echo: false
 
 null_dist |>
-     get_p_value(obs_stat = 0.73068, direction = "greater")
+     get_p_value(obs_stat = 0.2757, direction = "greater")
 
 ```
 
-The probability of observing a difference in means of 0.73068 years or more extreme between people shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.214. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
+The probability of observing a difference in means of 0.2757 years or more extreme between people shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.357 Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
 
 2)  Age, race, shot
 
@@ -207,8 +214,8 @@ police_shootings |>
   geom_histogram(fill = "#0099CC", alpha = 0.7, binwidth = 5) +
   facet_wrap("Person.Race", ncol = 2) +
   labs(
-    x = "Age",
-    y = "Number of individuals shot",
+    x = "Age (years)",
+    y = "Individuals shot",
     title = "People shot by race and age") +
   theme_minimal()
 ```
@@ -239,8 +246,8 @@ police_shootings |>
   geom_histogram(fill = "#FF6666", alpha = 0.7, binwidth = 5) +
   facet_wrap("Person.Race", ncol = 2) +
   labs(
-    x = "Age",
-    y = "Number of individuals shot and tasered",
+    x = "Age (years)",
+    y = "Individuals shot and tasered",
     title = "People shot and tasered by race and age") +
   theme_minimal()
 ```
@@ -259,7 +266,8 @@ police_shootings |>
 
 4.  Age and shot/shot tasered (female)
 
-Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for females shot vs shot and tasered is equal. $H_a$ : $\mu_1 \neq \mu_2$ The mean age for females shot and tasered is different than the mean age for shot alone.
+Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for females shot vs shot and tasered is equal. 
+$H_a$ : $\mu_1 \neq \mu_2$ The mean age for females shot and tasered is different than the mean age for shot alone.
 
 ```{r}
 #| label: null-dist-F
@@ -296,7 +304,7 @@ null_dist_F |>
 
 ```
 
-The probability of observing a difference in means of 2.04 years or more extreme between females shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.321. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
+The probability of observing a difference in means of 2.04 years or more extreme between females shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.303. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
 
 ```{r}
 #| label: violence-age-f
@@ -308,7 +316,6 @@ dataset_4 <- police_shootings |>
          Shooting.Manner == "shot") |>
   mutate(Shooting.Manner = as.factor(Shooting.Manner))
 
-dataset_4
 ```
 
 ```{r}
@@ -320,7 +327,7 @@ dataset_4 |>
   geom_density(alpha = .25) +
   labs(title = "Police violence by age for females",
        subtitle = "Overlaid density plot",
-       x = "Age",
+       x = "Age (years)",
        y = "Density",
        fill = "Manner of Violence") +
   theme_minimal()
@@ -329,7 +336,8 @@ dataset_4 |>
 
 5.  Age and shot/shot tasered (male)
 
-Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for males shot vs shot and tasered is equal. $H_a$ : $\mu_1 \neq \mu_2$ The mean age for males shot and tasered is different than the mean age for shot alone.
+Hypothesis test $H_o$: $\mu_1 = \mu_2$ The mean age for males shot vs shot and tasered is equal. 
+$H_a$ : $\mu_1 \neq \mu_2$ The mean age for males shot and tasered is different than the mean age for shot alone.
 
 ```{r}
 #| label: null-dist-M
@@ -355,18 +363,18 @@ police_shootings |>
   summarise(mean_age = mean(Person.Age))
 ```
 
-obs_stat: $\bar{x_1} - \bar{x_2}$ = 36.00623 - 35.30898 = 0.69725
+obs_stat: $\bar{x_1} - \bar{x_2}$ = 37.12306 - 36.80892 = 0.31414
 
 ```{r}
 #| label: hypothesis-test_M
 #| echo: false
 
 null_dist_F |>
-     get_p_value(obs_stat = 0.69725, direction = "greater")
+     get_p_value(obs_stat = 0.31414, direction = "greater")
 
 ```
 
-The probability of observing a difference in means of 0.69725 years or more extreme between males shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.411. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
+The probability of observing a difference in means of 0.69725 years or more extreme between males shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.459 Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
 
 ```{r}
 #| label: violence-age-m
@@ -399,6 +407,7 @@ dataset_5 |>
 
 ```{r}
 #| fleeing-model
+#| echo: false
 
 data <- police_shootings |>
   mutate(Factors.Fleeing = factor(Factors.Fleeing), 
@@ -452,22 +461,8 @@ police_shootings |>
 
 5.  Graph 6: This graph shows the relationship between fleeing manner and whether or not someone was shot, or shot and tasered. Overall, there is little correlation between these two variables. There is a slightly higher probability that someone was shot and tasered if they were not fleeing or on foot as opposed to in a car or pursuing an unknown/other manner of departure. However, there is not a large enough correlation to relate shooting manner and fleeing manner.
 
+**Discussion**
+
 Our overarching goal was to find how race and gender impact the average age of victims of police violence, and if those factors affect the level of violence they experience - shot vs shot and tasered. Overall, we concluded that age itself is relatively consistent between levels of violence, but minority groups experience both types of violence at younger ages (32 for African Americans, 36 for Asians, 33 for Hispanics, 31 for Native Americans) than white people (40). Gender also plays a role in the age, and type of violence that perpetrators experience. The mean probability of getting shot vs shot and tasered for males differs less by age than it does for females, but males in general experience more police violence (shot and tasered compared to just shot). Our findings confirm our hypothesis that minorities and men experience police violence at a higher rate, but we were wrong in predicting that younger people of minority races and both genders would be shot and tasered more than just shot - hypothesis tests showed that age for each race and gender did not determine level of violence.
 
-Potential limitations of our analysis is prioritizing interactions between age and race/gender instead of also looking at the interactions between gender and race separately. Additionally, there is significantly more data on men than women so to truly get an understanding of how gender predicts level of violence it would be helpful to use a dataset with more comprehensive data. Finally, we analyzed level of violence by comparing shot to shot and tased, but it would make sense to also compare these findings to police stoppages with no violence and interactions that end in harm or death.
-
-**References**
-
-Collins, A. (1998). Shielded from justice: Police brutality and accountability in the United States. London.
-
-Davis, J., & Marsh, N. (2020). Boys to men: The cost of 'adultification' in safeguarding responses to black boys. Critical and Radical Social Work, 8(2), 255--259. https://doi.org/10.1332/204986020x15945756023543
-
-Edwards, F., Lee, H., & Esposito, M. H. (2019). Risk of being killed by police use of force in the United States by age, race--ethnicity, and sex. PNAS. https://doi.org/10.31235/osf.io/kw9cu
-
-Koch, A., & Kozhumam, A. (2022). Adultification of black children negatively impacts their health: Recommendations for Health Care Providers. Nursing Forum, 57(5), 963--967. https://doi.org/10.1111/nuf.12736
-
-Lett, E., Asabor, E. N., Corbin, T., & Boatright, D. (2020). Racial inequity in fatal US police shootings, 2015--2020. Journal of Epidemiology and Community Health, 75(4), 394--397. https://doi.org/10.1136/jech-2020-215097
-
-Mohdin, A. (2022, July 5). 'they saw me as calculating, not a child': How adultification leads to black children being treated as criminals. The Guardian. Retrieved April 11, 2023, from https://www.theguardian.com/society/2022/jul/05/they-saw-me-as-calculating-not-a-child-how-adultification-leads-to-black-children-being-treated-as-criminals
-
-Staff, W. P. (2022, December 5). Police shootings database 2015-2023: Search by race, age, Department. The Washington Post. Retrieved April 11, 2023, from https://www.washingtonpost.com/graphics/investigations/police-shootings-database/
+Potential limitations of our analysis is prioritizing interactions between age and race/gender instead of also looking at the interactions between gender and race separately. Additionally, there is significantly more data on men than women so to truly get an understanding of how gender predicts level of violence it would be helpful to use a dataset with more comprehensive data. Finally, we analyzed level of violence by comparing shot to shot and tased, but it would make sense to also compare these findings to police stoppages with no violence and interactions that end in harm or death. In the future it would be interested to include more detailed ways of tracking police violence (such as including different weapons used or time-of-encounter). Additionally, future work may look at what strategies can be taken to limit violence based on what actions have been successful in the past.
