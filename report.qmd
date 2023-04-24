@@ -2,7 +2,7 @@
 title: "Project Statisfactory"
 subtitle: "Report: Sammy, Griffin, Josh, Elissa, Sancia"
 format: html
-bibliography: references.bib  
+bibliography: ./docs/references.bib  
 editor: visual
 execute:
   echo: true
