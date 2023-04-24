@@ -10,7 +10,7 @@ execute:
 
 1.  **Introduction and data**
 
-With the police killings of Eric Garner, Breonna Taylor, George Floyd, and many others, excess police force on people of color has been brought to the forefront of the American mind. National protests have commanded sustained attention to racialized violence against civilians. A 2020 study based on data from the Washington Post concluded that BIPOC Americans were on average 2-3 times more likely to be killed by police than white Americans (Washington Post, 2022; Lett et al., 2020).
+With the police killings of Eric Garner, Breonna Taylor, George Floyd, and many others, excess police force on Black, Indigenous, and people of color (BIPOC) has been brought to the forefront of the American mind. National protests have commanded sustained attention to racialized violence against civilians. A 2020 study based on data from the Washington Post concluded that BIPOC Americans were on average 2-3 times more likely to be killed by police than white Americans (Washington Post, 2022; Lett et al., 2020).
 
 As police brutality and violence has come to a national forefront, data has indicated that the burden of fatal police shootings falls disproportionately on BIPOC in terms of mortality and years of life lost (YLL). Contrary to popular hypotheses, while there was a small decline in deaths of white victims, there was no significant trend in death rates among all other race/ethnic groups (i.e. rates were stable across the 5 year interval). In order, mean deaths were as follows: highest among Native Americans (1.74), then Blacks (1.49), Hispanics (0.74) , Whites (0.57), and Asians (0.25). The authors of the article call for the treatment of police violence as a public health crisis and suggest police demilitarization as a potential intervention. (Lett et al., 2020)
 
@@ -139,7 +139,7 @@ logistic_reg() |>
   pull(AIC)
 ```
 
-Based on the results, the model with the lowest AIC of one additional variable is age. Once examining the effects of gender, race and age on shooting manner independently of one another, we conclude the most prominent factors related to the violence level are age, followed by gender, followed by race. Between the additive models, age and gender had a lower AIC than age and race, and the addition of all three variables had the highest AIC but the result is worth exploring further through graphics. In the interactive models, age and gender also had a lower AIC than age and race. This means we may want to further investigate the correlation between age and gender in predicting shooting manner. For our purposes, we also decided to examine how race effects level of violence because many current systemic issues in policing involve race. However, this AIC testing gave a baseline understanding that in this data set, age is the most prominent predictor of shooting manner followed by gender.
+Based on the results, the model with the lowest AIC of one additional variable is age. Once examining the effects of gender, race and age on shooting manner independently of one another, we conclude the most prominent factors related to the violence level are age, followed by gender, and then race. Between the additive models, age and gender had a lower AIC than age and race, and the addition of all three variables had the highest AIC. The result is still worth exploring further through graphics. In the interactive models, age and gender also had a lower AIC than age and race. This means we may want to further investigate the correlation between age and gender in predicting shooting manner. For our purposes, we also decided to examine the effect of race on the severity of violence, as many current systemic issues in policing involve race. However, this round of AIC testing gave us a baseline understanding that in this data set, age is the most prominent predictor of shooting manner followed by gender.
 
 1.  Age, shot vs age, shot and tasered
 
@@ -162,7 +162,9 @@ police_shootings |>
 
 Hypothesis test
 
-$H_o$: $\mu_1 = \mu_2$ The mean age for people shot vs shot and tasered is equal. $H_a$ : $\mu_1 \neq \mu_2$ The mean age for people shot and tasered is different than the mean age for shot alone.
+$H_o$: $\mu_1 = \mu_2$ The mean age for people shot vs shot and tasered is equal.
+
+$H_a$ : $\mu_1 \neq \mu_2$ The mean age for people shot and tasered is different than the mean age for shot alone.
 
 ```{r}
 #| label: null-dist
@@ -197,7 +199,7 @@ null_dist |>
 
 ```
 
-The probability of observing a difference in means of 0.2757 years or more extreme between people shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.357 Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
+The probability of observing a difference in means of 0.2757 years or more extreme between people shot and tasered vs shot alone, given the null assumption that the true difference in means is 0 years between groups, is 0.357. Therefore, we fail to reject the null hypothesis under the significance level alpha = 0.05 and conclude that there is weak evidence to support the alternative hypothesis.
 
 2)  Age, race, shot
 
@@ -231,6 +233,17 @@ police_shootings |>
   
 ```
 
+```{r}
+#| label: summary-stats3 bipoc
+#| echo: false
+
+police_shootings |>
+  filter(Person.Age > 0) |>
+  filter(Shooting.Manner == "shot") |>
+  filter(Person.Race != "White") |>
+  summarise(mean_age = mean(Person.Age))
+```
+
 3)  Age, race, shot and tasered
 
 ```{r}
@@ -261,6 +274,19 @@ police_shootings |>
   group_by(Person.Race) |>
   summarise(mean_age = mean(Person.Age))
   
+```
+
+```{r}
+
+#| label: summary-stats3 bipoc
+#| echo: false
+
+police_shootings |>
+  filter(Person.Age > 0) |>
+  filter(Shooting.Manner == "shot and Tasered") |>
+  filter(Person.Race != "White") |>
+  summarise(mean_age = mean(Person.Age))
+
 ```
 
 4.  Age and shot/shot tasered (female)
@@ -450,16 +476,16 @@ police_shootings |>
 
 1.  Graph 1: This graph relates age to the shooting manner in which the individual was targeted (shot and tased vs shot alone). For both groups, the average age at which they were targeted was between ages 25-40, and it initially appears from the data visualization that age did not differ significantly between the groups of people shot and tasered vs shot alone. This was confirmed with hypothesis testing. Summary statistics were calculated for both shot and tasered ($\mu$ = 36.08) and shot alone ($\mu$ = 35.35) groups, and a p-value of 0.214 was calculated given the null hypothesis that the difference in means between groups was 0 years. As a result, we fail to reject the null hypothesis and conclude weak evidence for the alternative hypothesis that age significantly differs between groups.
 
-2.  Graphs 2 and 3: These two graphs shows the effect of race and age on victims shot by the police. The trend across graphs was that the most likely age range to be shot for all demographics is in the late twenties to thirties, especially in the white population. Specifically, the most likely age to be shot...This matched with our predictions. The races with the highest count of those shot were in the African American, White, and Hispanic populations. We assumed that those of minority populations would be among the most targeted, and the data partially represents that hypothesis. This graph shows the effect of race and age on victims who were both shot and tasered. Again the trends center on those in the African American, Hispanic, and White populations, however the age spread is wider and older than the graphs of those who were only shot. Contrary to our assumptions, this seems to indicate that those shot and tasered span victims ages twenty to fifty in all races, and there is no definitive correlation between age and whether or not someone was shot, or shot and tasered. However, there were peaks in the graph in victims of African American descent in their late twenties and early thirties, as well as white and Hispanic victims in their thirties. The majority of those shot and tasered were in their twenties to thirties and African American, Hispanic, and white races. However, this is very similar to the trend among those who were shot and not tasered, and there is no definitive effect of race and age on the police officer's shooting manner.
+2.  Graphs 2 and 3: These two graphs shows the effect of race and age on violence severity at the hands of police. The trend across the first graph of those only `shot` was that the most likely age range to be shot for all demographics is from the mid twenties to late thirties. Specifically, the mean age to be shot by the police for white people is 40.05 years old, while the mean age to be shot for non-white BIPOC is 34.56 years old. This matched with our predictions. The races with the highest count of those shot were the African American, White, and Hispanic populations. We assumed that those of minority populations would be among the most targeted, and the data partially represents that hypothesis. The third graph shows the effect of race and age on victims who were both `shot and tasered`. Specifically, the mean age to be shot and tased by the police for white people is 38.32 years old, while the mean age to be shot and tased for non-white BIPOC is 35.71 years old. Again the trends center on those in the African American, Hispanic, and White populations, however the age spread is wider and older than the graphs of those who were only shot. Contrary to our assumptions, this seems to indicate that those shot and tasered span victims ages twenty to fifty in all races. We can conclude that there is no definitive correlation between age and whether or not someone was shot, or shot and tasered by age and race. However, there were peaks in the graph in victims of African American descent in their late twenties and early thirties, as well as white and Hispanic victims in their thirties. The majority of those shot and tasered were in their twenties to thirties and African American, Hispanic, and white races. However, this is very similar to the trend among those who were shot and not tasered, and there is no definitive effect that race and age has on the police officer's shooting manner, whether they shoot or tase and shoot.
 
 3.  Graph 4: This graph is showing the overlaid density plot for females, comparing both `shot` and `shot and Tasered`. As we can see from the density plot, there seems to be three hotspots at which females experience more violence (`shot and Tasered`), around ages 10, 37, and 60. However, based on the hypothesis testing, there does not appear to be sufficient evidence that the mean age is really any different across the two categories. So, overall, the mean age at which people encounter the different types of violence does not appear to have any significant difference, but at certain ages, there does appear to be a greater or lesser probability to experience one type of violence over another.
 
-4.  Graph 5: Compared to the graph for females, the male graph is pretty much indistinguishable when comparing `shot` and `shot and Tasered`. This seems to suggest that at least for males, whether or not they were tasered in addition to being shot did not really matter. Thus, the hypothesis that males will experience more violence (`shot and Tasered`) at younger ages seems to be disproven. This matches with our hypothesis testing which gave insufficient evidence to reject the null hypothesis (that mean age does not differ across categories).
+4.  Graph 5: Compared to the graph for females, the male graph is almost indistinguishable when comparing `shot` and `shot and Tasered`. This seems to suggest that at least for males, whether or not they were tasered in addition to being shot did not really matter. Thus, the hypothesis that males will experience more violence (`shot and Tasered`) at younger ages seems to be disproven. This matches with our hypothesis testing which gave insufficient evidence to reject the null hypothesis (that mean age does not differ across categories).
 
 5.  Graph 6: This graph shows the relationship between fleeing manner and whether or not someone was shot, or shot and tasered. Overall, there is little correlation between these two variables. There is a slightly higher probability that someone was shot and tasered if they were not fleeing or on foot as opposed to in a car or pursuing an unknown/other manner of departure. However, there is not a large enough correlation to relate shooting manner and fleeing manner.
 
 **Discussion**
 
-Our overarching goal was to find how race and gender impact the average age of victims of police violence, and if those factors affect the level of violence they experience - shot vs shot and tasered. Overall, we concluded that age itself is relatively consistent between levels of violence, but minority groups experience both types of violence at younger ages (32 for African Americans, 36 for Asians, 33 for Hispanics, 31 for Native Americans) than white people (40). Gender also plays a role in the age, and type of violence that perpetrators experience. The mean probability of getting shot vs shot and tasered for males differs less by age than it does for females, but males in general experience more police violence (shot and tasered compared to just shot). Our findings confirm our hypothesis that minorities and men experience police violence at a higher rate, but we were wrong in predicting that younger people of minority races and both genders would be shot and tasered more than just shot - hypothesis tests showed that age for each race and gender did not determine level of violence.
+Our overarching goal was to find how race and gender impact the average age of victims of police violence, and if those factors affect the level of violence they experience - `shot` vs `shot and tasered`. Overall, we concluded that age itself is relatively consistent between levels of violence, but minority groups experience both types of violence at younger ages (32 for African Americans, 36 for Asians, 33 for Hispanics, 31 for Native Americans) than white people (40). Gender also plays a role in the age, and type of violence that perpetrators experience. The mean probability of getting shot vs shot and tasered for males differs less by age than it does for females, but males in general experience more police violence (shot and tasered compared to just shot). Our findings confirm our hypothesis that minorities and men experience police violence at a higher rate, but we were wrong in predicting that younger people of minority races and both genders would be shot and tasered more than just shot - hypothesis tests showed that age for each race and gender did not determine level of violence.
 
-Potential limitations of our analysis is prioritizing interactions between age and race/gender instead of also looking at the interactions between gender and race separately. Additionally, there is significantly more data on men than women so to truly get an understanding of how gender predicts level of violence it would be helpful to use a dataset with more comprehensive data. Finally, we analyzed level of violence by comparing shot to shot and tased, but it would make sense to also compare these findings to police stoppages with no violence and interactions that end in harm or death. In the future it would be interested to include more detailed ways of tracking police violence (such as including different weapons used or time-of-encounter). Additionally, future work may look at what strategies can be taken to limit violence based on what actions have been successful in the past.
+Potential limitations of our analysis is prioritizing interactions between age and race/gender instead of also looking at the interactions between gender and race separately. Additionally, there is significantly more data on men than women so to truly get an understanding of how gender predicts level of violence it would be helpful to use a dataset with more comprehensive data on victims that were women. Finally, we analyzed level of violence by comparing `shot` to `shot and tasered`, but it would make sense to also compare these findings to police stoppages with no violence and interactions that end in harm or death. In the future we would be interested to include more detailed ways of tracking police violence (such as including police weapons used or time-of-encounter variables). Additionally, future work could look at what strategies can be taken to limit violence based on what measures have been successful in the past.
