@@ -143,6 +143,7 @@ Based on the results, the model with the lowest AIC of one additional variable i
 
 ```{r}
 #| label: lowest-AIC-model
+#| echo: false
 
 logistic_reg() |> 
   set_engine("glm") |> 
