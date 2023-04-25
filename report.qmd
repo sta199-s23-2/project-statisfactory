@@ -42,6 +42,8 @@ Next, we will create two overlaid density plots to compare age, gender, and shot
 
 Finally, we will include a graph of our additional variable, if the victim was fleeing or not (and how so). We predict that this variable might have an impact on if the victim was shot or shot and tasered, so we think it is important to include a representation of it. We will use a histogram with the three possibilities for fleeing on the x-axis (not fleeing, car, foot), and we will fill the graph by shot or shot and tasered. When making equations to analyze our data, we can use multiple linear regression analysis to estimate the importance and relevance of the extra explanatory variable (fleeing) and the response variable (level of violence). This helps account for fleeing status as a potentially confounding variable.
 
+Where relevant, we plan to use hypothesis testing to compare the mean age shot vs mean age tasered (i.e. find the difference in means). We hope to explore and quantify any potential differences, as well as their significance under the significance level alpha = 0.05, and hypothesis testing allows us to conduct these investigations. We plan to create null distributions to assess our observed statistic. While theory based techniques are justified in this instance (n > 30 for each group [shot vs shot and tasered] and each act of violence presumably does not affect the next), we will use simulation based techniques. We are justified to use simulation based techniques where we are justified to use theory based techniques.
+
 ```{r}
 #| label: load-data-2
 #| echo: false
@@ -138,6 +140,21 @@ logistic_reg() |>
 ```
 
 Based on the results, the model with the lowest AIC of one additional variable is age. Once examining the effects of gender, race and age on shooting manner independently of one another, we conclude the most prominent factors related to the violence level are age, followed by gender, and then race. Between the additive models, age and gender had a lower AIC than age and race, and the addition of all three variables had the highest AIC. The result is still worth exploring further through graphics. In the interactive models, age and gender also had a lower AIC than age and race. This means we may want to further investigate the correlation between age and gender in predicting shooting manner. For our purposes, we also decided to examine the effect of race on the severity of violence, as many current systemic issues in policing involve race. However, this round of AIC testing gave us a baseline understanding that in this data set, age is the most prominent predictor of shooting manner followed by gender.
+
+```{r}
+#| label: lowest-AIC-model
+
+logistic_reg() |> 
+  set_engine("glm") |> 
+  fit(Shooting.Manner ~ Person.Age, 
+      data = police_shootings_fix, family = "binomial") |>
+  tidy()
+```
+
+The associated model with the lowest AIC was therefore:
+$\widehat{Shooting.Manner} = -2.85 - 0.0016 * Person.Age$
+
+It is important here to note that there are likely other factors not explored in this analysis which may influence shooting manner, such as SES, geographic location, and the presence of body cameras.
 
 1.  Age, shot vs age, shot and tasered
 
