@@ -50,8 +50,6 @@ library(tidyverse)
 library(tidymodels)
 
 police_shootings <- read_csv("data/police_shootings (1).csv")
-glimpse(police_shootings)
-
 
 police_shootings <- police_shootings |>
   filter(Person.Age > 0)
